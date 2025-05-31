@@ -1,0 +1,114 @@
+---
+   title: 'Kubernetes (K8s)'
+   description: 'Introduction to Kubernetes'
+   date: '2025-02-06'
+   categories: ['devOps', 'kubernetes']
+   published: true
+---
+
+# {title}
+
+helps you with the orchestration of the deployments by managing the lifecycles of containerized applications. this includes the tasks:
+
+- Automates deployment
+- Manages scaling
+- Handles networking
+
+## Key Components
+
+1. **Kubernetes cluster:** A group of nodes that collectively run containerized application, includes a control plane(aka Master Node manages Worker nodes),and one or more nodes
+2. **Nodes:** Node represents a physical/virtual machine, a node can run one or more pods
+3. **Pods:** a pod is a smallest deployable unit(it can be web app, backend, databases….), it can be created, destroyed
+4. **Service:** provides a permanent IP address for pods (when pods restarts the IP address can change), & helps you with load balancing
+   1. **External Service:** Exposes the app externally, making it accessible via http, https(like: web apps..)
+   2. **Internal Service:** for the things(like databases) that you wouldn’t want to be exposed
+5. **Ingress:** provide rules for routes for external traffic(via. http, https), it helps with the mapping for domain or URLs to specific service with the cluster
+6. **Volumes:** similar to docker volumes, provides storage to pods
+7. **ConfigMap:** stores configuration data for pods
+8. **Secrets:** stores secret data such as usernames, passwords, API keys, tokens… in base64 encoded format
+9. **Deployments:** Manages stateless apps, responsible for scaling and updating replicas(without downtime)
+10. **StatefulSet:** Manages stateful apps that require persistent storage and stable identities like databases..
+
+## K8s Architecture
+
+Kubernetes has two types of nodes:
+
+1. Worker Node: does the actual work, every worker nodes must have 3 processes:
+   1. **container runtime:** such as Docker, containerd
+   2. **kublet:** is an agent, the agent communicates with the API server of Master node, and ensure that containers are running as instructed by control plane, does tasks include
+      - Sarting pods
+      - Monitoring pod health
+      - Reporting back to master node
+   3. **kubeproxy:** is responsible for network proxying, & load balancing, so that pods can communicate with each-other within the pods
+2. **Master Node(Control plane):** manages the cluster ,scheduling workloads… Give instructions to worker node. Every master node must have 4 processes
+   1. **API server:** is the frontend of the Kubernetes. It exposes the Kubernetes API, which can be interacted with the dashboards, or any API clients (such as kubectl)
+   2. **Scheduler:** assigns new pods to the worker nodes based on the resources and availability and some other factors
+   3. **Controller Manager:** monitors and manages the state of the cluster(restarts failed pods…).
+   4. **ectd:** key-value store that stores all cluster data and configurations.
+
+<div class="mx-auto max-w-5xl">
+  <img src="/images/k8s-prod-cluster-setup.png" alt="K8s Architecture" class="w-full max-w-full rounded-lg shadow-lg" />
+</div>
+
+## Layers of Abstraction
+
+1. Deployment: manages a ..
+2. Replicaset: manages a ..
+3. Pod: is an abstraction of a ..
+4. Container
+
+And everything below Deployment should be managed by kubernetes
+
+## Minikube
+
+To test something quickly or on local machine, try new components…etc setting up kubernetes is difficult so that’s where minikube comes in
+
+- creates a Virtual Box/Hypervisor on the machine
+- Nodes runs in Virtual Box
+- 1 Node k8s cluster
+
+## [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+
+It’s a command line tool to interact with k8s cluster
+
+**Basic commands:**
+
+1. CRUD commands
+   1. kubectl `create` | `edit` | `delete` deployment [name]
+2. Status of different k8s components
+   1. kubectl get `nodes` | `pod` | `services` | `deployment` | `replicaset`
+
+### Example Nginx deployment
+
+1. creating a Nginx deployment with the name of _nginx-depl_
+   1. `kubectl create deployment nginx-depl --image=nginx`
+2. now you can try with command: kublet get pods | deployment | replicaset
+3. To log into nginx container, get the pod name and run
+   1. kubectl exec -it POD_NAME -- bash
+4. using a yaml file to create a deployment
+
+   `kubectl apply -f nginx-deployment.yaml`
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx-deployment
+     labels:
+       app: nginx
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+           - name: nginx
+             image: nginx:1.14.2
+             ports:
+               - containerPort: 80
+   ```

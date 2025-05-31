@@ -1,0 +1,58 @@
+{
+	// ✏️ Editor Behavior & Formatting
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.wordWrap": "on",
+	"editor.formatOnSave": true,
+	"editor.fontFamily": "JetBrains Mono",
+	"editor.fontLigatures": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.largeFileOptimizations": true,
+	"editor.inlineSuggest.enabled": true,
+	"editor.tabCompletion": "on",
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "off",
+		"strings": "off"
+	},
+	"editor.codeActionsOnSave": ["source.fixAll"],
+
+	// 🎯 Prettier Settings
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+
+	// 🌐 Language-Specific Formatting
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"[markdown]": {
+		"editor.wordWrap": "on",
+		"editor.formatOnSave": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// 🧠 ESLint Integration
+	"eslint.validate": ["javascript", "typescript", "svelte"],
+
+	// 📄 File Handling
+	"files.autoSave": "afterDelay",
+	"files.associations": {
+		"*.css": "tailwindcss",
+		"*.svx": "markdown"
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+
+	// 🔧 Svelte Settings
+	"svelte.enable-ts-plugin": true,
+
+	// 💻 Terminal Settings
+	"terminal.integrated.fontFamily": "JetBrains Mono",
+	"terminal.integrated.fontLigatures.enabled": true,
+
+	// 🎨 Workbench & Theme
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorTheme": "Tokyo Night Storm"
+}
