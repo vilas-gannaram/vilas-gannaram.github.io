@@ -22,7 +22,7 @@
 
 		<p class="mt-4 text-neutral-600">
 			That journey of self-driven learning turned into real-world work.
-			<a href="#work">See what I’ve contributed to so far. </a>
+			<a href="#projects">See what I’ve contributed to so far. </a>
 		</p>
 	</div>
 </article>
