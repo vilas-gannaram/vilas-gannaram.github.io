@@ -11,8 +11,9 @@
 }
 
 @layer base {
+	html,
 	body {
-		@apply bg-ivory;
+		@apply bg-ivory scroll-smooth;
 	}
 
 	h1,

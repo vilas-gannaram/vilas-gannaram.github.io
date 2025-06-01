@@ -2,7 +2,7 @@
 	<div class="mx-auto max-w-4xl px-6 py-16">
 		<h2 class="text-5xl">About Me</h2>
 
-		<p class="mt-6 text-neutral-600">
+		<p class="mt-4 text-neutral-600 md:mt-6">
 			Hi, I'm a web developer who enjoys building clean, reliable, and purposeful applications. Over
 			the past couple of years, I’ve worked across the frontend and backend, helping shape
 			everything from corporate websites to data-driven tools used in bioinformatics.
@@ -22,7 +22,7 @@
 
 		<p class="mt-4 text-neutral-600">
 			That journey of self-driven learning turned into real-world work.
-			<a href="#projects">See what I’ve contributed to so far. </a>
+			<a href="#work-at-aganitha">See what I’ve contributed to so far. </a>
 		</p>
 	</div>
 </article>
