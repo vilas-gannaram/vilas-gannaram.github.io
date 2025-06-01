@@ -11,6 +11,10 @@
 }
 
 @layer base {
+	body {
+		@apply bg-ivory;
+	}
+
 	h1,
 	h2,
 	h3,
