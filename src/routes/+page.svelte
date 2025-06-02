@@ -14,7 +14,24 @@
 	<meta name="description" content="Vilas Gannaram | Web Developer" />
 </svelte:head>
 
-<main>
+<div
+	class="absolute top-0 right-0 bottom-0 left-0 -z-10 grid grid-cols-6 gap-x-3 px-[5vw] md:grid-cols-8 lg:grid-cols-12"
+>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+</div>
+
+<main class="">
 	<HeroSection />
 	<AboutSection />
 	<Experience />
