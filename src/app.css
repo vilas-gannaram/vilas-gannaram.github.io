@@ -13,7 +13,7 @@
 @layer base {
 	html,
 	body {
-		@apply bg-ivory scroll-smooth;
+		@apply bg-ivory scroll-smooth font-serif text-neutral-600;
 	}
 
 	h1,
@@ -22,7 +22,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif;
+		@apply font-sans font-semibold text-neutral-700;
 	}
 
 	a {

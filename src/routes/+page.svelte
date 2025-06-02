@@ -22,14 +22,27 @@
 	<div class="border-r border-l border-dashed border-gray-100"></div>
 	<div class="border-r border-l border-dashed border-gray-100"></div>
 	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
 </div>
+
+<header class="bg-ivory/70 sticky top-0 w-full py-4 pb-8 backdrop-blur-xs">
+	<div class="mx-auto flex max-w-11/12 items-center justify-between px-6">
+		<h1 class="text-neutral-500 uppercase">Vilas Gannaram</h1>
+
+		<ul
+			class="hidden items-center justify-end gap-x-6 font-serif text-sm text-neutral-500 uppercase md:flex"
+		>
+			<li>Background</li>
+			<li>My Work</li>
+		</ul>
+	</div>
+</header>
 
 <main class="">
 	<HeroSection />

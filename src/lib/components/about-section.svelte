@@ -1,6 +1,6 @@
 <article id="about" class="">
-	<div class="mx-auto max-w-4xl px-6 py-16">
-		<h2 class="text-5xl">About Me</h2>
+	<div class="mx-auto max-w-4xl px-6 py-16 font-serif">
+		<h2 class="text-5xl font-sans">About Me</h2>
 
 		<p class="mt-4 text-neutral-600 md:mt-6">
 			Hi, I'm a web developer who enjoys building clean, reliable, and purposeful applications. Over
