@@ -10,7 +10,7 @@
 	import Experience from '$lib/components/experience.svelte';
 
 	let shouldBlur = $state(false);
-	let thresholdY = 300;
+	let thresholdY = 120;
 
 	const handleScroll = () => {
 		shouldBlur = window.scrollY > thresholdY;
