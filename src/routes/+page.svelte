@@ -5,7 +5,7 @@
 	import HeroSection from '$lib/components/hero-section.svelte';
 	import AboutSection from '$lib/components/about-section.svelte';
 	import ContactSection from '$lib/components/contact-section.svelte';
-	import ProjectsSection from '$lib/components/projects-section.svelte';
+	// import ProjectsSection from '$lib/components/projects-section.svelte';
 	import Experience from '$lib/components/experience.svelte';
 </script>
 
@@ -17,27 +17,25 @@
 <div
 	class="absolute top-0 right-0 bottom-0 left-0 -z-10 grid grid-cols-5 gap-x-3 px-[5vw] md:grid-cols-8 lg:grid-cols-12"
 >
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="border-r border-l border-dashed border-gray-100"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="border-r border-l border-dashed border-slate-200"></div>
+	<div class="border-r border-l border-dashed border-slate-200"></div>
+	<div class="border-r border-l border-dashed border-slate-200"></div>
+	<div class="border-r border-l border-dashed border-slate-200"></div>
+	<div class="border-r border-l border-dashed border-slate-200"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
 </div>
 
-<header class="bg-ivory/70 sticky top-0 w-full py-4 pb-8 backdrop-blur-xs">
-	<div class="mx-auto flex max-w-11/12 items-center justify-between px-6">
-		<h1 class="text-neutral-500 uppercase">Vilas Gannaram</h1>
+<header class="bg-ivory/70 sticky top-0 w-full py-4 pb-6 backdrop-blur-xs">
+	<div class="mx-auto flex max-w-[1140px] items-center justify-between px-6">
+		<p class="uppercase">Vilas Gannaram</p>
 
-		<ul
-			class="hidden items-center justify-end gap-x-6 font-serif text-sm text-neutral-500 uppercase md:flex"
-		>
+		<ul class="hidden items-center justify-end gap-x-6 font-serif text-sm uppercase md:flex">
 			<li>Background</li>
 			<li>My Work</li>
 		</ul>
@@ -48,7 +46,7 @@
 	<HeroSection />
 	<AboutSection />
 	<Experience />
-	<ProjectsSection />
+	<!-- <ProjectsSection /> -->
 	<ContactSection />
 </main>
 

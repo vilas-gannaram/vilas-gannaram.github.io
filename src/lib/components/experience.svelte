@@ -86,27 +86,29 @@
 	];
 </script>
 
-<section id="work-at-aganitha" class="mx-auto max-w-4xl px-6">
-	<h2 class="text-5xl">Work At Aganitha</h2>
+<section id="work-at-aganitha" class="">
+	<div class="mx-auto max-w-[1140px] px-6 my-16">
+		<h2>Work At Aganitha</h2>
 
-	{#each projects.slice(0, 5) as project (project.title)}
-		<div class="mt-8">
-			<!--  eslint-disable-next-line svelte/no-at-html-tags -->
-			<h3 class="text-3xl">{@html project.title}</h3>
-			<div class="mt-2 text-neutral-500">
-				<p>{project.description}</p>
-				<ul class="mt-2 list-disc pl-5">
-					{#each project.keyPoints as item (item)}
-						<!--  eslint-disable-next-line svelte/no-at-html-tags -->
-						<li>{@html item}</li>
-					{/each}
-				</ul>
-				<ul class="mt-2 flex flex-wrap gap-2 pl-0">
-					{#each project.tools as item (item)}
-						<li class="rounded-full bg-slate-100 px-2 py-1 font-mono text-xs">{item}</li>
-					{/each}
-				</ul>
+		{#each projects.slice(0, 5) as project (project.title)}
+			<div class="mt-4 md:mt-6">
+				<!--  eslint-disable-next-line svelte/no-at-html-tags -->
+				<h3>{@html project.title}</h3>
+				<div class="mt-2 md:mt-2.5">
+					<p>{project.description}</p>
+					<ul class="mt-2 list-disc pl-5">
+						{#each project.keyPoints as item (item)}
+							<!--  eslint-disable-next-line svelte/no-at-html-tags -->
+							<li>{@html item}</li>
+						{/each}
+					</ul>
+					<ul class="mt-2 flex flex-wrap gap-2 pl-0">
+						{#each project.tools as item (item)}
+							<code class="chip text-xs">{item}</code>
+						{/each}
+					</ul>
+				</div>
 			</div>
-		</div>
-	{/each}
+		{/each}
+	</div>
 </section>

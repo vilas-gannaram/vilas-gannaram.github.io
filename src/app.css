@@ -7,7 +7,7 @@
 		'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif';
 	--font-mono: 'Menlo', 'Consolas', 'Monaco', 'Courier New', 'monospace';
 
-	--color-ivory: '#f8f6f2';
+	--color-ivory: '#f2ede0';
 }
 
 @layer base {
@@ -22,10 +22,26 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-sans font-semibold text-neutral-700;
+		@apply font-sans font-semibold text-neutral-700 uppercase;
+	}
+
+	h1 {
+		@apply text-6xl md:text-8xl lg:text-9xl;
+	}
+
+	h2 {
+		@apply text-4xl md:text-5xl lg:text-3xl;
 	}
 
 	a {
 		@apply text-neutral-500 underline;
+	}
+
+	code {
+		@apply bg-slate-50 px-1;
+	}
+
+	code.chip {
+		@apply rounded-2xl bg-slate-50 px-2 py-1;
 	}
 }
