@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	// import type { PageProps } from './$types';
 	// let { data }: PageProps = $props();
 
@@ -7,6 +8,24 @@
 	import ContactSection from '$lib/components/contact-section.svelte';
 	// import ProjectsSection from '$lib/components/projects-section.svelte';
 	import Experience from '$lib/components/experience.svelte';
+
+	let shouldBlur = $state(false);
+	let thresholdY = 300;
+
+	const handleScroll = () => {
+		shouldBlur = window.scrollY > thresholdY;
+	};
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		// Set initial state on load
+		handleScroll();
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
 <svelte:head>
@@ -17,21 +36,25 @@
 <div
 	class="absolute top-0 right-0 bottom-0 left-0 -z-10 grid grid-cols-5 gap-x-3 px-[5vw] md:grid-cols-8 lg:grid-cols-12"
 >
-	<div class="border-r border-l border-dashed border-slate-200"></div>
-	<div class="border-r border-l border-dashed border-slate-200"></div>
-	<div class="border-r border-l border-dashed border-slate-200"></div>
-	<div class="border-r border-l border-dashed border-slate-200"></div>
-	<div class="border-r border-l border-dashed border-slate-200"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 md:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
-	<div class="hidden border-r border-l border-dashed border-slate-200 lg:block"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="border-r border-l border-dashed border-gray-100"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 md:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
+	<div class="hidden border-r border-l border-dashed border-gray-100 lg:block"></div>
 </div>
 
-<header class="bg-ivory/70 sticky top-0 w-full py-4 pb-6 backdrop-blur-xs">
+<header
+	class="bg-ivory/70 sticky top-0 w-full py-4 pb-6 transition"
+	class:backdrop-blur-xs={shouldBlur}
+	class:backdrop-blur-none={!shouldBlur}
+>
 	<div class="mx-auto flex max-w-[1140px] items-center justify-between px-6">
 		<p class="uppercase">Vilas Gannaram</p>
 
