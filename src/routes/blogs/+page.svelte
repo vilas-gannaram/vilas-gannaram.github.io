@@ -4,17 +4,16 @@
 	let { data }: PageProps = $props();
 </script>
 
-<h1>Blogs listing page</h1>
+<h1>Blog Posts</h1>
 
 <ul>
-	{#each data.posts.slice(0, 5) as post}
+	{#each data.posts as post (post.title)}
 		<li>
 			<a href={`/blogs/${post.slug}`}>
-				{post.metadata?.title}
+				<h2>{post.title}</h2>
+				<p>{post.excerpt}</p>
+				<small>{post.date}</small>
 			</a>
-			{#if post.metadata.date}
-				<small> — {post.metadata.date}</small>
-			{/if}
 		</li>
 	{/each}
 </ul>

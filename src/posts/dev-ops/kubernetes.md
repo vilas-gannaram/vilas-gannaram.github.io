@@ -6,8 +6,6 @@
    published: true
 ---
 
-# {title}
-
 helps you with the orchestration of the deployments by managing the lifecycles of containerized applications. this includes the tasks:
 
 - Automates deployment
@@ -46,9 +44,9 @@ Kubernetes has two types of nodes:
    3. **Controller Manager:** monitors and manages the state of the cluster(restarts failed pods…).
    4. **ectd:** key-value store that stores all cluster data and configurations.
 
-<div class="mx-auto max-w-5xl">
+<!-- <div class="mx-auto max-w-5xl">
   <img src="/images/k8s-prod-cluster-setup.png" alt="K8s Architecture" class="w-full max-w-full rounded-lg shadow-lg" />
-</div>
+</div> -->
 
 ## Layers of Abstraction
 
