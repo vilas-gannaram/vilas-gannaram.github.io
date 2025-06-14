@@ -34,14 +34,100 @@
 	}
 
 	a {
-		@apply text-neutral-500 underline;
+		@apply text-neutral-500;
 	}
 
-	code {
-		@apply bg-slate-50 px-1;
+	#blogs-wrapper * {
+		@apply my-2 font-serif text-zinc-800;
 	}
 
-	code.chip {
-		@apply rounded-2xl bg-slate-50 px-2 py-1;
+	/* Headings */
+	#blogs-wrapper h1 {
+		@apply mb-6 text-5xl leading-tight font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	#blogs-wrapper h2 {
+		@apply mt-10 mb-4 text-4xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	#blogs-wrapper h3 {
+		@apply mt-8 mb-3 text-3xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	#blogs-wrapper h4 {
+		@apply mt-6 mb-3 text-2xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	#blogs-wrapper h5 {
+		@apply mt-4 mb-2 text-xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	#blogs-wrapper h6 {
+		@apply mt-2 mb-2 text-lg leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+	}
+
+	/* Paragraphs */
+	#blogs-wrapper p {
+		@apply mb-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300;
+	}
+
+	/* Lists */
+	#blogs-wrapper ul {
+		@apply mb-4 list-disc pl-6;
+	}
+
+	#blogs-wrapper ol {
+		@apply mb-4 list-decimal pl-6;
+	}
+
+	#blogs-wrapper li {
+		@apply mb-1 leading-relaxed;
+	}
+
+	#blogs-wrapper li > p {
+		@apply inline; /* prevent paragraph inside list items from adding extra margins */
+	}
+
+	/* Blockquotes */
+	#blogs-wrapper blockquote {
+		@apply my-6 border-l-4 border-blue-300 pl-4 text-zinc-600 italic;
+	}
+
+	/* Inline Code */
+	#blogs-wrapper code {
+		@apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-pink-600 dark:bg-zinc-800 dark:text-pink-400;
+	}
+
+	/* Code blocks */
+	#blogs-wrapper pre {
+		@apply my-6 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-900 p-4 font-mono text-sm leading-relaxed text-zinc-100;
+	}
+
+	/* Images */
+	#blogs-wrapper img {
+		@apply mx-auto my-4 rounded-lg;
+	}
+
+	/* Tables */
+	#blogs-wrapper table {
+		@apply my-4 w-full border-collapse text-left;
+	}
+
+	#blogs-wrapper th {
+		@apply border-b border-zinc-300 bg-zinc-100 px-4 py-2 font-semibold dark:bg-zinc-800;
+	}
+
+	#blogs-wrapper td {
+		@apply border-b border-zinc-200 px-4 py-2;
+	}
+
+	/* Horizontal Rule */
+	#blogs-wrapper hr {
+		@apply my-8 border-zinc-200 dark:border-zinc-700;
+	}
+
+	/* Links */
+	#blogs-wrapper a {
+		@apply underline;
 	}
 }

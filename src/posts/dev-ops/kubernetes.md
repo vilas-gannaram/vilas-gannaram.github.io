@@ -1,9 +1,9 @@
 ---
-   title: 'Kubernetes (K8s)'
-   description: 'Introduction to Kubernetes'
-   date: '2025-02-06'
-   categories: ['devOps', 'kubernetes']
-   published: true
+  title: 'Kubernetes (K8s)'
+  description: 'Introduction to Kubernetes'
+  date: '2025-02-06'
+  categories: ['devOps', 'kubernetes']
+  published: true
 ---
 
 helps you with the orchestration of the deployments by managing the lifecycles of containerized applications. this includes the tasks:

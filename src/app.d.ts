@@ -14,14 +14,8 @@ export {};
 
 declare module '*.md' {
 	import type { SvelteComponent } from 'svelte';
-	const component: typeof SvelteComponent;
-	export default component;
-	export const metadata: Record<string, any>;
-}
 
-declare module '*.svx' {
-	import type { SvelteComponent } from 'svelte';
-	const component: typeof SvelteComponent;
-	export default component;
-	export const metadata: Record<string, any>;
+	export const metadata: BlogFrontmatter;
+
+	export default class Comp extends SvelteComponent {}
 }

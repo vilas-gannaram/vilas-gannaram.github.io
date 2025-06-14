@@ -1,49 +1,56 @@
 import type { SvelteComponent } from 'svelte';
-
-export interface IBlogPost {
-	slug: string;
-	title: string;
-	date: string;
-	excerpt: string;
-	tags?: string[];
-	component: typeof SvelteComponent;
-}
+import type { IBlogPost, BlogFrontmatter } from '$lib/types';
 
 const postFiles = import.meta.glob('/src/posts/**/*.md');
 
-// Build slug map ONCE at startup
-const slugMap: Record<string, () => Promise<unknown>> = {};
+const slugMap: Record<
+	string,
+	() => Promise<{ metadata: BlogFrontmatter; default: typeof SvelteComponent }>
+> = {};
 
 for (const path in postFiles) {
 	const slug = path.replace('/src/posts/', '').replace('.md', '');
 
-	slugMap[slug] = postFiles[path];
+	slugMap[slug] = postFiles[path] as () => Promise<{
+		metadata: BlogFrontmatter;
+		default: typeof SvelteComponent;
+	}>;
+}
+
+// Transform function to normalize blog post objects
+function transformPost(
+	slug: string,
+	post: { metadata: BlogFrontmatter; default: typeof SvelteComponent }
+): IBlogPost {
+	return {
+		slug,
+		component: post.default,
+		metadata: post.metadata
+	};
 }
 
 /**
- * Get all blog posts metadata (for listing page)
+ * Get all blog posts metadata (for blog listing)
  */
 export async function getAllPosts(): Promise<IBlogPost[]> {
 	const posts = await Promise.all(
 		Object.entries(slugMap).map(async ([slug, resolver]) => {
-			const post: any = await resolver();
-
-			return {
-				slug,
-				title: post.metadata.title,
-				date: post.metadata.date,
-				excerpt: post.metadata.excerpt,
-				tags: post.metadata.tags || [],
-				component: post.default
-			};
+			const post = await resolver();
+			return transformPost(slug, post);
 		})
 	);
 
-	return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+	// Optional: Filter out drafts
+	const publishedPosts = posts.filter((post) => !post.metadata.draft);
+
+	// Sort by date descending
+	return publishedPosts.sort((a, b) =>
+		a.metadata.date! < b.metadata.date! ? 1 : -1
+	);
 }
 
 /**
- * Get single post by slug
+ * Get a single blog post by slug
  */
 export async function getPostBySlug(slug: string): Promise<IBlogPost | null> {
 	const resolver = slugMap[slug];
@@ -52,14 +59,6 @@ export async function getPostBySlug(slug: string): Promise<IBlogPost | null> {
 		return null;
 	}
 
-	const post: any = await resolver();
-
-	return {
-		slug,
-		title: post.metadata.title,
-		date: post.metadata.date,
-		excerpt: post.metadata.excerpt,
-		tags: post.metadata.tags || [],
-		component: post.default
-	};
+	const post = await resolver();
+	return transformPost(slug, post);
 }

@@ -1,9 +1,9 @@
 ---
-   title: 'Docker'
-   description: 'Introduction to Docker'
-   date: '2025-06-12'
-   categories: ['devOps', 'docker']
-   published: true
+  title: 'Docker'
+  description: 'Introduction to Docker'
+  date: '2025-06-12'
+  categories: ['devOps', 'docker']
+  published: true
 ---
 
 Docker is an open-source tool that allows developers to easily build, ship, and run applications in containers. A container is a standalone executable package of software that includes everything the application needs to run (such as code, libraries, dependencies...).

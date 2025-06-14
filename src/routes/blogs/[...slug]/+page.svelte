@@ -3,10 +3,10 @@
 	const { post } = data;
 </script>
 
-<article class="prose md:prose-lg mx-auto">
-	<h1>{post.title}</h1>
-	<small>{post.date}</small>
-	<p>{post.excerpt}</p>
+<article>
+	<h1>{post.metadata.title}</h1>
+	<small>{post.metadata.date}</small>
+	<p>{post.metadata.description}</p>
 
 	<!-- Render actual MDsvex compiled content -->
 	<svelte:component this={post.component} />

@@ -36,7 +36,7 @@
 	<div class="mx-auto flex max-w-[1140px] items-center justify-between px-6">
 		<p class="uppercase">Vilas Gannaram</p>
 
-		<ul class="hidden items-center justify-end gap-x-6 font-serif text-sm uppercase md:flex">
+		<ul class="hidden items-center justify-end gap-x-6 text-sm uppercase md:flex">
 			<li>Background</li>
 			<li>My Work</li>
 		</ul>
@@ -57,7 +57,7 @@
 
 	<!-- About -->
 	<article id="about" class="">
-		<div class="mx-auto my-16 max-w-[1140px] px-6 font-serif">
+		<div class="mx-auto my-16 max-w-[1140px] px-6">
 			<h2>About Me</h2>
 
 			<p class="mt-4 md:mt-6">
