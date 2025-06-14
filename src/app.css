@@ -43,32 +43,32 @@
 
 	/* Headings */
 	#blogs-wrapper h1 {
-		@apply mb-6 text-5xl leading-tight font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mb-6 text-5xl leading-tight font-semibold text-neutral-800;
 	}
 
 	#blogs-wrapper h2 {
-		@apply mt-10 mb-4 text-4xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mt-10 mb-4 text-4xl leading-snug font-semibold text-neutral-800;
 	}
 
 	#blogs-wrapper h3 {
-		@apply mt-8 mb-3 text-3xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mt-8 mb-3 text-3xl leading-snug font-semibold text-neutral-800;
 	}
 
 	#blogs-wrapper h4 {
-		@apply mt-6 mb-3 text-2xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mt-6 mb-3 text-2xl leading-snug font-semibold text-neutral-800;
 	}
 
 	#blogs-wrapper h5 {
-		@apply mt-4 mb-2 text-xl leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mt-4 mb-2 text-xl leading-snug font-semibold text-neutral-800;
 	}
 
 	#blogs-wrapper h6 {
-		@apply mt-2 mb-2 text-lg leading-snug font-semibold text-neutral-800 dark:text-zinc-100;
+		@apply mt-2 mb-2 text-lg leading-snug font-semibold text-neutral-800;
 	}
 
 	/* Paragraphs */
 	#blogs-wrapper p {
-		@apply mb-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300;
+		@apply mb-4 text-base leading-relaxed text-zinc-700;
 	}
 
 	/* Lists */
@@ -95,7 +95,7 @@
 
 	/* Inline Code */
 	#blogs-wrapper code {
-		@apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-pink-600 dark:bg-zinc-800 dark:text-pink-400;
+		@apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-pink-600;
 	}
 
 	/* Code blocks */
@@ -114,7 +114,7 @@
 	}
 
 	#blogs-wrapper th {
-		@apply border-b border-zinc-300 bg-zinc-100 px-4 py-2 font-semibold dark:bg-zinc-800;
+		@apply border-b border-zinc-300 bg-zinc-100 px-4 py-2 font-semibold;
 	}
 
 	#blogs-wrapper td {
@@ -123,7 +123,7 @@
 
 	/* Horizontal Rule */
 	#blogs-wrapper hr {
-		@apply my-8 border-zinc-200 dark:border-zinc-700;
+		@apply my-8 border-zinc-200;
 	}
 
 	/* Links */
