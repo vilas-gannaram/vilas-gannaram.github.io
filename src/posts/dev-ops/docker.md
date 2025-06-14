@@ -6,6 +6,12 @@
   published: true
 ---
 
+# {title}
+
+{date}
+
+{description}
+
 Docker is an open-source tool that allows developers to easily build, ship, and run applications in containers. A container is a standalone executable package of software that includes everything the application needs to run (such as code, libraries, dependencies...).
 
 ## Why do we use it?

@@ -2,15 +2,14 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-	--font-serif: 'Georgia', 'serif';
-	--font-sans:
-		'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif';
-	--font-mono: 'Menlo', 'Consolas', 'Monaco', 'Courier New', 'monospace';
-
 	--color-ivory: '#f2ede0';
 }
 
 @layer base {
+	* {
+		@apply antialiased;
+	}
+
 	html,
 	body {
 		@apply bg-ivory scroll-smooth font-serif text-neutral-600;
@@ -30,45 +29,45 @@
 	}
 
 	h2 {
-		@apply text-4xl md:text-5xl lg:text-3xl;
+		@apply text-3xl md:text-4xl;
 	}
 
-	a {
-		@apply text-neutral-500;
+	h3 {
+		@apply text-xl;
 	}
 
 	#blogs-wrapper * {
-		@apply my-2 font-serif text-zinc-800;
+		@apply text-neutral-700;
 	}
 
 	/* Headings */
 	#blogs-wrapper h1 {
-		@apply mb-6 text-5xl leading-tight font-semibold text-neutral-800;
+		@apply mb-6 text-5xl/loose font-semibold text-neutral-800 capitalize;
 	}
 
 	#blogs-wrapper h2 {
-		@apply mt-10 mb-4 text-4xl leading-snug font-semibold text-neutral-800;
+		@apply mt-10 mb-4 text-4xl/snug font-semibold text-neutral-800 capitalize;
 	}
 
 	#blogs-wrapper h3 {
-		@apply mt-8 mb-3 text-3xl leading-snug font-semibold text-neutral-800;
+		@apply mt-8 mb-3 text-3xl/snug font-semibold text-neutral-800 capitalize;
 	}
 
 	#blogs-wrapper h4 {
-		@apply mt-6 mb-3 text-2xl leading-snug font-semibold text-neutral-800;
+		@apply mt-6 mb-3 text-2xl/snug font-semibold text-neutral-800 capitalize;
 	}
 
 	#blogs-wrapper h5 {
-		@apply mt-4 mb-2 text-xl leading-snug font-semibold text-neutral-800;
+		@apply mt-4 mb-2 text-xl/snug font-semibold text-neutral-800 capitalize;
 	}
 
 	#blogs-wrapper h6 {
-		@apply mt-2 mb-2 text-lg leading-snug font-semibold text-neutral-800;
+		@apply mt-2 mb-2 text-lg/snug font-semibold text-neutral-800 capitalize;
 	}
 
 	/* Paragraphs */
 	#blogs-wrapper p {
-		@apply mb-4 text-base leading-relaxed text-zinc-700;
+		@apply mt-1 mb-4 text-base/relaxed;
 	}
 
 	/* Lists */
@@ -81,7 +80,7 @@
 	}
 
 	#blogs-wrapper li {
-		@apply mb-1 leading-relaxed;
+		@apply mb-1.5 leading-loose;
 	}
 
 	#blogs-wrapper li > p {
@@ -90,17 +89,21 @@
 
 	/* Blockquotes */
 	#blogs-wrapper blockquote {
-		@apply my-6 border-l-4 border-blue-300 pl-4 text-zinc-600 italic;
+		@apply border-l-4 border-neutral-300 pl-4 italic;
 	}
 
-	/* Inline Code */
-	#blogs-wrapper code {
-		@apply rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-pink-600;
+	/* Inline Code (still styled separately) */
+	#blogs-wrapper code:not(.shiki code) {
+		@apply rounded bg-zinc-50 px-1.5 py-0.5 font-mono text-sm text-[#B56959];
 	}
 
-	/* Code blocks */
-	#blogs-wrapper pre {
-		@apply my-6 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-900 p-4 font-mono text-sm leading-relaxed text-zinc-100;
+	/* Code Blocks (Shiki-powered) */
+	#blogs-wrapper pre.shiki {
+		@apply my-8 overflow-x-auto rounded-lg border border-zinc-200 p-5 font-mono text-sm leading-relaxed;
+	}
+
+	#blogs-wrapper pre.shiki code {
+		@apply block;
 	}
 
 	/* Images */

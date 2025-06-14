@@ -6,6 +6,12 @@
   published: true
 ---
 
+# {title}
+
+{date}
+
+{description}
+
 helps you with the orchestration of the deployments by managing the lifecycles of containerized applications. this includes the tasks:
 
 - Automates deployment
@@ -65,7 +71,7 @@ To test something quickly or on local machine, try new components…etc setting 
 - Nodes runs in Virtual Box
 - 1 Node k8s cluster
 
-## [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+### [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 
 It’s a command line tool to interact with k8s cluster
 
