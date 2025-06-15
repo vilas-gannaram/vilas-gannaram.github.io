@@ -36,101 +36,101 @@
 		@apply text-xl;
 	}
 
-	#blogs-wrapper * {
+	#blog-wrapper * {
 		@apply text-neutral-700;
 	}
 
 	/* Headings */
-	#blogs-wrapper h1 {
-		@apply mb-6 text-5xl/loose font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h1 {
+		@apply mb-6 text-4xl/snug font-bold text-neutral-800 capitalize;
 	}
 
-	#blogs-wrapper h2 {
-		@apply mt-10 mb-4 text-4xl/snug font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h2 {
+		@apply mt-10 mb-4 text-3xl/snug font-bold text-neutral-800 capitalize;
 	}
 
-	#blogs-wrapper h3 {
-		@apply mt-8 mb-3 text-3xl/snug font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h3 {
+		@apply mt-8 mb-3 text-2xl/snug font-bold text-neutral-800 capitalize;
 	}
 
-	#blogs-wrapper h4 {
-		@apply mt-6 mb-3 text-2xl/snug font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h4 {
+		@apply mt-6 mb-3 text-xl/snug font-bold text-neutral-800 capitalize;
 	}
 
-	#blogs-wrapper h5 {
-		@apply mt-4 mb-2 text-xl/snug font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h5 {
+		@apply mt-4 mb-2 text-lg/snug font-bold text-neutral-800 capitalize;
 	}
 
-	#blogs-wrapper h6 {
-		@apply mt-2 mb-2 text-lg/snug font-semibold text-neutral-800 capitalize;
+	#blog-wrapper h6 {
+		@apply mt-2 mb-2 text-base/snug font-bold text-neutral-800 capitalize;
 	}
 
 	/* Paragraphs */
-	#blogs-wrapper p {
-		@apply mt-1 mb-4 text-base/relaxed;
+	#blog-wrapper p {
+		@apply mt-1 mb-4 text-base/normal md:text-base/relaxed;
 	}
 
 	/* Lists */
-	#blogs-wrapper ul {
+	#blog-wrapper ul {
 		@apply mb-4 list-disc pl-6;
 	}
 
-	#blogs-wrapper ol {
+	#blog-wrapper ol {
 		@apply mb-4 list-decimal pl-6;
 	}
 
-	#blogs-wrapper li {
+	#blog-wrapper li {
 		@apply mb-1.5 leading-loose;
 	}
 
-	#blogs-wrapper li > p {
+	#blog-wrapper li > p {
 		@apply inline; /* prevent paragraph inside list items from adding extra margins */
 	}
 
 	/* Blockquotes */
-	#blogs-wrapper blockquote {
-		@apply border-l-4 border-neutral-300 pl-4 italic;
+	#blog-wrapper blockquote {
+		@apply border-l-4 border-zinc-300 pl-4 italic;
 	}
 
 	/* Inline Code (still styled separately) */
-	#blogs-wrapper code:not(.shiki code) {
-		@apply rounded bg-zinc-50 px-1.5 py-0.5 font-mono text-sm text-[#B56959];
+	#blog-wrapper code:not(.shiki code) {
+		@apply rounded bg-zinc-50/55 px-1.5 py-0.5 font-mono text-sm text-[#B56959];
 	}
 
 	/* Code Blocks (Shiki-powered) */
-	#blogs-wrapper pre.shiki {
+	#blog-wrapper pre.shiki {
 		@apply my-8 overflow-x-auto rounded-lg border border-zinc-200 p-5 font-mono text-sm leading-relaxed;
 	}
 
-	#blogs-wrapper pre.shiki code {
+	#blog-wrapper pre.shiki code {
 		@apply block;
 	}
 
 	/* Images */
-	#blogs-wrapper img {
+	#blog-wrapper img {
 		@apply mx-auto my-4 rounded-lg;
 	}
 
 	/* Tables */
-	#blogs-wrapper table {
+	#blog-wrapper table {
 		@apply my-4 w-full border-collapse text-left;
 	}
 
-	#blogs-wrapper th {
+	#blog-wrapper th {
 		@apply border-b border-zinc-300 bg-zinc-100 px-4 py-2 font-semibold;
 	}
 
-	#blogs-wrapper td {
+	#blog-wrapper td {
 		@apply border-b border-zinc-200 px-4 py-2;
 	}
 
 	/* Horizontal Rule */
-	#blogs-wrapper hr {
+	#blog-wrapper hr {
 		@apply my-8 border-zinc-200;
 	}
 
 	/* Links */
-	#blogs-wrapper a {
+	#blog-wrapper a {
 		@apply underline;
 	}
 }

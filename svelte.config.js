@@ -11,7 +11,8 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['vitesse-light'],
-				langs: ['docker', 'dockerfile', 'bash']
+				langs: ['docker', 'dockerfile', 'bash'],
+				bg: 'transparent'
 			});
 			await highlighter.loadLanguage('javascript', 'typescript', 'yaml');
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'vitesse-light' }));
