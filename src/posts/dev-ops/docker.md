@@ -6,6 +6,10 @@
   published: true
 ---
 
+<script>
+  import Mermaid from '$lib/components/mermaid.svelte';
+</script>
+
 # {title}
 
 {date}
@@ -18,13 +22,46 @@
 
 ## Why do we use it?
 
-> ***The classic example scenario:***
+> **_The classic example scenario:_**
 >
-> *Imagine you’ve built an application, and want to share it with your team members for testing, deploying, or even running it on a local machine. However, your teammates may not have the same machine(runtime, OS, dependencies) as you do, causing the application to fail or behave unexpectedly.*
+> _Imagine you’ve built an application, and want to share it with your team members for testing, deploying, or even running it on a local machine. However, your teammates may not have the same machine(runtime, OS, dependencies) as you do, causing the application to fail or behave unexpectedly._
 >
->  *To solve this problem, you would need to manually replicate your environment on every team member’s machine, which is time-consuming and error-prone.*
+> _To solve this problem, you would need to manually replicate your environment on every team member’s machine, which is time-consuming and error-prone._
 >
-> *This is where Virtual Machine comes in handy, later replaced by Containers.*
+> _This is where **Virtual Machine** comes in handy._
+
+### Virtual Machine (VM)
+
+Virtual Machine: allows us to create an isolated environment, by placing a hypervisor on top of the System OS.
+
+<Mermaid
+diagram={`%% block diagram mode
+  block-beta
+    columns 3
+    block:VM1:1
+      columns 1
+      App1["App"]
+      OS1["Windows"]
+    end
+    block:VM2:1
+      columns 1
+      block:app2:1
+        columns 3
+        App2["App 1"]
+        App3["App 2"]
+        App4["App 3"]
+      end
+      OS2["Ubuntu"]
+    end
+    block:VM3:1
+      columns 1
+      VM3["Another VM"]
+    end
+    HV["Hypervisor"]:3
+    OS["Host Operating System"]:3
+    HW["Host Hardware"]:3
+  `}
+/>
 
 ### Virtual Machine (VM) & Container
 
@@ -63,4 +100,3 @@ CMD ["npm", "start"]
 ## Images & Containers
 
 **Docker Image** is like a blueprint for the container, you can run multiple containers using a single **Docker Image**
-
