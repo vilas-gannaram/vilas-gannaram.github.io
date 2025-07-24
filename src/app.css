@@ -1,136 +1,191 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: italic;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf')
+		format('truetype');
+}
 
 @theme {
-	--color-ivory: '#f2ede0';
+	/* 	Your main brand color. Used by most elements throughout the website. */
+	--color-primary: #ffbf1c;
+
+	/* --color-primary: #1198ed; */
+
+	/* Your secondary brand color. Used mainly as hover color or by secondary elements. */
+	--color-secondary: #ff852c;
+
+	/* Usually a contrasting color used to draw attention to key pieces of your website. */
+	--color-accent: #d1345b;
+
+	/* A dark, contrasting color, used by all headlines in your website. */
+	--color-headline: #000000;
+
+	/* A neutral grey, easy to read color, used by all text elements. */
+	--color-body: rgba(0, 0, 0, 0.6);
+
+	/* Generally used as background color for footer, copyright and dark sections. */
+	--color-dark-neutral: #000000;
+
+	/* Generally used as background color for light, alternating sections. */
+	--color-light-neutral: #fafafa;
+
+	/* Generally used as background color for light, alternating sections. */
+	--color-white: #ffffff;
+
+	--font-sans:
+		'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 @layer base {
 	* {
-		@apply antialiased;
+		@apply font-sans antialiased;
 	}
 
 	html,
 	body {
-		@apply bg-ivory scroll-smooth font-serif text-neutral-600;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-sans font-semibold text-neutral-700 uppercase;
+		line-height: 1.9;
+		@apply text-body scroll-smooth font-normal;
 	}
 
 	h1 {
-		@apply text-6xl md:text-8xl lg:text-9xl;
+		line-height: 1.4;
+		letter-spacing: -0.027em;
+		@apply text-headline text-4xl font-bold md:text-[50px] lg:text-[64px];
 	}
 
 	h2 {
-		@apply text-3xl md:text-4xl;
+		line-height: 1.4;
+		letter-spacing: -0.027em;
+		@apply text-headline text-[26px] font-bold md:text-[34px] lg:text-[48px];
 	}
 
 	h3 {
-		@apply text-xl;
+		line-height: 1.4;
+		letter-spacing: -0.027em;
+		@apply text-headline text-[18px] font-bold md:text-[19px] lg:text-[20px];
 	}
 
-	#blog-wrapper * {
-		@apply text-neutral-700;
+	h4 {
+		line-height: 1.4;
+		letter-spacing: -0.027em;
+		@apply text-headline text-[16px] font-semibold md:text-[17px] lg:text-[18px];
 	}
 
-	/* Headings */
-	#blog-wrapper h1 {
-		@apply mb-6 text-4xl/snug font-bold text-neutral-800 capitalize;
+	h5 {
+		line-height: 1.4;
+		letter-spacing: -0.015em;
+		@apply text-accent text-[14px] font-semibold md:text-[15px] lg:text-[16px];
 	}
 
-	#blog-wrapper h2 {
-		@apply mt-10 mb-4 text-3xl/snug font-bold text-neutral-800 capitalize;
+	h6 {
+		line-height: 1.4;
+		letter-spacing: -0.027em;
+		@apply text-headline text-[12px] font-semibold uppercase md:text-[13px] lg:text-[14px];
 	}
 
-	#blog-wrapper h3 {
-		@apply mt-8 mb-3 text-2xl/snug font-bold text-neutral-800 capitalize;
+	a {
+		@apply text-secondary underline underline-offset-1;
 	}
+}
 
-	#blog-wrapper h4 {
-		@apply mt-6 mb-3 text-xl/snug font-bold text-neutral-800 capitalize;
-	}
+/* Headings */
+#blog-wrapper h1 {
+	@apply mb-6;
+}
 
-	#blog-wrapper h5 {
-		@apply mt-4 mb-2 text-lg/snug font-bold text-neutral-800 capitalize;
-	}
+#blog-wrapper h2 {
+	@apply mt-10 mb-4;
+}
 
-	#blog-wrapper h6 {
-		@apply mt-2 mb-2 text-base/snug font-bold text-neutral-800 capitalize;
-	}
+#blog-wrapper h3 {
+	@apply mt-8 mb-3;
+}
 
-	/* Paragraphs */
-	#blog-wrapper p {
-		@apply mt-1 mb-4 text-base/normal md:text-base/relaxed;
-	}
+#blog-wrapper h4 {
+	@apply mt-6 mb-3;
+}
 
-	/* Lists */
-	#blog-wrapper ul {
-		@apply mb-4 list-disc pl-6;
-	}
+#blog-wrapper h5 {
+	@apply mt-4 mb-2;
+}
 
-	#blog-wrapper ol {
-		@apply mb-4 list-decimal pl-6;
-	}
+#blog-wrapper h6 {
+	@apply mt-2 mb-2;
+}
 
-	#blog-wrapper li {
-		@apply mb-1.5 leading-loose;
-	}
+/* Paragraphs */
+#blog-wrapper p {
+	@apply mt-1 mb-4;
+}
 
-	#blog-wrapper li > p {
-		@apply inline; /* prevent paragraph inside list items from adding extra margins */
-	}
+/* Lists */
+#blog-wrapper ul {
+	@apply mb-4 list-disc pl-6;
+}
 
-	/* Blockquotes */
-	#blog-wrapper blockquote {
-		@apply border-l-4 border-zinc-300 pl-4 italic;
-	}
+#blog-wrapper ol {
+	@apply mb-4 list-decimal pl-6;
+}
 
-	/* Inline Code (still styled separately) */
-	#blog-wrapper code:not(.shiki code) {
-		@apply rounded bg-zinc-50/55 px-1.5 py-0.5 font-mono text-sm text-[#B56959];
-	}
+#blog-wrapper li {
+	@apply mb-1.5 leading-loose;
+}
 
-	/* Code Blocks (Shiki-powered) */
-	#blog-wrapper pre.shiki {
-		@apply my-8 overflow-x-auto rounded-lg border border-zinc-200 p-5 font-mono text-sm leading-relaxed;
-	}
+#blog-wrapper li > p {
+	@apply inline; /* prevent paragraph inside list items from adding extra margins */
+}
 
-	#blog-wrapper pre.shiki code {
-		@apply block;
-	}
+/* Blockquotes */
+#blog-wrapper blockquote {
+	@apply border-light-neutral border-l-2 pl-4 italic;
+}
 
-	/* Images */
-	#blog-wrapper img {
-		@apply mx-auto my-4 rounded-lg;
-	}
+/* Inline Code (still styled separately) */
+#blog-wrapper code:not(.shiki code) {
+	@apply text-primary bg-light-neutral rounded px-1.5 py-0.5 font-mono text-sm;
+}
 
-	/* Tables */
-	#blog-wrapper table {
-		@apply my-4 w-full border-collapse text-left;
-	}
+/* Code Blocks (Shiki-powered) */
+#blog-wrapper pre.shiki {
+	@apply border-light-neutral my-8 overflow-x-auto rounded-lg border p-5 font-mono text-sm leading-relaxed;
+}
 
-	#blog-wrapper th {
-		@apply border-b border-zinc-300 bg-zinc-100 px-4 py-2 font-semibold;
-	}
+#blog-wrapper pre.shiki code {
+	@apply block;
+}
 
-	#blog-wrapper td {
-		@apply border-b border-zinc-200 px-4 py-2;
-	}
+/* Images */
+#blog-wrapper img {
+	@apply mx-auto my-4 rounded-lg;
+}
 
-	/* Horizontal Rule */
-	#blog-wrapper hr {
-		@apply my-8 border-zinc-200;
-	}
+/* Tables */
+#blog-wrapper table {
+	@apply my-4 w-full border-collapse text-left;
+}
 
-	/* Links */
-	#blog-wrapper a {
-		@apply underline;
-	}
+#blog-wrapper th {
+	@apply border-light-neutral border-b bg-zinc-100 px-4 py-2 font-semibold;
+}
+
+#blog-wrapper td {
+	@apply border-light-neutral border-b px-4 py-2;
+}
+
+/* Horizontal Rule */
+#blog-wrapper hr {
+	@apply border-light-neutral my-8;
 }
