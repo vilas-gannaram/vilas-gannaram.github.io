@@ -8,6 +8,7 @@
 
 <script>
   import VirtualMachine from '$lib/components/roughjs/virtual-machine.svelte';
+  import Container from '$lib/components/roughjs/container.svelte';
 </script>
 
 ## What is Docker?
@@ -16,7 +17,7 @@
 
 ## Why do we use it?
 
-> **_The classic example scenario:_**
+> **_The classic example:_**
 >
 > _Imagine you’ve built an application, and want to share it with your team members for testing, deploying, or even running it on a local machine. However, your teammates may not have the same machine(runtime, OS, dependencies) as you do, causing the application to fail or behave unexpectedly._
 >
@@ -41,6 +42,8 @@ Both VMs & Containers: allows you to create an isolated environment for the appl
 - Running multiple VMs on the same machine can slow down the performance.
 
 **Containers:**
+
+<Container/>
 
 <!-- ![dc501852-1f9a-44d8-83ef-37651e229f31.jpg](attachment:1f01b37b-64d4-4e56-aade-6e7f5e6bc52a:dc501852-1f9a-44d8-83ef-37651e229f31.jpg) -->
 

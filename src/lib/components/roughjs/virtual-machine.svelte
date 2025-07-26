@@ -30,9 +30,9 @@
 			rc.rectangle(350, 100, 120, 40, commonOpts),
 
 			// Stack
-			rc.rectangle(50, 150, 420, 45, commonOpts),
-			rc.rectangle(50, 205, 420, 45, commonOpts),
-			rc.rectangle(50, 260, 420, 45, commonOpts),
+			rc.rectangle(50, 150, 420, 45, { ...commonOpts, roughness: 3 }),
+			rc.rectangle(50, 205, 420, 45, { ...commonOpts, roughness: 3 }),
+			rc.rectangle(50, 260, 420, 45, { ...commonOpts, roughness: 3 }),
 
 			rc.rectangle(0, 0, 520, 350, { stroke: 'var(--color-border)', roughness: 6 })
 		];
