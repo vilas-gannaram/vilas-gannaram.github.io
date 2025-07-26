@@ -7,14 +7,8 @@
 ---
 
 <script>
-  import Mermaid from '$lib/components/mermaid.svelte';
+  import VirtualMachine from '$lib/components/roughjs/virtual-machine.svelte';
 </script>
-
-# {title}
-
-{date}
-
-{description}
 
 ## What is Docker?
 
@@ -34,34 +28,7 @@
 
 Virtual Machine: allows us to create an isolated environment, by placing a hypervisor on top of the System OS.
 
-<Mermaid
-diagram={`%% block diagram mode
-  block-beta
-    columns 3
-    block:VM1:1
-      columns 1
-      App1["App"]
-      OS1["Windows"]
-    end
-    block:VM2:1
-      columns 1
-      block:app2:1
-        columns 3
-        App2["App 1"]
-        App3["App 2"]
-        App4["App 3"]
-      end
-      OS2["Ubuntu"]
-    end
-    block:VM3:1
-      columns 1
-      VM3["Another VM"]
-    end
-    HV["Hypervisor"]:3
-    OS["Host Operating System"]:3
-    HW["Host Hardware"]:3
-  `}
-/>
+<VirtualMachine/>
 
 ### Virtual Machine (VM) & Container
 

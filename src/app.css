@@ -44,6 +44,8 @@
 	/* Generally used as background color for light, alternating sections. */
 	--color-white: #ffffff;
 
+	--color-border: #e0e0e0;
+
 	--font-sans:
 		'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -95,19 +97,15 @@
 		letter-spacing: -0.027em;
 		@apply text-headline text-[12px] font-semibold uppercase md:text-[13px] lg:text-[14px];
 	}
-
-	a {
-		@apply text-secondary underline underline-offset-1;
-	}
 }
 
 /* Headings */
 #blog-wrapper h1 {
-	@apply mb-6;
+	@apply mb-6 text-[26px] md:text-[32px] lg:text-[38px];
 }
 
 #blog-wrapper h2 {
-	@apply mt-10 mb-4;
+	@apply mt-10 mb-4 text-[20px] md:text-[21px] lg:text-[22px];
 }
 
 #blog-wrapper h3 {
@@ -188,4 +186,8 @@
 /* Horizontal Rule */
 #blog-wrapper hr {
 	@apply border-light-neutral my-8;
+}
+
+#blog-wrapper a {
+	@apply text-secondary underline underline-offset-1;
 }

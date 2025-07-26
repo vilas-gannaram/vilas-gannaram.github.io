@@ -6,12 +6,6 @@
   published: true
 ---
 
-# {title}
-
-{date}
-
-{description}
-
 helps you with the orchestration of the deployments by managing the lifecycles of containerized applications. this includes the tasks:
 
 - Automates deployment

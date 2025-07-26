@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { projects } from '$lib/projects';
+
 	// import type { PageProps } from './$types';
 	// let { data }: PageProps = $props();
 
