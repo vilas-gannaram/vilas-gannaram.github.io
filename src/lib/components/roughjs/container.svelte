@@ -10,10 +10,10 @@
 			fill: '#f8fafc',
 			fillWeight: 0.25,
 			bowing: 0,
-			roughness: 1,
+			roughness: 0.25,
 			fillStyle: 'solid',
 			stroke: 'var(--color-border)',
-			strokeWidth: 0.5
+			strokeWidth: 0.25
 		};
 
 		shapes = [
@@ -23,11 +23,11 @@
 			rc.rectangle(390, 50, 80, 40, commonOpts),
 
 			// Stack
-			rc.rectangle(50, 110, 420, 45, { ...commonOpts, roughness: 3 }),
-			rc.rectangle(50, 170, 420, 45, { ...commonOpts, roughness: 3 }),
-			rc.rectangle(50, 230, 420, 45, { ...commonOpts, roughness: 3 }),
+			rc.rectangle(50, 110, 420, 45, { ...commonOpts }),
+			rc.rectangle(50, 170, 420, 45, { ...commonOpts }),
+			rc.rectangle(50, 230, 420, 45, { ...commonOpts }),
 
-			rc.rectangle(0, 0, 520, 330, { stroke: 'var(--color-border)', roughness: 6 })
+			rc.rectangle(0, 0, 520, 330, { stroke: 'var(--color-border)', strokeWidth: 0.5 })
 		];
 	}
 </script>
@@ -59,7 +59,6 @@
 
 <style>
 	svg#vm_container text {
-		font-size: 12px;
-		font-family: sans-serif;
+		font-size: 10px;
 	}
 </style>

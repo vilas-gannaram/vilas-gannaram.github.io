@@ -10,10 +10,10 @@
 			fill: '#f8fafc',
 			fillWeight: 0.25,
 			bowing: 0,
-			roughness: 0.85,
+			roughness: 0.25,
 			fillStyle: 'solid',
 			stroke: 'var(--color-border)',
-			strokeWidth: 0.5
+			strokeWidth: 0.25
 		};
 
 		shapes = [
@@ -30,11 +30,14 @@
 			rc.rectangle(350, 100, 120, 40, commonOpts),
 
 			// Stack
-			rc.rectangle(50, 150, 420, 45, { ...commonOpts, roughness: 3 }),
-			rc.rectangle(50, 205, 420, 45, { ...commonOpts, roughness: 3 }),
-			rc.rectangle(50, 260, 420, 45, { ...commonOpts, roughness: 3 }),
+			rc.rectangle(50, 150, 420, 45, { ...commonOpts }),
+			rc.rectangle(50, 205, 420, 45, { ...commonOpts }),
+			rc.rectangle(50, 260, 420, 45, { ...commonOpts }),
 
-			rc.rectangle(0, 0, 520, 350, { stroke: 'var(--color-border)', roughness: 6 })
+			rc.rectangle(0, 0, 520, 350, {
+				stroke: 'var(--color-border)',
+				strokeWidth: 0.5
+			})
 		];
 	}
 </script>
@@ -63,14 +66,13 @@
 	<text x="405" y="125" text-anchor="middle">Guest OS</text>
 
 	<!-- Stack labels -->
-	<text x="250" y="175" text-anchor="middle">Hypervisor</text>
+	<text x="250" y="175" text-anchor="middle">HyperVisor</text>
 	<text x="250" y="235" text-anchor="middle">Host Operating System</text>
 	<text x="250" y="285" text-anchor="middle">Host Hardware</text>
 </svg>
 
 <style>
 	svg#vm_container text {
-		font-size: 12px;
-		font-family: sans-serif;
+		font-size: 10px;
 	}
 </style>

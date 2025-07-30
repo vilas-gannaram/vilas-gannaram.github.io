@@ -6,7 +6,7 @@
 </script>
 
 <div id="blog-wrapper">
-	<section class="from-light-neutral bg-gradient-to-b to-white">
+	<section>
 		<div class="mx-auto max-w-[1140px] px-4 pt-12 md:pt-16 lg:px-6 xl:w-[60%]">
 			<h1>{post.metadata.title}</h1>
 
