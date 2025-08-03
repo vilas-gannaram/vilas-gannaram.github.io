@@ -12,11 +12,12 @@
 			I did my bachelor's in
 			<span title="History, Political Science, & Public Administration">Arts [B.A.]</span>, but
 			found myself drawn to the logic and creativity of the web. During my second year — around the
-			COVID lockdown — I began learning <code>HTML</code>, <code>CSS</code>, and
-			<code>JavaScript</code> through online tutorials, YouTube channels, and documentation. The internet
-			became my classroom, and I learned by building, breaking, and debugging my way through small projects.
-			What started as curiosity quickly became a daily habit — and by the time I graduated, I knew I
-			wanted to build for the web professionally.
+			COVID lockdown — I began learning <span class="ml-0.5 text-lg font-medium">HTML</span>,
+			<span class="text-lg font-medium">CSS</span>, and
+			<span class="mr-0.5 text-lg font-medium">JavaScript</span> through online tutorials, YouTube channels,
+			and documentation. The internet became my classroom, and I learned by building, breaking, and debugging
+			my way through small projects. What started as curiosity quickly became a daily habit — and by
+			the time I graduated, I knew I wanted to build for the web professionally.
 		</p>
 
 		<p class="mt-4">
