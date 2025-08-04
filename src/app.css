@@ -63,10 +63,19 @@ body {
 		@apply border-border font-sans antialiased;
 	}
 
+	html {
+		scroll-behavior: auto;
+		scrollbar-width: none;
+	}
+
+	body {
+		scroll-behavior: none;
+	}
+
 	html,
 	body {
 		line-height: 1.9;
-		@apply text-body scroll-smooth font-normal;
+		@apply text-body font-normal;
 	}
 
 	h1 {
