@@ -44,9 +44,7 @@ export async function getAllPosts(): Promise<IBlogPost[]> {
 	const publishedPosts = posts.filter((post) => !post.metadata.draft);
 
 	// Sort by date descending
-	return publishedPosts.sort((a, b) =>
-		a.metadata.date! < b.metadata.date! ? 1 : -1
-	);
+	return publishedPosts.sort((a, b) => (a.metadata.date! < b.metadata.date! ? 1 : -1));
 }
 
 /**

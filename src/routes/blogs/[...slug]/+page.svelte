@@ -7,7 +7,7 @@
 
 <div id="blog-wrapper">
 	<section>
-		<div class="mx-auto max-w-[1140px] px-4 pt-12 md:pt-16 lg:px-6 xl:w-[60%]">
+		<div class="mx-auto max-w-[1140px] px-4 pt-12 md:pt-16 lg:px-6">
 			<h1>{post.metadata.title}</h1>
 
 			<p>{post.metadata.description}</p>
@@ -16,7 +16,7 @@
 		</div>
 	</section>
 
-	<section class="mx-auto max-w-[1140px] px-4 lg:px-6 xl:w-[60%]">
+	<section class="mx-auto max-w-[1140px] px-4 lg:px-6">
 		<post.component />
 	</section>
 </div>

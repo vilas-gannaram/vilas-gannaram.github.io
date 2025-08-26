@@ -164,7 +164,7 @@ body {
 
 /* Blockquotes */
 #blog-wrapper blockquote {
-	@apply border-light-neutral border-l-2 pl-4 italic;
+	@apply border-secondary border-l-2 pl-4 italic;
 }
 
 /* Inline Code (still styled separately) */
@@ -174,7 +174,7 @@ body {
 
 /* Code Blocks (Shiki-powered) */
 #blog-wrapper pre.shiki {
-	@apply border-light-neutral my-8 overflow-x-auto rounded-lg border p-5 font-mono text-sm leading-relaxed;
+	@apply my-4 overflow-x-auto rounded-lg border bg-transparent p-5 font-mono text-sm backdrop-blur;
 }
 
 #blog-wrapper pre.shiki code {
@@ -188,20 +188,20 @@ body {
 
 /* Tables */
 #blog-wrapper table {
-	@apply my-4 w-full border-collapse text-left;
+	@apply my-4 w-full border-collapse rounded-lg border bg-white text-left;
 }
 
 #blog-wrapper th {
-	@apply border-light-neutral border-b bg-zinc-100 px-4 py-2 font-semibold;
+	@apply bg-light-neutral border border-b px-4 py-2 font-semibold;
 }
 
 #blog-wrapper td {
-	@apply border-light-neutral border-b px-4 py-2;
+	@apply border border-b px-4 py-2;
 }
 
 /* Horizontal Rule */
 #blog-wrapper hr {
-	@apply border-light-neutral my-8;
+	@apply my-8 border;
 }
 
 #blog-wrapper a {

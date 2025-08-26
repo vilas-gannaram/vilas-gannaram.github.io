@@ -25,7 +25,7 @@
 </script>
 
 <header
-	class="sticky top-0 w-full transform bg-transparent py-4 transition duration-300 ease-in-out lg:py-5"
+	class="sticky top-0 z-20 w-full transform bg-transparent py-4 transition duration-300 ease-in-out lg:py-5"
 	class:-translate-y-full={!showHeader}
 	class:translate-y-0={showHeader}
 	class:backdrop-blur-xs={lastScrollY > 40}
@@ -36,8 +36,6 @@
 		</h1>
 
 		<ul class="hidden items-center justify-end gap-x-6 uppercase md:flex">
-			<li>Background</li>
-			<li>My Work</li>
 			<li><a href="/blogs">Blogs</a></li>
 		</ul>
 	</div>
