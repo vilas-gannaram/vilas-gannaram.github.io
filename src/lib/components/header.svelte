@@ -31,12 +31,12 @@
 	class:backdrop-blur-xs={lastScrollY > 40}
 >
 	<div class="mx-auto flex max-w-[1140px] items-center justify-between px-6">
-		<h1 class="text-body text-lg font-normal uppercase">
-			<a href="/">Vilas Gannaram</a>
+		<h1 class="text-body mt-0 text-lg font-normal uppercase">
+			<a href="/" class="no-underline">Vilas Gannaram</a>
 		</h1>
 
-		<ul class="hidden items-center justify-end gap-x-6 uppercase md:flex">
-			<li><a href="/blogs">Blogs</a></li>
+		<ul class="hidden list-none items-center justify-end gap-x-6 uppercase md:flex">
+			<li><a href="/blogs" class="no-underline">Blogs</a></li>
 		</ul>
 	</div>
 </header>

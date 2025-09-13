@@ -10,15 +10,15 @@
 			<div class="mt-4 md:mt-6">
 				<!--  eslint-disable-next-line svelte/no-at-html-tags -->
 				<h3>{@html project.title}</h3>
-				<div class="mt-2 md:mt-2.5">
+				<div class="mt-2 space-y-2 md:mt-2.5">
 					<p>{project.description}</p>
-					<ul class="mt-2 list-disc pl-5">
+					<ul class="ml-5 list-disc pl-5">
 						{#each project.keyPoints as item (item)}
 							<!--  eslint-disable-next-line svelte/no-at-html-tags -->
-							<li>{@html item}</li>
+							<li class="mt-2">{@html item}</li>
 						{/each}
 					</ul>
-					<ul class="mt-2 flex flex-wrap gap-2 pl-0">
+					<ul class="flex flex-wrap gap-2 pl-0">
 						{#each project.tools as item (item)}
 							<code class="chip text-xs">{item}</code>
 						{/each}

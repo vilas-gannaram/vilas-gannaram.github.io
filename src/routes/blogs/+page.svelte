@@ -9,10 +9,10 @@
 
 	<ul class="mt-8 grid list-none grid-cols-1 gap-4 md:mt-16 md:grid-cols-2">
 		{#each data.posts as post (post.slug)}
-			<li class="rounded border border-zinc-200 px-8 py-6">
+			<li class="rounded border border-zinc-200 bg-white px-8 py-6">
 				<a href={`/blogs/${post.slug}`}>
-					<h2 class="text-xl/relaxed normal-case">{post.metadata.title}</h2>
-					<p class="mt-1 text-base/normal">{post.metadata.description}</p>
+					<h2 class="mt-0 text-xl border-0 pb-0">{post.metadata.title}</h2>
+					<p class="mt-1">{post.metadata.description}</p>
 					<small>{post.metadata.date}</small>
 				</a>
 			</li>

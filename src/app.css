@@ -1,21 +1,7 @@
 @import 'tailwindcss';
 
-@font-face {
-	font-family: 'Plus Jakarta Sans';
-	font-style: normal;
-	font-weight: 200 800;
-	font-display: swap;
-	src: url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Plus Jakarta Sans';
-	font-style: italic;
-	font-weight: 200 800;
-	font-display: swap;
-	src: url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf')
-		format('truetype');
-}
+@import '@fontsource-variable/raleway';
+@import '@fontsource-variable/jetbrains-mono';
 
 @theme {
 	/* 	Your main brand color. Used by most elements throughout the website. */
@@ -30,10 +16,10 @@
 	--color-accent: #d1345b;
 
 	/* A dark, contrasting color, used by all headlines in your website. */
-	--color-headline: #000000;
+	--color-headline: rgba(0, 0, 0, 0.9);
 
 	/* A neutral grey, easy to read color, used by all text elements. */
-	--color-body: rgba(0, 0, 0, 0.6);
+	--color-body: rgba(0, 0, 0, 0.7);
 
 	/* Generally used as background color for footer, copyright and dark sections. */
 	--color-dark-neutral: #000000;
@@ -47,8 +33,12 @@
 	--color-border: #e0e0e0;
 
 	--font-sans:
-		'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+		'Raleway Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+
+	--font-mono:
+		'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		'Liberation Mono', 'Courier New', monospace;
 }
 
 body {
@@ -60,7 +50,7 @@ body {
 
 @layer base {
 	* {
-		@apply border-border font-sans antialiased;
+		@apply border-border font-sans font-[450] antialiased;
 	}
 
 	html {
@@ -74,136 +64,93 @@ body {
 
 	html,
 	body {
-		line-height: 1.9;
 		@apply text-body font-normal;
 	}
 
 	h1 {
-		line-height: 1.4;
-		letter-spacing: -0.027em;
-		@apply text-headline text-4xl font-bold md:text-[50px] lg:text-[64px];
+		@apply text-headline scroll-m-20 text-4xl font-bold tracking-tight text-balance;
 	}
 
 	h2 {
-		line-height: 1.4;
-		letter-spacing: -0.027em;
-		@apply text-headline text-[26px] font-bold md:text-[34px] lg:text-[48px];
+		@apply text-headline scroll-m-20 text-3xl font-semibold tracking-tight;
 	}
 
 	h3 {
-		line-height: 1.4;
-		letter-spacing: -0.027em;
-		@apply text-headline text-[18px] font-bold md:text-[19px] lg:text-[20px];
+		@apply text-headline scroll-m-20 text-2xl font-semibold tracking-tight;
 	}
 
 	h4 {
-		line-height: 1.4;
-		letter-spacing: -0.027em;
-		@apply text-headline text-[16px] font-semibold md:text-[17px] lg:text-[18px];
+		@apply text-headline scroll-m-20 text-xl font-semibold tracking-tight;
 	}
 
-	h5 {
-		line-height: 1.4;
-		letter-spacing: -0.015em;
-		@apply text-accent text-[14px] font-semibold md:text-[15px] lg:text-[16px];
+	p {
+		@apply leading-7 [&:not(:first-child)]:mt-6;
 	}
 
-	h6 {
-		line-height: 1.4;
-		letter-spacing: -0.027em;
-		@apply text-headline text-[12px] font-semibold uppercase md:text-[13px] lg:text-[14px];
+	blockquote {
+		@apply mt-6 border-l-2 pl-6 italic;
 	}
-}
 
-/* Headings */
-#blog-wrapper h1 {
-	@apply mb-6 text-[26px] md:text-[32px] lg:text-[38px];
-}
+	code:not(.shiki code) {
+		@apply bg-light-neutral relative rounded px-[0.3rem] py-[0.2rem] font-mono font-semibold;
+	}
 
-#blog-wrapper h2 {
-	@apply mt-10 mb-4 text-[20px] md:text-[21px] lg:text-[22px];
-}
+	pre.shiki {
+		@apply my-4 overflow-x-auto rounded-lg border bg-transparent p-5 backdrop-blur;
+	}
 
-#blog-wrapper h3 {
-	@apply mt-8 mb-3;
-}
+	pre.shiki * {
+		@apply font-mono;
+	}
 
-#blog-wrapper h4 {
-	@apply mt-6 mb-3;
-}
+	/* Tables */
+	table {
+		@apply my-4 w-full border-collapse rounded-lg border bg-white text-left;
+	}
 
-#blog-wrapper h5 {
-	@apply mt-4 mb-2;
-}
+	thead {
+		@apply bg-light-neutral;
+	}
 
-#blog-wrapper h6 {
-	@apply mt-2 mb-2;
-}
+	tr {
+		@apply even:bg-light-neutral m-0 border-t p-0;
+	}
 
-/* Paragraphs */
-#blog-wrapper p {
-	@apply mt-1 mb-4;
-}
+	th {
+		@apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+	}
 
-/* Lists */
-#blog-wrapper ul {
-	@apply mb-4 list-disc pl-6;
-}
+	td {
+		@apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+	}
 
-#blog-wrapper ol {
-	@apply mb-4 list-decimal pl-6;
-}
+	/* Blog Page */
 
-#blog-wrapper li {
-	@apply mb-1.5 leading-loose;
-}
+	#blog-wrapper h1 {
+		@apply mb-6;
+	}
 
-#blog-wrapper li > p {
-	@apply inline; /* prevent paragraph inside list items from adding extra margins */
-}
+	#blog-wrapper h2 {
+		@apply mt-10 mb-4 border-b pb-2;
+	}
 
-/* Blockquotes */
-#blog-wrapper blockquote {
-	@apply border-secondary border-l-2 pl-4 italic;
-}
+	#blog-wrapper h3 {
+		@apply mt-8 mb-3;
+	}
 
-/* Inline Code (still styled separately) */
-#blog-wrapper code:not(.shiki code) {
-	@apply text-primary bg-light-neutral rounded px-1.5 py-0.5 font-mono text-sm;
-}
+	#blog-wrapper h4 {
+		@apply mt-6 mb-3;
+	}
 
-/* Code Blocks (Shiki-powered) */
-#blog-wrapper pre.shiki {
-	@apply my-4 overflow-x-auto rounded-lg border bg-transparent p-5 font-mono text-sm backdrop-blur;
-}
+	#blog-wrapper ul {
+		@apply my-6 ml-6 list-disc [&>li]:mt-2;
+	}
 
-#blog-wrapper pre.shiki code {
-	@apply block;
-}
+	#blog-wrapper ol {
+		@apply my-6 ml-6 list-decimal [&>li]:mt-2;
+	}
 
-/* Images */
-#blog-wrapper img {
-	@apply mx-auto my-4 rounded-lg;
-}
-
-/* Tables */
-#blog-wrapper table {
-	@apply my-4 w-full border-collapse rounded-lg border bg-white text-left;
-}
-
-#blog-wrapper th {
-	@apply bg-light-neutral border border-b px-4 py-2 font-semibold;
-}
-
-#blog-wrapper td {
-	@apply border border-b px-4 py-2;
-}
-
-/* Horizontal Rule */
-#blog-wrapper hr {
-	@apply my-8 border;
-}
-
-#blog-wrapper a {
-	@apply text-secondary underline underline-offset-1;
+	#blog-wrapper a {
+		@apply underline;
+	}
 }

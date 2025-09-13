@@ -48,5 +48,13 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"packageManager": "pnpm@10.15.1",
+	"volta": {
+		"node": "22.19.0"
+	},
+	"dependencies": {
+		"@fontsource-variable/jetbrains-mono": "^5.2.6",
+		"@fontsource-variable/raleway": "^5.2.6"
 	}
 }
