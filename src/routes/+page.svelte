@@ -37,7 +37,8 @@
 	<!-- About Me -->
 	<section id="about" class="scroll-m-20">
 		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2>About Me</h2>
+			<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">About Me</h2>
+
 			<p class="mt-4 md:mt-6">
 				Hello there! I’m <span>Vilas Gannaram</span>, a self-taught web developer with 2.7+ years of
 				work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
@@ -72,7 +73,7 @@
 	<!-- work at aganitha -->
 	<section id="projects" class="scroll-m-20">
 		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2>Work At Aganitha</h2>
+			<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">Work At Aganitha</h2>
 
 			{#each projects.slice(0, 5) as project (project.title)}
 				<div class="mt-4 md:mt-6">
@@ -99,7 +100,7 @@
 
 	<!-- contact me -->
 	<section id="contact" class="mx-auto my-16 max-w-[1140px] scroll-m-20 px-6">
-		<h2>Let's Connect</h2>
+		<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">Let's Connect</h2>
 		<p class="mt-4 md:mt-6">Open to opportunities and collaborations. Drop me a message!</p>
 		<a href="mailto:vilasgannaram@gmail.com" class="mt-2 md:mt-4"> Email Me </a>
 	</section>
