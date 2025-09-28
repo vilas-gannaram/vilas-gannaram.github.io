@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Lenis from 'lenis';
-	import Header from '../lib/components/header.svelte';
 
 	import '../app.css';
 	import 'lenis/dist/lenis.css';
@@ -15,7 +14,5 @@
 		});
 	});
 </script>
-
-<Header />
 
 {@render children()}
