@@ -37,29 +37,34 @@
 	<!-- About Me -->
 	<section id="about" class="scroll-m-20">
 		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">About Me</h2>
+			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">About Me</h2>
 
 			<p class="mt-4 md:mt-6">
-				Hello there! I’m <span>Vilas Gannaram</span>, a self-taught web developer with 2.7+ years of
-				work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
-				working more in spaces where development and design overlap — where I don’t just write code
-				but also make UI/UX decisions and become a "de facto designer".
+				Hello there! I’m <span class="text-lg font-semibold">Vilas Gannaram</span>, a self-taught
+				web developer with
+				<span class="text-lg font-semibold">2.7+ years</span>
+				of work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
+				working more in spaces where development and design overlap — where I don’t just write code but
+				also make UI/UX decisions and become a <em>"de facto designer"</em>.
 			</p>
 
 			<p class="mt-4">
-				Currently, I work as a Junior Web Developer at Aganitha Cognitive Solutions, Hyderabad,
-				India — where I often get to wear the “de facto designer” hat. I contribute to a range of
-				projects, including corporate websites, LLM chat web applications, and data-driven tools
-				used in bioinformatics.
+				Currently, I work as a Junior Web Developer at <span class="text-lg font-semibold"
+					>Aganitha Cognitive Solutions</span
+				>, Hyderabad, India — where I often get to wear the “de facto designer” hat. I contribute to
+				a range of projects, including corporate websites, LLM chat web applications, and
+				data-driven tools used in bioinformatics.
 			</p>
 
 			<p class="mt-4">
 				I did my bachelor's in
 				<span title="History, Political Science, & Public Administration">Arts [B.A.]</span>, but
 				found myself drawn to the logic and creativity of the web. During my second year — around
-				the time of the COVID lockdown — I began learning Web Development through online tutorials,
-				YouTube channels, and documentation. The internet became my classroom, and I started to
-				understand the web by building, breaking, and debugging small projects.
+				the time of the COVID lockdown — I began learning Web Development through
+				<span class="text-lg font-semibold"> online tutorials, YouTube channels, </span> and
+				<span class="text-lg font-semibold"> documentation </span>. The internet became my
+				classroom, and I started to understand the web by building, breaking, and debugging small
+				projects.
 			</p>
 
 			<p class="mt-4">
@@ -70,10 +75,40 @@
 		</div>
 	</section>
 
+	<!-- <section id="experience">
+		<div class="mx-auto my-16 max-w-[1140px] px-6">
+			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Experience</h2>
+
+			<h3 class="mt-6">Aganitha Cognitive Solutions – Hyderabad</h3>
+			<p class="text-headline mt-2 text-lg font-medium tracking-tight italic">
+				Web Developer Intern → Jr. Web Developer I → Jr. Web Developer II
+			</p>
+			<p class="mt-0.5 font-semibold italic">March 2023 - Present</p>
+
+			<p class="mt-6">
+				Joined as a full-time intern and advanced through 2 Junior roles, contributing across
+				multiple projects in bioinformatics and research tooling, with a focus on frontend
+				engineering, data visualization.
+			</p>
+
+			<div class="mt-4">
+				<div class="">
+					<h4>Corporate Website:</h4>
+
+					<p class="mt-2">
+						Contributed to the company’s existing website by adding new pages and updates. Later,
+						under the CTO’s guidance, migrated the site to the <b>WordPress CMS</b>, exploring
+						plugins and managing <b>Dockerized deployment</b> to production.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
 	<!-- work at aganitha -->
 	<section id="projects" class="scroll-m-20">
 		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">Work At Aganitha</h2>
+			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Work At Aganitha</h2>
 
 			{#each projects.slice(0, 5) as project (project.title)}
 				<div class="mt-4 md:mt-6">
@@ -100,7 +135,7 @@
 
 	<!-- contact me -->
 	<section id="contact" class="mx-auto my-16 max-w-[1140px] scroll-m-20 px-6">
-		<h2 class="text-[clamp(36px,8vw+16px,70px)] font-light">Let's Connect</h2>
+		<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Let's Connect</h2>
 		<p class="mt-4 md:mt-6">Open to opportunities and collaborations. Drop me a message!</p>
 		<a href="mailto:vilasgannaram@gmail.com" class="mt-2 md:mt-4"> Email Me </a>
 	</section>
@@ -112,40 +147,9 @@
 		<ul class="flex items-center justify-center gap-x-1.5">
 			{#each navItems as item (item.value)}
 				<li class="border border-dashed px-8 py-4">
-					<a href={item.value}>{item.label}</a>
+					<a href={item.value} class="font-light">{item.label}</a>
 				</li>
 			{/each}
 		</ul>
 	</nav>
 </main>
-
-<!-- <section id="experience">
-	<div class="mx-auto my-16 max-w-[1140px] px-6">
-		<h2>Experience</h2>
-
-		<h3 class="mt-6">Aganitha Cognitive Solutions – Hyderabad</h3>
-		<p class="text-headline mt-2 text-lg font-medium tracking-tight italic">
-			Web Developer Intern → Jr. Web Developer I → Jr. Web Developer II
-		</p>
-		<p class="mt-0.5 font-semibold italic">March 2023 - Present</p>
-
-		<p class="mt-6">
-			Joined as a full-time intern and advanced through 2 Junior roles, contributing across multiple
-			projects in bioinformatics and research tooling, with a focus on frontend engineering, data
-			visualization.
-		</p>
-
-
-		<div class="mt-4">
-			<div class="">
-				<h4>Corporate Website:</h4>
-
-				<p class="mt-2">
-					Contributed to the company’s existing website by adding new pages and updates. Later,
-					under the CTO’s guidance, migrated the site to the <b>WordPress CMS</b>, exploring plugins
-					and managing <b>Dockerized deployment</b> to production.
-				</p>
-			</div>
-		</div>
-	</div>
-</section> -->
