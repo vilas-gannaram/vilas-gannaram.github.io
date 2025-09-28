@@ -68,18 +68,22 @@ body {
 	}
 
 	h1 {
-		@apply text-headline scroll-m-20 text-4xl font-bold tracking-tight text-balance;
+		@apply text-headline scroll-m-20 text-5xl font-bold tracking-tight text-balance;
 	}
 
 	h2 {
-		@apply text-headline scroll-m-20 text-3xl font-semibold tracking-tight;
+		@apply text-headline scroll-m-20 text-4xl font-semibold tracking-tight;
 	}
 
 	h3 {
-		@apply text-headline scroll-m-20 text-2xl font-semibold tracking-tight;
+		@apply text-headline scroll-m-20 text-3xl font-semibold tracking-tight;
 	}
 
 	h4 {
+		@apply text-headline scroll-m-20 text-2xl font-semibold tracking-tight;
+	}
+
+	h5 {
 		@apply text-headline scroll-m-20 text-xl font-semibold tracking-tight;
 	}
 

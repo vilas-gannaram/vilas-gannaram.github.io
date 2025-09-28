@@ -24,42 +24,47 @@
 		<div class="mx-auto w-full max-w-[1140px] px-6">
 			<h4 class="font-light">Hello!, I am</h4>
 			<h1 class="text-[clamp(36px,12vw+16px,125px)] font-light">Vilas Gannaram</h1>
-			<h4 class="mt-1 font-light">
+			<h5 class="mt-1 font-light">
 				B.A. <span title="History, Political Science & Public Administration" class="font-light"
 					>[H.P.P]</span
 				>
 				<span class="mx-1.5 font-medium">|</span> Self-Taught Web Developer
 				<span class="mx-1.5 font-medium">|</span> 2.7+ years IT Experience
-			</h4>
+			</h5>
 		</div>
 	</section>
 
 	<!-- About Me -->
 	<section id="about" class="scroll-m-20">
 		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="">About Me</h2>
-
+			<h2>About Me</h2>
 			<p class="mt-4 md:mt-6">
-				Hi, I'm a web developer who enjoys building clean, reliable, and purposeful applications.
-				Over the past couple of years, I’ve worked across the frontend and backend, helping shape
-				everything from corporate websites to data-driven tools used in bioinformatics.
+				Hello there! I’m <span>Vilas Gannaram</span>, a self-taught web developer with 2.7+ years of
+				work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
+				working more in spaces where development and design overlap — where I don’t just write code
+				but also make UI/UX decisions and become a "de facto designer".
+			</p>
+
+			<p class="mt-4">
+				Currently, I work as a Junior Web Developer at Aganitha Cognitive Solutions, Hyderabad,
+				India — where I often get to wear the “de facto designer” hat. I contribute to a range of
+				projects, including corporate websites, LLM chat web applications, and data-driven tools
+				used in bioinformatics.
 			</p>
 
 			<p class="mt-4">
 				I did my bachelor's in
 				<span title="History, Political Science, & Public Administration">Arts [B.A.]</span>, but
 				found myself drawn to the logic and creativity of the web. During my second year — around
-				the COVID lockdown — I began learning <span class="ml-0.5 text-lg font-medium">HTML</span>,
-				<span class="text-lg font-medium">CSS</span>, and
-				<span class="mr-0.5 text-lg font-medium">JavaScript</span> through online tutorials, YouTube
-				channels, and documentation. The internet became my classroom, and I learned by building, breaking,
-				and debugging my way through small projects. What started as curiosity quickly became a daily
-				habit — and by the time I graduated, I knew I wanted to build for the web professionally.
+				the time of the COVID lockdown — I began learning Web Development through online tutorials,
+				YouTube channels, and documentation. The internet became my classroom, and I started to
+				understand the web by building, breaking, and debugging small projects.
 			</p>
 
 			<p class="mt-4">
-				That journey of self-driven learning turned into real-world work.
-				<a href="#projects">See what I’ve contributed to so far. </a>
+				What started as curiosity quickly became a daily habit — and by the time I graduated, I knew
+				I wanted to keep learning and building for the web. That journey of self-driven learning
+				turned into real-world work, and it continues to drive the way I grow as a developer today.
 			</p>
 		</div>
 	</section>
@@ -101,11 +106,11 @@
 
 	<!-- navigation -->
 	<nav
-		class="bg-light-neutral fixed bottom-10 left-[50%] z-50 hidden -translate-x-[50%] rounded border p-1 lg:inline-block"
+		class="bg-light-neutral fixed bottom-5 left-[50%] z-50 hidden -translate-x-[50%] rounded border border-dashed p-1.5 lg:inline-block"
 	>
 		<ul class="flex items-center justify-center gap-x-1.5">
 			{#each navItems as item (item.value)}
-				<li class="border px-8 py-4">
+				<li class="border border-dashed px-8 py-4">
 					<a href={item.value}>{item.label}</a>
 				</li>
 			{/each}
