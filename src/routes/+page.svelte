@@ -3,10 +3,10 @@
 
 	const navItems = [
 		{ value: '#about', label: 'About Me' },
-		{
-			value: '#experience',
-			label: 'Experience'
-		},
+		// {
+		// 	value: '#experience',
+		// 	label: 'Experience'
+		// },
 		{ value: '#projects', label: 'Projects' },
 		{ value: '#contact', label: 'Contact' },
 		{ value: '/blogs', label: 'Blogs' }
@@ -59,7 +59,7 @@
 
 			<p class="mt-4">
 				That journey of self-driven learning turned into real-world work.
-				<a href="#work-at-aganitha">See what I’ve contributed to so far. </a>
+				<a href="#projects">See what I’ve contributed to so far. </a>
 			</p>
 		</div>
 	</section>
