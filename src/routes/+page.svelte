@@ -24,13 +24,7 @@
 		<div class="mx-auto w-full max-w-[1140px] px-6">
 			<h4 class="font-light">Hello!, I am</h4>
 			<h1 class="text-[clamp(36px,12vw+16px,125px)] font-light">Vilas Gannaram</h1>
-			<h5 class="mt-1 font-light">
-				B.A. <span title="History, Political Science & Public Administration" class="font-light"
-					>[H.P.P]</span
-				>
-				<span class="mx-1.5 font-medium">|</span> Self-Taught Web Developer
-				<span class="mx-1.5 font-medium">|</span> 2.7+ years IT Experience
-			</h5>
+			<h5 class="mt-1 font-light">Web Developer <span class="mx-1.5 font-medium">|</span> 2.7+ years IT Experience</h5>
 		</div>
 	</section>
 
