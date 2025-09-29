@@ -40,16 +40,16 @@
 			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">About Me</h2>
 
 			<p class="mt-4 md:mt-6">
-				Hello there! I’m <span class="text-lg font-semibold">Vilas Gannaram</span>, a self-taught
+				Hello there! I’m <span class="font-semibold">Vilas Gannaram</span>, a self-taught
 				web developer with
-				<span class="text-lg font-semibold">2.7+ years</span>
+				<span class="font-semibold">2.7+ years</span>
 				of work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
 				working more in spaces where development and design overlap — where I don’t just write code but
 				also make UI/UX decisions and become a <em>"de facto designer"</em>.
 			</p>
 
 			<p class="mt-4">
-				Currently, I work as a Junior Web Developer at <span class="text-lg font-semibold"
+				Currently, I work as a Junior Web Developer at <span class="font-semibold"
 					>Aganitha Cognitive Solutions</span
 				>, Hyderabad, India — where I often get to wear the “de facto designer” hat. I contribute to
 				a range of projects, including corporate websites, LLM chat web applications, and
@@ -61,8 +61,8 @@
 				<span title="History, Political Science, & Public Administration">Arts [B.A.]</span>, but
 				found myself drawn to the logic and creativity of the web. During my second year — around
 				the time of the COVID lockdown — I began learning Web Development through
-				<span class="text-lg font-semibold"> online tutorials, YouTube channels, </span> and
-				<span class="text-lg font-semibold"> documentation </span>. The internet became my
+				<span class="font-semibold"> online tutorials, YouTube channels, </span> and
+				<span class="font-semibold"> documentation </span>. The internet became my
 				classroom, and I started to understand the web by building, breaking, and debugging small
 				projects.
 			</p>
