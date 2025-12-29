@@ -1,90 +1,95 @@
 @import 'tailwindcss';
 
-@import '@fontsource-variable/raleway';
 @import '@fontsource-variable/jetbrains-mono';
 
+@font-face {
+	font-family: 'Google Sans';
+	src: url('/fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Google Sans';
+	src: url('/fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Google Sans Code';
+	src: url('/fonts/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Google Sans Code';
+	src: url('/fonts/GoogleSansCode-Italic-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
 @theme {
-	/* 	Your main brand color. Used by most elements throughout the website. */
-	--color-primary: #ffbf1c;
+	--color-background-gray: #f5f6f7;
+	--color-background-gray-2: #e1e9f6;
+	--color-background-oficial-gray: #f5f6f7;
+	--color-background-white: #fff;
 
-	/* --color-primary: #1198ed; */
+	--color-google-colors-blue-50: #e8f0fe;
+	--color-google-colors-blue-600: #1a73e8;
+	--color-google-colors-blue-800: #185abc;
+	--color-primary: #1a73e8;
 
-	/* Your secondary brand color. Used mainly as hover color or by secondary elements. */
-	--color-secondary: #ff852c;
+	--color-headline: rgb(32, 33, 36);
+	/* --color-headline: #202124; */
 
-	/* Usually a contrasting color used to draw attention to key pieces of your website. */
-	--color-accent: #d1345b;
+	--color-body: rgb(32, 33, 36);
+	/* --color-body: #3c4043; */
+	--color-text-text-3: #80868b;
 
-	/* A dark, contrasting color, used by all headlines in your website. */
-	--color-headline: rgba(0, 0, 0, 0.9);
-
-	/* A neutral grey, easy to read color, used by all text elements. */
-	--color-body: rgba(0, 0, 0, 0.7);
-
-	/* Generally used as background color for footer, copyright and dark sections. */
-	--color-dark-neutral: #000000;
-
-	/* Generally used as background color for light, alternating sections. */
-	--color-light-neutral: #fafafa;
-
-	/* Generally used as background color for light, alternating sections. */
-	--color-white: #ffffff;
-
-	--color-border: #e0e0e0;
+	--color-illustration-colors-blue: #006bee;
+	--color-illustration-colors-gray: #3c4043;
+	--color-illustration-colors-green: #34a853;
+	--color-illustration-colors-red: #ea3323;
 
 	--font-sans:
-		'Raleway Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Google Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
 
 	--font-mono:
-		'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-		'Liberation Mono', 'Courier New', monospace;
-}
-
-body {
-	background-image:
-		linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-	background-size: 20px 20px;
+		'Google Sans Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+		'Courier New', monospace;
 }
 
 @layer base {
 	* {
-		@apply border-border font-sans font-[450] antialiased;
-	}
-
-	html {
-		scroll-behavior: auto;
-		scrollbar-width: none;
-	}
-
-	body {
-		scroll-behavior: none;
+		@apply border-background-gray;
 	}
 
 	html,
 	body {
-		@apply text-body font-normal;
+		@apply text-body bg-background-white scroll-smooth font-sans font-normal antialiased;
 	}
 
 	h1 {
-		@apply text-headline scroll-m-20 text-5xl font-bold tracking-tight text-balance;
+		@apply text-headline text-5xl leading-snug;
 	}
 
 	h2 {
-		@apply text-headline scroll-m-20 text-4xl font-semibold tracking-tight;
+		@apply text-headline text-4xl leading-snug;
 	}
 
 	h3 {
-		@apply text-headline scroll-m-20 text-3xl font-semibold tracking-tight;
+		@apply text-headline text-3xl leading-snug;
 	}
 
 	h4 {
-		@apply text-headline scroll-m-20 text-2xl font-semibold tracking-tight;
-	}
-
-	h5 {
-		@apply text-headline scroll-m-20 text-xl font-semibold tracking-tight;
+		@apply text-headline text-2xl leading-snug;
 	}
 
 	p {
@@ -93,68 +98,5 @@ body {
 
 	blockquote {
 		@apply mt-6 border-l-2 pl-6 italic;
-	}
-
-	code:not(.shiki code) {
-		@apply bg-light-neutral relative rounded px-[0.3rem] py-[0.2rem] font-mono font-semibold;
-	}
-
-	pre.shiki {
-		@apply my-4 overflow-x-auto rounded-lg border bg-transparent p-5 backdrop-blur;
-	}
-
-	pre.shiki * {
-		@apply font-mono;
-	}
-
-	/* Tables */
-	table {
-		@apply my-4 w-full border-collapse rounded-lg border bg-white text-left;
-	}
-
-	thead {
-		@apply bg-light-neutral;
-	}
-
-	tr {
-		@apply even:bg-light-neutral m-0 border-t p-0;
-	}
-
-	th {
-		@apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
-	}
-
-	td {
-		@apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
-	}
-
-	/* Blog Page */
-
-	#blog-wrapper h1 {
-		@apply mb-6;
-	}
-
-	#blog-wrapper h2 {
-		@apply mt-10 mb-4 border-b pb-2;
-	}
-
-	#blog-wrapper h3 {
-		@apply mt-8 mb-3;
-	}
-
-	#blog-wrapper h4 {
-		@apply mt-6 mb-3;
-	}
-
-	#blog-wrapper ul {
-		@apply my-6 ml-6 list-disc [&>li]:mt-2;
-	}
-
-	#blog-wrapper ol {
-		@apply my-6 ml-6 list-decimal [&>li]:mt-2;
-	}
-
-	#blog-wrapper a {
-		@apply underline;
 	}
 }

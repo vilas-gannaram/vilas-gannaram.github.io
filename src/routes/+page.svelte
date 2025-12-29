@@ -1,16 +1,5 @@
 <script lang="ts">
 	import { projects } from '$lib/projects';
-
-	const navItems = [
-		{ value: '#about', label: 'About Me' },
-		// {
-		// 	value: '#experience',
-		// 	label: 'Experience'
-		// },
-		{ value: '#projects', label: 'Projects' },
-		{ value: '#contact', label: 'Contact' },
-		{ value: '/blogs', label: 'Blogs' }
-	];
 </script>
 
 <svelte:head>
@@ -18,24 +7,39 @@
 	<meta name="description" content="Vilas Gannaram | Web Developer" />
 </svelte:head>
 
-<main class="scroll-smooth">
+<main class="mx-auto min-h-screen w-[90%] max-w-[1440px] gap-x-6 rounded-2xl border lg:flex">
 	<!-- Hero Section -->
-	<section class="relative flex h-[680px] scroll-m-20 flex-col justify-center">
-		<div class="mx-auto w-full max-w-[1140px] px-6">
-			<h4 class="font-light">Hello!, I am</h4>
-			<h1 class="text-[clamp(36px,12vw+16px,125px)] font-light">Vilas Gannaram</h1>
-			<h5 class="mt-1 font-light">Web Developer <span class="mx-1.5 font-medium">|</span> 2.7+ years IT Experience</h5>
+	<section
+		class="top-0 w-full flex-col justify-between border-r p-6 lg:sticky lg:flex lg:h-screen lg:max-w-xl"
+	>
+		<div>
+			<h1>Vilas Gannaram</h1>
+			<h6>Full Stack Web Developer</h6>
+		</div>
+
+		<div class="flex items-center gap-x-4">
+			<a href="https://github.com/vilas-gannaram" target="_blank" rel="noopener noreferrer">
+				<img class="aspect-auto w-8" src="/images/github-mark/github-mark.png" alt="Git Hub" />
+			</a>
+
+			<a
+				href="https://www.linkedin.com/in/vilasgannaram/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img class="aspect-auto w-8" src="/images/in-logo/InBug-Black.png" alt="LinkedIn" />
+			</a>
 		</div>
 	</section>
 
-	<!-- About Me -->
-	<section id="about" class="scroll-m-20">
-		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">About Me</h2>
+	<section class="w-full p-6">
+		<!-- About Me -->
+		<section id="about" class="">
+			<!-- <h3 class="border-b">About Me</h3> -->
 
 			<p class="mt-4 md:mt-6">
-				Hello there! I’m <span class="font-semibold">Vilas Gannaram</span>, a self-taught
-				web developer with
+				Hello there! I’m <span class="font-semibold">Vilas Gannaram</span>, a self-taught web
+				developer with
 				<span class="font-semibold">2.7+ years</span>
 				of work experience. Over the past couple of years, I’ve worked across the stack, but I enjoy
 				working more in spaces where development and design overlap — where I don’t just write code but
@@ -56,9 +60,8 @@
 				found myself drawn to the logic and creativity of the web. During my second year — around
 				the time of the COVID lockdown — I began learning Web Development through
 				<span class="font-semibold"> online tutorials, YouTube channels, </span> and
-				<span class="font-semibold"> documentation </span>. The internet became my
-				classroom, and I started to understand the web by building, breaking, and debugging small
-				projects.
+				<span class="font-semibold"> documentation </span>. The internet became my classroom, and I
+				started to understand the web by building, breaking, and debugging small projects.
 			</p>
 
 			<p class="mt-4">
@@ -66,48 +69,16 @@
 				I wanted to keep learning and building for the web. That journey of self-driven learning
 				turned into real-world work, and it continues to drive the way I grow as a developer today.
 			</p>
-		</div>
-	</section>
+		</section>
 
-	<!-- <section id="experience">
-		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Experience</h2>
-
-			<h3 class="mt-6">Aganitha Cognitive Solutions – Hyderabad</h3>
-			<p class="text-headline mt-2 text-lg font-medium tracking-tight italic">
-				Web Developer Intern → Jr. Web Developer I → Jr. Web Developer II
-			</p>
-			<p class="mt-0.5 font-semibold italic">March 2023 - Present</p>
-
-			<p class="mt-6">
-				Joined as a full-time intern and advanced through 2 Junior roles, contributing across
-				multiple projects in bioinformatics and research tooling, with a focus on frontend
-				engineering, data visualization.
-			</p>
-
-			<div class="mt-4">
-				<div class="">
-					<h4>Corporate Website:</h4>
-
-					<p class="mt-2">
-						Contributed to the company’s existing website by adding new pages and updates. Later,
-						under the CTO’s guidance, migrated the site to the <b>WordPress CMS</b>, exploring
-						plugins and managing <b>Dockerized deployment</b> to production.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<!-- work at aganitha -->
-	<section id="projects" class="scroll-m-20">
-		<div class="mx-auto my-16 max-w-[1140px] px-6">
-			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Work At Aganitha</h2>
+		<!-- work at aganitha -->
+		<section id="projects" class="mt-12">
+			<h3 class="border-background-gray-2 border-b">Experience</h3>
 
 			{#each projects.slice(0, 5) as project (project.title)}
 				<div class="mt-4 md:mt-6">
 					<!--  eslint-disable-next-line svelte/no-at-html-tags -->
-					<h3>{@html project.title}</h3>
+					<h4>{@html project.title}</h4>
 					<div class="mt-2 space-y-2 md:mt-2.5">
 						<p>{project.description}</p>
 						<ul class="ml-5 list-disc pl-5">
@@ -124,17 +95,16 @@
 					</div>
 				</div>
 			{/each}
-		</div>
-	</section>
+		</section>
 
-	<!-- contact me -->
-	<section id="contact" class="mx-auto my-16 max-w-[1140px] scroll-m-20 px-6">
-		<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Let's Connect</h2>
-		<p class="mt-4 md:mt-6">Open to opportunities and collaborations. Drop me a message!</p>
-		<a href="mailto:vilasgannaram@gmail.com" class="mt-2 md:mt-4"> Email Me </a>
-	</section>
+		<!-- contact me -->
+		<section id="contact" class="">
+			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Let's Connect</h2>
+			<p class="mt-4 md:mt-6">Open to opportunities and collaborations. Drop me a message!</p>
+			<a href="mailto:vilasgannaram@gmail.com" class="mt-2 md:mt-4"> Email Me </a>
+		</section>
 
-	<!-- navigation -->
+		<!-- navigation
 	<nav
 		class="bg-light-neutral fixed bottom-5 left-[50%] z-50 hidden -translate-x-[50%] rounded border border-dashed p-1.5 lg:inline-block"
 	>
@@ -145,5 +115,6 @@
 				</li>
 			{/each}
 		</ul>
-	</nav>
+	</nav> -->
+	</section>
 </main>
