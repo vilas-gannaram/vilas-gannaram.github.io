@@ -11,7 +11,7 @@ export const projects = [
 		tools: ['11ty', 'Nunjucks', 'TailwindCSS', 'WordPress', 'Docker']
 	},
 	{
-		title: 'Burden Reports (<i>23andMe</i>)',
+		title: 'Burden Reports',
 		description:
 			'A dashboard tool for exploring gene, phenotype, and variant burden data. I worked on UI implementation and data visualization.',
 		keyPoints: [
@@ -22,7 +22,7 @@ export const projects = [
 		tools: ['ReactJS', 'Plotly.js', 'D3.js', 'Figma']
 	},
 	{
-		title: 'Genome Browser (<i>23andMe</i>)',
+		title: 'Genome Browser',
 		description:
 			'An internal genome exploration tool developed using SvelteKit. I was responsible for the frontend structure, routing, and page logic.',
 		keyPoints: [
