@@ -40,6 +40,17 @@
 		<meta name="google-site-verification" content="Vwg1zWw_5JHFywiHWZeKOszAqPNTURuObI_JUNBkH9o" />
 		%sveltekit.head%
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CT9MMD6M4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-3CT9MMD6M4');
+	</script>
 	<body data-sveltekit-preload-data="hover" class="relative">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
