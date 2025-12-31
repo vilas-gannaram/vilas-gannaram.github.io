@@ -7,14 +7,14 @@
 	<meta name="description" content="Vilas Gannaram | Web Developer" />
 </svelte:head>
 
-<main class="mx-auto min-h-screen w-[90%] max-w-[1440px] gap-x-6 rounded-2xl border lg:flex">
+<main class="mx-auto min-h-screen w-[90%] max-w-[1440px] gap-x-6 rounded-2xl lg:flex">
 	<!-- Hero Section -->
 	<section
-		class="top-0 w-full flex-col justify-between border-r p-6 lg:sticky lg:flex lg:h-screen lg:max-w-xl"
+		class="top-0 flex w-full flex-col justify-between gap-y-6 py-6 lg:sticky lg:h-screen lg:max-w-xl"
 	>
 		<div>
 			<h1>Vilas Gannaram</h1>
-			<h6>Full Stack Web Developer</h6>
+			<h5>Full Stack Web Developer</h5>
 		</div>
 
 		<div class="flex items-center gap-x-4">
@@ -32,7 +32,7 @@
 		</div>
 	</section>
 
-	<section class="w-full p-6">
+	<section class="w-full">
 		<!-- About Me -->
 		<section id="about" class="">
 			<!-- <h3 class="border-b">About Me</h3> -->
