@@ -54,7 +54,6 @@
 		"node": "22.19.0"
 	},
 	"dependencies": {
-		"@fontsource-variable/jetbrains-mono": "^5.2.6",
-		"@fontsource-variable/raleway": "^5.2.6"
+		"@lucide/svelte": "^0.562.0"
 	}
 }
