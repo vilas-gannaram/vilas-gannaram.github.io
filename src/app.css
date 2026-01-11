@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@import '@fontsource-variable/jetbrains-mono';
-
 @font-face {
 	font-family: 'Google Sans';
 	src: url('/fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
@@ -35,27 +33,7 @@
 }
 
 @theme {
-	--color-background-gray: #f5f6f7;
-	--color-background-gray-2: #e1e9f6;
-	--color-background-oficial-gray: #f5f6f7;
-	--color-background-white: #fff;
-
-	--color-google-colors-blue-50: #e8f0fe;
-	--color-google-colors-blue-600: #1a73e8;
-	--color-google-colors-blue-800: #185abc;
-	--color-primary: #1a73e8;
-
-	--color-headline: rgb(32, 33, 36);
-	/* --color-headline: #202124; */
-
-	--color-body: rgb(32, 33, 36);
-	/* --color-body: #3c4043; */
-	--color-text-text-3: #80868b;
-
-	--color-illustration-colors-blue: #006bee;
-	--color-illustration-colors-gray: #3c4043;
-	--color-illustration-colors-green: #34a853;
-	--color-illustration-colors-red: #ea3323;
+	--color-background: #151a28;
 
 	--font-sans:
 		'Google Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -68,28 +46,28 @@
 
 @layer base {
 	* {
-		@apply border-background-gray;
+		@apply border-slate-800;
 	}
 
 	html,
 	body {
-		@apply text-body bg-background-white scroll-smooth font-sans font-normal antialiased;
+		@apply bg-background scroll-smooth font-sans font-normal text-slate-400 antialiased;
 	}
 
 	h1 {
-		@apply text-headline text-5xl leading-snug;
+		@apply text-7xl font-medium text-slate-100;
 	}
 
 	h2 {
-		@apply text-headline text-4xl leading-snug;
+		@apply text-3xl font-medium text-slate-100;
 	}
 
 	h3 {
-		@apply text-headline text-3xl leading-snug;
+		@apply text-3xl font-medium text-slate-100;
 	}
 
 	h4 {
-		@apply text-headline text-2xl leading-snug;
+		@apply text-xl font-medium text-slate-100;
 	}
 
 	p {

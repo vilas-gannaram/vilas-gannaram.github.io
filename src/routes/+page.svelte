@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { projects } from '$lib/projects';
+	import { Github, Linkedin } from '@lucide/svelte';
 </script>
 
 <svelte:head>
@@ -7,19 +8,19 @@
 	<meta name="description" content="Vilas Gannaram | Web Developer" />
 </svelte:head>
 
-<main class="mx-auto min-h-screen w-[90%] max-w-[1440px] gap-x-6 rounded-2xl lg:flex">
+<main class="mx-auto my-8 min-h-screen w-[90%] max-w-7xl gap-x-12 rounded-2xl lg:my-0 lg:flex">
 	<!-- Hero Section -->
 	<section
-		class="top-0 flex w-full flex-col justify-between gap-y-6 py-6 lg:sticky lg:h-screen lg:max-w-xl"
+		class="top-0 flex w-full flex-col justify-between gap-y-4 lg:sticky lg:h-screen lg:max-w-xl lg:py-24"
 	>
 		<div>
 			<h1>Vilas Gannaram</h1>
-			<h5>Full Stack Web Developer</h5>
+			<h4>Full Stack Web Developer</h4>
 		</div>
 
 		<div class="flex items-center gap-x-4">
 			<a href="https://github.com/vilas-gannaram" target="_blank" rel="noopener noreferrer">
-				<img class="aspect-auto w-8" src="/images/github-mark/github-mark.png" alt="Git Hub" />
+				<Github />
 			</a>
 
 			<a
@@ -27,12 +28,12 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<img class="aspect-auto w-8" src="/images/in-logo/InBug-Black.png" alt="LinkedIn" />
+				<Linkedin />
 			</a>
 		</div>
 	</section>
 
-	<section class="w-full">
+	<section class="w-full lg:py-24">
 		<!-- About Me -->
 		<section id="about" class="">
 			<!-- <h3 class="border-b">About Me</h3> -->
@@ -89,7 +90,7 @@
 						</ul>
 						<ul class="flex flex-wrap gap-2 pl-0">
 							{#each project.tools as item (item)}
-								<code class="chip text-xs">{item}</code>
+								<code class="text-sm">{item}</code>
 							{/each}
 						</ul>
 					</div>
@@ -98,10 +99,14 @@
 		</section>
 
 		<!-- contact me -->
-		<section id="contact" class="">
-			<h2 class="text-[clamp(36px,8vw+16px,60px)] font-light">Let's Connect</h2>
-			<p class="mt-4 md:mt-6">Open to opportunities and collaborations. Drop me a message!</p>
-			<a href="mailto:vilasgannaram@gmail.com" class="mt-2 md:mt-4"> Email Me </a>
+		<section id="contact" class="mt-12">
+			<h2 class="">Let's Connect</h2>
+			<p class="mt-2">
+				Open to opportunities and collaborations.
+				<a href="mailto:vilasgannaram@gmail.com" class="mt-2 underline-offset-2 underline md:mt-4"
+					>Drop me a message!</a
+				>
+			</p>
 		</section>
 
 		<!-- navigation
