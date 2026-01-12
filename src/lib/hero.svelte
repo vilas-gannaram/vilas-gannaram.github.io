@@ -3,11 +3,11 @@
 </script>
 
 <section
-	class="top-0 flex w-full flex-col justify-between gap-y-4 lg:sticky lg:h-screen lg:max-w-xl lg:py-18"
+	class="top-0 my-16 flex w-full flex-col justify-between gap-y-6 lg:sticky lg:my-0 lg:h-screen lg:max-w-xl lg:py-22"
 >
 	<div>
-		<h1 class="tracking-tighter text-slate-300">Vilas Gannaram</h1>
-		<h5 class="mt-1 tracking-tight text-slate-300">Web Developer</h5>
+		<h1 class="font-bold tracking-tighter lg:text-slate-300">Vilas Gannaram</h1>
+		<h5 class="mt-1 tracking-tight lg:text-slate-300">Web Developer</h5>
 	</div>
 
 	<nav class="hidden lg:inline-block">

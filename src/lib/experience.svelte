@@ -2,10 +2,10 @@
 	import { projects } from '$lib/projects';
 </script>
 
-<section id="experience" class="mt-12 min-h-svh scroll-mt-16">
-	<h3 class="border-b pb-0.5">Experience</h3>
+<section id="experience" class="my-32 min-h-svh scroll-mt-18">
+	<h3 class="my-8 text-sm font-semibold uppercase lg:hidden">Experience</h3>
 
-	<div class="mt-4 space-y-1 md:mt-6">
+	<div class="space-y-4">
 		<h4>Web Developer | Aganitha Cognitive Solutions</h4>
 		<p class="text-sm italic">Hyderabad, India | 2023 – Present</p>
 
