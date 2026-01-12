@@ -34,6 +34,7 @@
 
 @theme {
 	--color-background: #151a28;
+	/* --color-background: #0e111b; */
 
 	--font-sans:
 		'Google Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -76,5 +77,9 @@
 
 	blockquote {
 		@apply mt-6 border-l-2 pl-6 italic;
+	}
+
+	code {
+		@apply font-mono;
 	}
 }
