@@ -2,7 +2,7 @@
 	import { projects } from '$lib/projects';
 </script>
 
-<section id="experience" class="my-32 min-h-svh scroll-mt-18">
+<section id="experience" class="observe my-32 min-h-svh scroll-mt-18">
 	<h3 class="my-8 text-sm font-semibold uppercase lg:hidden">Experience</h3>
 
 	<div class="space-y-4">

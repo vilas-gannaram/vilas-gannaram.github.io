@@ -1,40 +1,82 @@
-<script>
+<script lang="ts">
 	import { Github, Linkedin, Mail } from '@lucide/svelte';
+
+	// Svelte 5 Props
+	let { activeId }: { activeId: string } = $props();
+
+	const navLinks = [
+		{ id: 'about', label: 'About' },
+		{ id: 'experience', label: 'Experience' },
+		{ id: 'projects', label: 'Projects' }
+	];
 </script>
 
-<section
-	class="top-0 my-16 flex w-full flex-col justify-between gap-y-6 lg:sticky lg:my-0 lg:h-screen lg:max-w-xl lg:py-22"
+<div
+	class="top-0 my-16 flex w-full flex-col justify-between gap-y-6 lg:sticky lg:my-0 lg:h-screen lg:max-w-xl lg:py-20"
 >
-	<div>
-		<h1 class="font-bold tracking-tighter lg:text-slate-300">Vilas Gannaram</h1>
-		<h5 class="mt-1 tracking-tight lg:text-slate-300">Web Developer</h5>
+	<div class="flex w-full flex-col gap-y-48">
+		<div>
+			<h1 class="font-bold tracking-tighter">Vilas Gannaram</h1>
+			<h5 class="mt-2">Full Stack Web Developer</h5>
+			<!-- <p class="mt-4 max-w-xs">I build accessible, pixel-perfect digital experiences for the web.</p> -->
+		</div>
+
+		<nav class="hidden lg:block">
+			<ul class="w-max space-y-2">
+				{#each navLinks as { id, label } (id)}
+					<li>
+						<a
+							href="#{id}"
+							class="group flex items-center py-3 transition-all duration-250"
+							class:active={activeId === id}
+						>
+							<span
+								class="mr-4 h-px transition-all duration-250 group-hover:w-16 group-hover:bg-slate-200"
+								class:w-16={activeId === id}
+								class:bg-slate-200={activeId === id}
+								class:w-8={activeId !== id}
+								class:bg-slate-600={activeId !== id}
+							></span>
+
+							<span
+								class="text-xs font-bold tracking-widest uppercase transition-all duration-250 group-hover:text-slate-200"
+								class:text-slate-200={activeId === id}
+								class:text-slate-500={activeId !== id}
+							>
+								{label}
+							</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
 	</div>
 
-	<nav class="hidden lg:inline-block">
-		<ul class="space-y-4 text-sm uppercase">
-			<li>
-				<a href="#about">About</a>
-			</li>
-			<li>
-				<a href="#experience">Experience</a>
-			</li>
-			<li>
-				<a href="#projects">Projects</a>
-			</li>
-		</ul>
-	</nav>
-
-	<div class="flex items-center gap-x-4">
-		<a href="https://github.com/vilas-gannaram" target="_blank" rel="noopener noreferrer">
-			<Github />
+	<div class="flex items-center gap-x-6">
+		<a
+			href="https://github.com/vilas-gannaram"
+			target="_blank"
+			class="text-slate-400 transition-colors hover:text-slate-200"
+			aria-label="GitHub"
+		>
+			<Github size={24} />
 		</a>
 
-		<a href="https://www.linkedin.com/in/vilasgannaram/" target="_blank" rel="noopener noreferrer">
-			<Linkedin />
+		<a
+			href="https://www.linkedin.com/in/vilasgannaram/"
+			target="_blank"
+			class="text-slate-400 transition-colors hover:text-slate-200"
+			aria-label="LinkedIn"
+		>
+			<Linkedin size={24} />
 		</a>
 
-		<a href="mailto:vilasgannaram@gmail.com" target="_blank" rel="noopener noreferrer">
-			<Mail />
+		<a
+			href="mailto:vilasgannaram@gmail.com"
+			class="text-slate-400 transition-colors hover:text-slate-200"
+			aria-label="Email"
+		>
+			<Mail size={24} />
 		</a>
 	</div>
-</section>
+</div>
