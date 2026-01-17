@@ -39,10 +39,31 @@
 		<Experience />
 		<Projects />
 
-		<footer>
-			<p>
-				Made with SvelteKit <br />
-				Layout inspired by Brittany Chiang's portfolio <br /> Colors from Microsoft Copilot
+		<footer class="my-8 lg:my-0">
+			<p class="text-sm lg:text-base">
+				Made with
+				<a
+					class="underline underline-offset-2"
+					href="https://svelte.dev/docs/kit/introduction"
+					target="_blank"
+					rel="noopener noreferrer">SvelteKit</a
+				>
+				<br />
+				Layout inspired by
+				<a
+					class="underline underline-offset-2"
+					href="https://brittanychiang.com"
+					target="_blank"
+					rel="noopener noreferrer">Brittany Chiang</a
+				>'s portfolio <br /> Colors from Microsoft
+				<a
+					class="underline underline-offset-2"
+					href="https://copilot.microsoft.com"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Copilot</a
+				>
 			</p>
 		</footer>
 	</div>
