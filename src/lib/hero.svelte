@@ -12,9 +12,9 @@
 </script>
 
 <div
-	class="top-0 my-16 flex w-full flex-col justify-between gap-y-6 lg:sticky lg:my-0 lg:h-screen lg:max-w-xl lg:py-20"
+	class="top-0 my-16 flex w-full flex-col justify-between gap-y-6 lg:sticky lg:my-0 lg:h-screen lg:max-w-lg lg:py-20"
 >
-	<div class="flex w-full flex-col gap-y-48">
+	<div class="flex w-full flex-col gap-y-42">
 		<div>
 			<h1 class="font-bold tracking-tighter">Vilas Gannaram</h1>
 			<h5 class="mt-2">Full Stack Web Developer</h5>

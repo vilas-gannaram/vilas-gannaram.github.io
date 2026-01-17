@@ -52,31 +52,35 @@
 
 	html,
 	body {
-		@apply bg-background scroll-smooth font-sans font-normal text-slate-400 antialiased;
+		@apply bg-background scroll-smooth font-sans leading-relaxed font-normal text-slate-400 antialiased;
 	}
 
 	h1 {
-		@apply text-5xl font-semibold text-slate-300 md:text-6xl;
+		@apply text-5xl leading-snug font-semibold text-slate-300;
 	}
 
 	h2 {
-		@apply text-3xl font-medium text-slate-300;
+		@apply text-3xl leading-snug font-semibold text-slate-300;
 	}
 
 	h3 {
-		@apply text-2xl font-medium text-slate-300;
+		@apply text-2xl leading-snug font-semibold text-slate-300;
 	}
 
 	h4 {
-		@apply text-xl font-medium text-slate-300;
+		@apply text-xl leading-snug font-medium text-slate-300;
 	}
 
 	h5 {
-		@apply text-lg font-medium text-slate-300;
+		@apply text-lg leading-snug font-medium text-slate-300;
 	}
 
 	blockquote {
 		@apply mt-6 border-l-2 pl-6 italic;
+	}
+
+	p {
+		@apply leading-relaxed font-normal;
 	}
 
 	code {
