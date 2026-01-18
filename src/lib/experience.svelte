@@ -1,7 +1,11 @@
 <section id="experience" class="observe my-32 min-h-svh scroll-mt-20">
-	<h3 class="my-8 text-sm font-semibold uppercase lg:hidden">Experience</h3>
+	<h3
+		class="sticky top-0 mx-auto my-8 w-[90%] px-4 py-4 text-sm font-semibold uppercase backdrop-blur lg:hidden lg:w-full"
+	>
+		Experience
+	</h3>
 
-	<div>
+	<div class="mx-auto w-[90%] px-4 lg:w-full">
 		<h4>Web Developer | Aganitha Cognitive Solutions</h4>
 		<p class="mt-1 text-sm italic">Hyderabad, India | 2023 – Present</p>
 
@@ -11,7 +15,7 @@
 			projects:
 		</p>
 
-		<ul class="mt-10 list-none space-y-6">
+		<ul class="mt-10 list-none space-y-10">
 			<!-- Aganitha's Corp. website -->
 			<li class="space-y-2">
 				<h5>Corporate Website Maintenance & Migration</h5>
@@ -22,9 +26,10 @@
 					business team to improve content workflows.
 				</p>
 
-				<div class="mt-3 flex flex-wrap gap-2">
+				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
 					{#each ['11ty', 'TailwindCSS', 'WordPress', 'Docker', 'OpenLightSpeed'] as chip (chip)}
-						<code class="rounded-full border px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 text-slate-300/70"
+						<code
+							class="rounded-full border px-2 py-1 text-xs font-medium text-slate-300/70 lg:px-3 lg:py-1.5"
 							>{chip}</code
 						>
 					{/each}
@@ -42,9 +47,10 @@
 					<span class="text-slate-300">(Fingen pheWeb)</span> data exploration platform for custom workflows
 				</p>
 
-				<div class="mt-3 flex flex-wrap gap-2">
+				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
 					{#each ['ReactJS', 'SvelteKit', 'TailwindCSS', 'Hasura', 'GraphQL', 'Apollo client', 'D3.js', 'Plotly.js'] as chip (chip)}
-						<code class="rounded-full border px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 text-slate-300/70"
+						<code
+							class="rounded-full border px-2 py-1 text-xs font-medium text-slate-300/70 lg:px-3 lg:py-1.5"
 							>{chip}</code
 						>
 					{/each}
@@ -62,9 +68,10 @@
 					across multiple agents.
 				</p>
 
-				<div class="mt-3 flex flex-wrap gap-2">
+				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
 					{#each ['Next.js', 'MDX', 'Zustand', 'TailwindCSS', 'Plotly.js'] as chip (chip)}
-						<code class="rounded-full border px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 text-slate-300/70"
+						<code
+							class="rounded-full border px-2 py-1 text-xs font-medium text-slate-300/70 lg:px-3 lg:py-1.5"
 							>{chip}</code
 						>
 					{/each}

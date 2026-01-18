@@ -1,7 +1,11 @@
 <section id="about" class="observe my-18 scroll-mt-20 lg:mt-0">
-	<h3 class="my-8 text-sm font-semibold uppercase lg:hidden">About</h3>
+	<h3
+		class="sticky top-0 mx-auto my-8 px-4 py-4 text-sm font-semibold uppercase backdrop-blur w-[90%] lg:hidden lg:w-full"
+	>
+		About
+	</h3>
 
-	<div class="space-y-4">
+	<div class="mx-auto space-y-4 px-4 w-[90%] lg:w-full">
 		<p>
 			I am a Full-Stack Developer with 3 years of experience building and shipping web applications.
 			I focus on the entire lifecycle of a feature—from building responsive UI components to writing

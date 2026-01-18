@@ -68,11 +68,11 @@
 	}
 
 	h4 {
-		@apply text-xl leading-snug font-medium text-slate-300;
+		@apply text-xl leading-snug font-semibold text-slate-300;
 	}
 
 	h5 {
-		@apply text-base leading-snug font-medium text-slate-300;
+		@apply text-lg leading-snug font-medium text-slate-300;
 	}
 
 	h6 {

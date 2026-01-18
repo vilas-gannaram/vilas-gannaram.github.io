@@ -29,9 +29,7 @@
 	}
 </script>
 
-<main
-	class="mx-auto min-h-screen w-[90%] max-w-7xl gap-x-12 rounded-xl px-1 md:px-6 lg:flex lg:px-12"
->
+<main class="mx-auto min-h-screen max-w-7xl gap-x-12 rounded-xl lg:flex lg:px-12">
 	<Hero {activeId} />
 
 	<div class="w-full lg:py-20" use:scrollSpy={(id) => (activeId = id)}>
@@ -39,7 +37,7 @@
 		<Experience />
 		<Projects />
 
-		<footer class="my-8 lg:my-0">
+		<footer class="mx-auto my-8 px-4 w-[90%] lg:my-0 lg:w-full">
 			<p class="text-sm lg:text-base">
 				Made with
 				<a
