@@ -12,7 +12,7 @@
 </script>
 
 <div
-	class="top-0 mx-auto my-16 flex w-[90%] flex-col justify-between gap-y-6 px-4 lg:sticky lg:my-0 lg:h-screen lg:max-w-lg lg:py-20"
+	class="top-0 mx-auto my-16 flex w-full flex-col justify-between gap-y-6 px-[5%] lg:sticky lg:my-0 lg:h-screen lg:max-w-lg lg:px-0 lg:py-20"
 >
 	<div class="flex w-full flex-col gap-y-30">
 		<div>

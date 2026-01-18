@@ -37,7 +37,7 @@
 		<Experience />
 		<Projects />
 
-		<footer class="mx-auto my-8 px-4 w-[90%] lg:my-0 lg:w-full">
+		<footer class="mx-auto my-8 w-[90%] lg:my-0 lg:w-full">
 			<p class="text-sm lg:text-base">
 				Made with
 				<a

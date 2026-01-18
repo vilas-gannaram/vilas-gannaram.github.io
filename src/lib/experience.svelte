@@ -1,11 +1,11 @@
 <section id="experience" class="observe my-32 min-h-svh scroll-mt-20">
 	<h3
-		class="sticky top-0 mx-auto my-8 w-[90%] px-4 py-4 text-sm font-semibold uppercase backdrop-blur lg:hidden lg:w-full"
+		class="sticky top-0 mx-auto my-8 px-[5%] py-4 text-sm font-semibold uppercase backdrop-blur lg:hidden lg:w-full"
 	>
 		Experience
 	</h3>
 
-	<div class="mx-auto w-[90%] px-4 lg:w-full">
+	<div class="mx-auto w-[90%] lg:w-full">
 		<h4>Web Developer | Aganitha Cognitive Solutions</h4>
 		<p class="mt-1 text-sm italic">Hyderabad, India | 2023 – Present</p>
 
