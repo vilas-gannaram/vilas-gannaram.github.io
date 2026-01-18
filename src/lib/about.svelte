@@ -1,4 +1,4 @@
-<section id="about" class="observe my-18 scroll-mt-18 lg:mt-0">
+<section id="about" class="observe my-18 scroll-mt-20 lg:mt-0">
 	<h3 class="my-8 text-sm font-semibold uppercase lg:hidden">About</h3>
 
 	<div class="space-y-4">

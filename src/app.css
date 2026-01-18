@@ -47,12 +47,12 @@
 
 @layer base {
 	* {
-		@apply border-slate-800;
+		@apply border-slate-300/10;
 	}
 
 	html,
 	body {
-		@apply bg-background scroll-smooth font-sans leading-relaxed font-normal text-slate-400 antialiased;
+		@apply bg-background scroll-smooth font-sans leading-relaxed font-normal text-slate-300/65 antialiased;
 	}
 
 	h1 {
@@ -72,7 +72,11 @@
 	}
 
 	h5 {
-		@apply text-lg leading-snug font-medium text-slate-300;
+		@apply text-base leading-snug font-medium text-slate-300;
+	}
+
+	h6 {
+		@apply text-base leading-snug font-medium text-slate-300;
 	}
 
 	blockquote {
@@ -80,7 +84,7 @@
 	}
 
 	p {
-		@apply leading-relaxed font-normal;
+		@apply leading-[1.7] font-normal;
 	}
 
 	code {

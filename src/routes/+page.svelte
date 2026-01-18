@@ -55,7 +55,7 @@
 					href="https://brittanychiang.com"
 					target="_blank"
 					rel="noopener noreferrer">Brittany Chiang</a
-				>'s portfolio <br /> Colors from Microsoft
+				>'s portfolio <br /> Color palette inspired by Microsoft
 				<a
 					class="underline underline-offset-2"
 					href="https://copilot.microsoft.com"
