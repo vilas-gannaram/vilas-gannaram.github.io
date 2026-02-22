@@ -17,10 +17,12 @@
 	<div class="flex w-full flex-col gap-y-30">
 		<div>
 			<h1 class="font-bold tracking-tighter">Vilas Gannaram</h1>
-			<h5 class="mt-1">Web Developer <span class="text-slate-300/65">| Hyderabad, IND</span></h5>
-			<!-- <p class="mt-4 max-w-xs">
-				I build accessible, pixel-perfect digital experiences for the web.
-			</p> -->
+			<h5 class="mt-1">
+				Software Engineer <span class="text-slate-300/65">| Hyderabad, IND</span>
+			</h5>
+			<p class="mt-4 max-w-xs">
+				I enjoy building software that stays predictable and maintainable as it grows.
+			</p>
 		</div>
 
 		<nav class="hidden lg:block">

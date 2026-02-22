@@ -6,28 +6,30 @@
 	</h3>
 
 	<div class="mx-auto w-[90%] lg:w-full">
-		<h4>Web Developer | Aganitha Cognitive Solutions</h4>
+		<h4>Software Engineer | Aganitha Cognitive Solutions</h4>
 		<p class="mt-1 text-sm italic">Hyderabad, India | 2023 – Present</p>
 
 		<p class="mt-4">
-			I joined as an intern and grew into a Web Developer I role, contributing to production systems
-			as well as internal tools, research prototypes, and demo applications. Below are selected
-			projects:
+			I transitioned from a background in the Humanities to architecting high-performance systems
+			for global research teams. My work focuses on the intersection of complex data visualization,
+			AI-driven workflows, and the engineering required to make them both interactive and reliable.
 		</p>
 
 		<ul class="mt-10 list-none space-y-10">
-			<!-- Aganitha's Corp. website -->
+			<!-- Aganitha's Igniva Product -->
 			<li class="space-y-2">
-				<h5>Corporate Website Maintenance & Migration</h5>
+				<h5>Igniva<sup>TM</sup> - Platform Core</h5>
 				<p>
-					Maintained and extended a <span class="text-slate-300">JAMstack</span>-based public-facing
-					website by adding new pages and handling ongoing content updates, then migrated it to a
-					<span class="text-slate-300">WordPress</span>-backed CMS while collaborating with the
-					business team to improve content workflows.
+					Architected a unified UI for 13 specialized bioinformatics agents, enabling researchers to
+					orchestrate cross-domain scientific workflows within a single Next.js ecosystem. Developed
+					a tool-rendering engine to map heterogeneous agent outputs—including protein structures
+					and genomic plots—into standardized interactive frameworks. Engineered a high-performance
+					SSE streaming pipeline with token reconciliation for flicker-free AI reasoning and
+					multi-day session persistence.
 				</p>
 
 				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
-					{#each ['11ty', 'TailwindCSS', 'WordPress', 'Docker', 'OpenLightSpeed'] as chip (chip)}
+					{#each ['Next.js', 'MDX', 'Zustand', 'TailwindCSS', 'Plotly.js'] as chip (chip)}
 						<code
 							class="rounded-full border px-2 py-1 text-xs font-medium text-slate-300/70 lg:px-3 lg:py-1.5"
 							>{chip}</code
@@ -38,13 +40,14 @@
 
 			<!-- TTAM Research Reports -->
 			<li class="space-y-2">
-				<h5>TTAM Research Data Reports</h5>
+				<h5>Research Data Product Reports</h5>
 				<p>
-					Worked on a suite of data exploration applications, Including <span class="text-slate-300"
-						>Burden Reports</span
-					>, <span class="text-slate-300">Genome Browser</span> building a data-intensive analytics
-					dashboard, extending an existing open-source
-					<span class="text-slate-300">(Fingen pheWeb)</span> data exploration platform for custom workflows
+					Built real-time analytics interfaces for "Burden Reports," transforming multi-million row
+					genomic datasets into accessible research tools via GraphQL and server-side pagination.
+					Modernized open-source exploration logic into a DuckDB-backed architecture to increase
+					responsiveness for high-volume sequence exploration. Optimized rendering pipelines for
+					complex scientific visualizations involving over 50k data points, achieving sub-second UI
+					responsivenes
 				</p>
 
 				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
@@ -57,19 +60,19 @@
 				</div>
 			</li>
 
-			<!-- Aganitha's Igniva Product -->
+			<!-- Aganitha's Corp. website -->
 			<li class="space-y-2">
-				<h5>Igniva - Platform Core</h5>
+				<h5>Aganitha Corporate Website</h5>
 				<p>
-					Built the <span class="text-slate-300"> chat-style UI </span> for an internal LLM-powered
-					platform exploring biomedical metadata. Designed and implemented
-					<span class="text-slate-300">MDX-based interactive components</span> that agents can render,
-					enabling rich data visualizations and custom workflows. Owned the end-to-end frontend experience
-					across multiple agents.
+					Migrated the corporate digital presence to a containerized WordPress ecosystem, cutting
+					content update turnaround time by 50%. Engineered a Docker-based deployment environment
+					tuned with server-level LSCache settings to secure an "A+" performance grade in GTmetrix.
+					Enhanced technical SEO and organic search visibility by 30% through integrated
+					site-tracking and performance tuning
 				</p>
 
 				<div class="mt-3 flex flex-wrap gap-x-2 gap-y-1 lg:gap-y-2">
-					{#each ['Next.js', 'MDX', 'Zustand', 'TailwindCSS', 'Plotly.js'] as chip (chip)}
+					{#each ['11ty', 'TailwindCSS', 'WordPress', 'Docker', 'OpenLightSpeed'] as chip (chip)}
 						<code
 							class="rounded-full border px-2 py-1 text-xs font-medium text-slate-300/70 lg:px-3 lg:py-1.5"
 							>{chip}</code

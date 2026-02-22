@@ -7,23 +7,28 @@
 
 	<div class="mx-auto w-[90%] space-y-4 lg:w-full">
 		<p>
-			I am a Full-Stack Developer with 3 years of experience building and shipping web applications.
-			I focus on the entire lifecycle of a feature—from building responsive UI components to writing
-			the APIs and handling the data integration that connects them.
+			I’m a software engineer focused on building reliable, interactive web applications. My work
+			centers on designing systems where interfaces, data flow, and backend services work together
+			in a predictable and maintainable way.
 		</p>
 
 		<p>
-			I’ve spent the last few years working on a variety of projects, including corporate platforms,
-			LLM-integrated chat tools, and data-driven applications for the biotech sector. I enjoy the
-			challenge of taking a complex requirement and breaking it down into a functional, end-to-end
-			solution.
+			I have experience developing web platforms that support complex workflows, real-time
+			interactions, and data-intensive features. I enjoy shaping software from the ground up —
+			structuring the frontend, defining how state and data move through the system, and building
+			tools that remain understandable as they grow.
 		</p>
 
 		<p>
-			My path into development was non-traditional. I started with a B.A. and taught myself to build
-			for the web by digging into documentation and solving real-world bugs. That background has
-			made me a developer who is comfortable jumping into unfamiliar codebases, navigating technical
-			debt, and learning whatever stack is necessary to get the job done.
+			Most of my work is in the modern JavaScript ecosystem, particularly React-based frameworks and
+			Node.js. I’m especially interested in how applications behave over time — how state stays
+			consistent, how asynchronous processes interact, and how systems remain stable under
+			real-world usage.
+		</p>
+
+		<p>
+			I value clear engineering decisions and practical solutions. My goal is to build software that
+			is not only functional, but also dependable and easy to reason about.
 		</p>
 	</div>
 </section>
