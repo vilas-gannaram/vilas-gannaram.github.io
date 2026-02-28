@@ -1,18 +1,17 @@
-<script lang="ts">
-	// import { onMount } from 'svelte';
-	// import Lenis from 'lenis';
-
+<script>
+	import Navbar from '$lib/components/portfolio/Navbar.svelte';
 	import '../app.css';
-	import 'lenis/dist/lenis.css';
-
-	let { children } = $props();
-
-	// onMount(() => {
-	// 	new Lenis({
-	// 		autoRaf: true,
-	// 		anchors: true
-	// 	});
-	// });
+	import { ModeWatcher, setMode } from 'mode-watcher';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	setMode('dark');
 </script>
 
-{@render children()}
+<ModeWatcher />
+<Tooltip.Provider delayDuration={300}>
+	<div
+		class="bg-background relative mx-auto min-h-screen max-w-2xl px-6 py-12 font-sans antialiased sm:py-24"
+	>
+		<slot></slot>
+		<Navbar />
+	</div>
+</Tooltip.Provider>
