@@ -11,35 +11,26 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
-
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
-				themes: ['vitesse-light', 'vitesse-dark'],
-				langs: ['docker', 'dockerfile', 'bash', 'go', 'json'],
-				bg: 'transparent'
+				themes: ['vesper'],
+				langs: ['javascript', 'typescript', 'svelte', 'py', 'python']
 			});
-			await highlighter.loadLanguage('javascript', 'typescript', 'yaml');
-			const html = escapeSvelte(
-				highlighter.codeToHtml(code, {
-					lang,
-					themes: {
-						light: 'vitesse-light',
-						dark: 'vitesse-dark'
-					}
-				})
-			);
+			await highlighter.loadLanguage('javascript', 'typescript', 'svelte', 'py', 'python');
+			await highlighter.loadTheme('vesper');
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'vesper' }));
 			return `{@html \`${html}\` }`;
 		}
 	},
 	remarkPlugins: [remarkGfm],
 	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 };
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.svx', '.md'],
+	extensions: ['.svelte', '.md'],
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
+
 	kit: {
 		adapter: adapter()
 	}
