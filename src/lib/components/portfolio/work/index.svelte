@@ -67,7 +67,7 @@
 
 		{
 			company: 'Aganitha AI',
-			role: 'Software Engineer I',
+			role: 'Associate Software Engineer I',
 			startDate: 'Sept. 2023',
 			endDate: 'Aug. 2024',
 			content: {
@@ -81,7 +81,7 @@
 
 		{
 			company: 'Aganitha AI',
-			role: 'Software Engineer II',
+			role: 'Associate Software Engineer II',
 			startDate: 'Aug. 2024',
 			endDate: 'Sept. 2025',
 			content: {
@@ -107,62 +107,6 @@
 			}
 		}
 	];
-
-	// let timelineData: TWorkTimelineItem[] = [
-	// 	{
-	// 		company: 'Aganitha AI',
-	// 		role: 'Software Engineer Intern',
-	// 		startDate: 'March 2023',
-	// 		endDate: 'Sept. 2023',
-	// 		content: {
-	// 			responsibilities: [
-	// 				'Migrated corporate infrastructure from JAMStack to WordPress, cutting content update turnaround time by 50%.',
-	// 				'Secured "A+" performance grades in GTmetrix by engineering containerized deployment environments with Docker.'
-	// 			]
-	// 		}
-	// 	},
-
-	// 	{
-	// 		company: 'Aganitha AI',
-	// 		role: 'Software Engineer I',
-	// 		startDate: 'Sept. 2023',
-	// 		endDate: 'Aug. 2024',
-	// 		content: {
-	// 			responsibilities: [
-	// 				'Contributed high-performance genomic exploration tools for a global research organization, enabling the visualization of large-scale gene-phenotype datasets.',
-	// 				'Built "Burden Reports" using React and Hasura (GraphQL), implementing server-side pagination and structured querying to transform multi-million row genomic datasets into an accessible, real-time analytics interface.',
-	// 				'Accelerated the identification of rare-variant associations for thousands of researchers through optimized data accessibility.'
-	// 			]
-	// 		}
-	// 	},
-	// 	{
-	// 		company: 'Aganitha AI',
-	// 		role: 'Software Engineer II',
-	// 		startDate: 'Aug. 2024',
-	// 		endDate: 'Sept. 2025',
-	// 		content: {
-	// 			responsibilities: [
-	// 				'Optimized rendering pipelines for complex scientific visualizations (50k+ data points), achieving sub-second UI responsiveness and increasing overall researcher productivity by 35%.',
-	// 				'Modernized the FinnGen PheWeb interface, refactoring legacy code into a modular architecture that reduced dashboard latency by 40%.',
-	// 				'Developed a custom Genome Browser by modernizing open-source gnomAD logic into a DuckDB-backed architecture, significantly increasing responsiveness for high-volume sequence exploration.'
-	// 			]
-	// 		}
-	// 	},
-	// 	{
-	// 		company: 'Aganitha AI',
-	// 		role: 'Software Engineer',
-	// 		startDate: 'Sept. 2025',
-	// 		endDate: 'Present',
-	// 		content: {
-	// 			responsibilities: [
-	// 				'Built a unified federated UI for 13 specialized bioinformatics agents, enabling researchers to orchestrate complex, cross-domain scientific workflows within a single Next.js ecosystem.',
-	// 				'Developed a tool-rendering engine that automatically maps heterogeneous agent outputs—including	Molstar protein structures and Plotly genomic plots—into a standardized, interactive UI framework.',
-	// 				'Engineered a high-performance SSE streaming pipeline with token reconciliation for flicker-free LLM reasoning, coupled with a Zustand rehydration strategy for seamless multi-day session persistence.',
-	// 				'Scaled agent integration via OpenAPI-generated SDKs and a modular Shadcn/UI + MDX component library, reducing frontend feature-delivery time by 25%.'
-	// 			]
-	// 		}
-	// 	}
-	// ];
 </script>
 
 <div class="w-full" bind:this={containerRef}>

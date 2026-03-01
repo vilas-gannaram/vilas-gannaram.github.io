@@ -4,6 +4,7 @@
 	// import ProjectCard from '$lib/components/portfolio/ProjectCard.svelte';
 	// import ResumeCard from '$lib/components/portfolio/ResumeCard.svelte';
 	import Work from '$lib/components/portfolio/work/index.svelte';
+	import Skills from '$lib/components/portfolio/skills.svelte';
 	// import * as Avatar from '$lib/components/ui/avatar';
 	// import Badge from '$lib/components/ui/badge/badge.svelte';
 	import { DATA } from '$lib/data/resume';
@@ -70,7 +71,7 @@
 			<h2 class="text-lg font-bold md:text-2xl">About</h2>
 		</BlurFade>
 		<BlurFade delay={BLUR_FADE_DELAY * 1.4}>
-			<p class="text-muted-foreground mt-4 font-sans text-sm md:text-base">
+			<p class="text-muted-foreground mt-4 font-sans text-sm">
 				Software Engineer with 3+ years of experience building high-performance, real-time web
 				platforms for data-intensive and AI-driven products. Proven track record of optimizing
 				rendering pipelines, structuring scalable state systems, and delivering production-grade
@@ -82,8 +83,8 @@
 	<!-- Work Experience -->
 	<section id="work">
 		<BlurFade delay={BLUR_FADE_DELAY}>
-			<h2 class="text-lg font-bold md:text-2xl">Work</h2>
-			<p class="text-muted-foreground mt-4 max-w-md text-sm md:text-base">
+			<h2 class="text-lg font-bold md:text-2xl">Work Experience</h2>
+			<p class="text-muted-foreground mt-4 max-w-md text-sm">
 				I've been working with Aganitha for the past 3+ years. Here's a timeline of my journey.
 			</p>
 		</BlurFade>
@@ -116,20 +117,18 @@
 	</section> -->
 
 	<!-- Skills -->
-	<!-- <section id="skills">
+	<section id="skills">
 		<div class="flex min-h-0 flex-col gap-y-3">
 			<BlurFade delay={BLUR_FADE_DELAY}>
 				<h2 class="text-xl font-bold">Skills</h2>
 			</BlurFade>
 			<div class="flex flex-wrap gap-1">
-				{#each DATA.skills as skill, id}
-					<BlurFade delay={BLUR_FADE_DELAY * id + 0.002}>
-						<Badge>{skill}</Badge>
-					</BlurFade>
-				{/each}
+				<BlurFade delay={BLUR_FADE_DELAY * 0.002}>
+					<Skills />
+				</BlurFade>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	<!-- Projects -->
 	<!-- <section id="projects">
