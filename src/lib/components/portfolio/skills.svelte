@@ -4,13 +4,13 @@
 	let skills = [
 		{
 			title: 'Svelte Ecosystem',
-			items: ['SvelteKit', 'Runes', 'Context API'],
+			items: ['SvelteKit', 'Runes'],
 			description: 'My primary driver for high-performance UIs.',
 			className: 'md:col-span-4 md:row-span-2'
 		},
 		{
 			title: 'Frontend Architecture',
-			items: ['React.js', 'Next.js', 'Redux Toolkit', 'Zustand', 'Tailwind CSS'],
+			items: ['React.js', 'Next.js', 'Context API', 'Redux Toolkit', 'Zustand', 'Tailwind CSS'],
 			description: 'Building scalable, federated enterprise platforms.',
 			className: 'md:col-span-8 md:row-span-4'
 		},
@@ -22,7 +22,16 @@
 		},
 		{
 			title: 'Backend & Engine',
-			items: ['Node.js', 'GraphQL', 'Hasura', 'PostgreSQL', 'Prisma'],
+			items: [
+				'Node.js',
+				'Express.js',
+				'REST APIs',
+				'GraphQL',
+				'Hasura',
+				'Prisma ORM',
+				'TypeORM',
+				'PostgreSQL'
+			],
 			description: 'Robust APIs and real-time data streaming.',
 			className: 'md:col-span-8 md:row-span-2'
 		},
