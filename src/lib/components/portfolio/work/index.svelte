@@ -54,7 +54,7 @@
 	let timelineData: TWorkTimelineItem[] = [
 		{
 			company: 'Aganitha AI',
-			role: 'Software Engineer Intern',
+			role: 'Web Developer Intern',
 			startDate: 'March 2023',
 			endDate: 'Sept. 2023',
 			content: {
@@ -67,7 +67,7 @@
 
 		{
 			company: 'Aganitha AI',
-			role: 'Associate Software Engineer I',
+			role: 'Jr. Web Developer I',
 			startDate: 'Sept. 2023',
 			endDate: 'Aug. 2024',
 			content: {
@@ -81,7 +81,7 @@
 
 		{
 			company: 'Aganitha AI',
-			role: 'Associate Software Engineer II',
+			role: 'Jr. Web Developer II',
 			startDate: 'Aug. 2024',
 			endDate: 'Sept. 2025',
 			content: {
@@ -95,7 +95,7 @@
 
 		{
 			company: 'Aganitha AI',
-			role: 'Software Engineer',
+			role: 'Web Developer I',
 			startDate: 'Sept. 2025',
 			endDate: 'Present',
 			content: {

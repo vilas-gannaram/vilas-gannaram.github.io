@@ -49,7 +49,7 @@
 		{#each skills as skill, i (i)}
 			<div
 				class={cn(
-					'group relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-all hover:bg-zinc-900',
+					'group relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 p-6 transition-all hover:bg-transparent',
 					skill.className
 				)}
 			>
