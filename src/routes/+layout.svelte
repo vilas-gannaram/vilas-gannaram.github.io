@@ -1,9 +1,9 @@
 <script>
+	import { ModeWatcher } from 'mode-watcher';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+
 	import Navbar from '$lib/components/portfolio/navbar.svelte';
 	import '../app.css';
-	import { ModeWatcher, setMode } from 'mode-watcher';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	setMode('dark');
 </script>
 
 <ModeWatcher />
