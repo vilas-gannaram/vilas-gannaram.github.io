@@ -1,13 +1,24 @@
 <script lang="ts">
-	import { DATA } from '$lib/data/resume';
-	import Dock from '../magic/Dock.svelte';
-	import DockIcon from '../magic/DockIcon.svelte';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import ModeToggle from './ModeToggle.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { mode } from 'mode-watcher';
+	import { CodeIcon, HomeIcon, NotebookIcon } from '@lucide/svelte';
+
+	import * as Tooltip from '$lib/components/ui/tooltip';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
+
+	import Dock from '$lib/components/magic/dock.svelte';
+	import DockIcon from '$lib/components/magic/dock-Icon.svelte';
+	import ModeToggle from './theme-toggle.svelte';
+
+	import { CONTACT } from '$lib/data/contact';
+
 	let theme = $derived(mode.current);
+
+	const navbar = [
+		{ href: '/', icon: HomeIcon, label: 'Home' },
+		{ href: '/blog', icon: NotebookIcon, label: 'Blog' },
+		{ href: '#', icon: CodeIcon, label: 'Projects' }
+	];
 </script>
 
 <div
@@ -22,7 +33,7 @@
 		let:distance
 		let:mouseX
 	>
-		{#each DATA.navbar as item (item.label)}
+		{#each navbar as item (item.label)}
 			<DockIcon {magnification} {mouseX} {distance}>
 				<Tooltip.Root>
 					<Tooltip.Trigger>
@@ -37,14 +48,21 @@
 				</Tooltip.Root>
 			</DockIcon>
 		{/each}
+
 		<Separator orientation="vertical" class="h-full" />
-		{#each Object.entries(DATA.contact.social)
+		{#each Object.entries(CONTACT.social)
 			.filter(([_, social]) => social.navbar)
 			.map(([_, social]) => social) as social (social.name)}
 			<DockIcon {magnification} {mouseX} {distance}>
 				<Tooltip.Root>
 					<Tooltip.Trigger>
-						<Button href={social.url} variant="ghost" size="icon" class="size-12 rounded-full">
+						<Button
+							href={social.url}
+							target="_blank"
+							variant="ghost"
+							size="icon"
+							class="size-12 rounded-full"
+						>
 							<!-- <svelte:component this={social.icon} class="size-4" strokeWidth={1.5} /> -->
 							{#if social?.dark_icon && theme === 'dark'}
 								<img src={social?.dark_icon} class="size-4" alt={social.name} />
@@ -60,6 +78,7 @@
 			</DockIcon>
 		{/each}
 		<Separator orientation="vertical" class="h-full py-2" />
+
 		<DockIcon {magnification} {mouseX} {distance}>
 			<Tooltip.Root>
 				<Tooltip.Trigger>
