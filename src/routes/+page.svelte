@@ -219,7 +219,7 @@
 						<a href={CONTACT.social.X.url} target="_blank" class="text-blue-500 hover:underline">
 							with a direct question on twitter
 						</a>
-						and I&apos;ll respond whenever I can. I will ignore all soliciting.
+						and I&apos;ll respond whenever I can.
 					</p>
 				</div>
 			</BlurFade>
