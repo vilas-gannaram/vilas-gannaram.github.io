@@ -44,7 +44,7 @@
 		"remark-gfm": "^4.0.1",
 		"roughjs": "^4.6.6",
 		"shiki": "^3.6.0",
-		"svelte": "^5.51.5",
+		"svelte": "^5.53.5",
 		"svelte-check": "^4.0.0",
 		"svelte-inview": "^4.0.4",
 		"svelte-motion": "^0.12.2",
