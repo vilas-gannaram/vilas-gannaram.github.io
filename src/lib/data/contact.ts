@@ -1,8 +1,8 @@
 import GithubSvg from '$lib/imgs/github.svg';
 import GithubDarkSvg from '$lib/imgs/github-dark.svg';
 
-// import PeerListSvg from '$lib/imgs/peerlist.svg';
-// import PeerListDarkSvg from '$lib/imgs/peerlist-dark.svg';
+import PeerListSvg from '$lib/imgs/peerlist.svg';
+import PeerListDarkSvg from '$lib/imgs/peerlist-dark.svg';
 
 import GmailSvg from '$lib/imgs/gmail.svg';
 import GmailDarkSvg from '$lib/imgs/gmail-dark.svg';
@@ -41,14 +41,14 @@ export const CONTACT = {
 			navbar: true,
 			dark_icon: TwitterDarkSvg
 		},
-		// PeerList: {
-		// 	name: 'PeerList',
-		// 	url: 'https://peerlist.io/vilasgannaram',
-		// 	// // icon: Icons.x,
-		// 	icon: PeerListSvg,
-		// 	navbar: true,
-		// 	dark_icon: PeerListDarkSvg
-		// },
+		PeerList: {
+			name: 'PeerList',
+			url: 'https://peerlist.io/vilasgannaram',
+			// // icon: Icons.x,
+			icon: PeerListSvg,
+			navbar: true,
+			dark_icon: PeerListDarkSvg
+		},
 		// Youtube: {
 		// 	name: 'Youtube',
 		// 	url: 'https://github.com/vilasgannaram',

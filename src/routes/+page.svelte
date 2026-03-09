@@ -1,28 +1,23 @@
 <script>
 	import BlurFade from '$lib/components/magic/blur-fade.svelte';
-	// import HackathonCard from '$lib/components/portfolio/HackathonCard.svelte';
-	// import ProjectCard from '$lib/components/portfolio/ProjectCard.svelte';
-	// import ResumeCard from '$lib/components/portfolio/ResumeCard.svelte';
+	import ProjectCard from '$lib/components/portfolio/ProjectCard.svelte';
 	import Work from '$lib/components/portfolio/work/index.svelte';
 	import Skills from '$lib/components/portfolio/skills.svelte';
-	// import * as Avatar from '$lib/components/ui/avatar';
-	// import Badge from '$lib/components/ui/badge/badge.svelte';
-	import { DATA } from '$lib/data/resume';
+	import PROJECTS from '$lib/data/projects';
 	import { CONTACT } from '$lib/data/contact';
-	// import { marked } from 'marked';
 	let BLUR_FADE_DELAY = 0.04;
 </script>
 
 <!-- META TAGS -->
 
 <svelte:head>
-	<title>Vilas Gannaram</title>
+	<title>Vilas Gannaram | Software Engineer</title>
 	<meta name="description" content="Vilas Gannaram | Software Engineer" />
 	<meta property="og:title" content="Vilas Gannaram" />
 	<meta property="og:description" content="Vilas Gannaram | Software Engineer" />
 	<meta property="og:url" content="https://vilas-gannaram.github.io" />
 	<meta property="og:site_name" content="Vilas Gannaram" />
-	<meta property="og:image" content={DATA.img} />
+	<!-- <meta property="og:image" content={DATA.img} /> -->
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
 	<meta name="robots" content="index, follow" />
@@ -32,7 +27,7 @@
 	/>
 	<meta name="twitter:title" content="Vilas Gannaram" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content={DATA.img} />
+	<!-- <meta name="twitter:image" content={DATA.img} /> -->
 	<meta name="twitter:description" content="Vilas Gannaram | Software Engineer" />
 
 	<meta name="google-site-verification" content="your-google-verification-code" />
@@ -84,37 +79,12 @@
 	<section id="work">
 		<BlurFade delay={BLUR_FADE_DELAY}>
 			<h2 class="text-lg font-bold md:text-2xl">Work Experience</h2>
-			<p class="text-muted-foreground mt-4 max-w-md text-sm">
-				I've been working with Aganitha for the past 3+ years. Here's a timeline of my journey.
-			</p>
 		</BlurFade>
 
 		<BlurFade delay={BLUR_FADE_DELAY * 1.4}>
 			<Work />
 		</BlurFade>
 	</section>
-
-	<!-- Education Details -->
-	<!-- <section id="education">
-		<div class="flex min-h-0 flex-col gap-y-3">
-			<BlurFade delay={BLUR_FADE_DELAY}>
-				<h2 class="text-xl font-bold">Education</h2>
-			</BlurFade>
-			{#each DATA.education as edu, id}
-				<BlurFade delay={BLUR_FADE_DELAY * 1.2 + id * 0.05}>
-					<ResumeCard
-						href={edu.href}
-						logoUrl={edu.logoUrl}
-						company={edu.school}
-						title={edu.school}
-						subtitle={edu.degree}
-						start={edu.start}
-						end={edu.end}
-					/>
-				</BlurFade>
-			{/each}
-		</div>
-	</section> -->
 
 	<!-- Skills -->
 	<section id="skills">
@@ -131,7 +101,7 @@
 	</section>
 
 	<!-- Projects -->
-	<!-- <section id="projects">
+	<section id="projects">
 		<div class="w-full space-y-12 py-12">
 			<BlurFade delay={BLUR_FADE_DELAY}>
 				<div class="flex flex-col items-center justify-center space-y-4 text-center">
@@ -152,7 +122,7 @@
 				</div>
 			</BlurFade>
 			<div class="mx-auto grid max-w-[800px] grid-cols-1 gap-3 sm:grid-cols-2">
-				{#each DATA.projects as project, id}
+				{#each PROJECTS as project, id (id)}
 					<BlurFade delay={BLUR_FADE_DELAY * 1.5 + id * 0.05}>
 						<ProjectCard
 							href={project.href}
@@ -168,41 +138,7 @@
 				{/each}
 			</div>
 		</div>
-	</section> -->
-
-	<!-- Hackathons -->
-	<!-- <section id="hackathons">
-		<div class="w-full space-y-12 py-12">
-			<BlurFade delay={BLUR_FADE_DELAY}>
-				<div class="flex flex-col items-center justify-center space-y-4 text-center">
-					<div class="space-y-2">
-						<div class="bg-foreground text-background inline-block rounded-lg px-3 py-1 text-sm">
-							Hackathons
-						</div>
-						<h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">I like building things</h2>
-						<p
-							class="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
-						>
-							During my time in university, I attended{' '}
-							{DATA.hackathons.length}+ hackathons. People from around the country would come
-							together and build incredible things in 2-3 days. It was eye-opening to see the
-							endless possibilities brought to life by a group of motivated and passionate
-							individuals.
-						</p>
-					</div>
-				</div>
-			</BlurFade>
-			<BlurFade delay={BLUR_FADE_DELAY * 2}>
-				<ul class="mb-4 ml-4 divide-y divide-dashed border-l">
-					{#each DATA.hackathons as project}
-						<BlurFade delay={BLUR_FADE_DELAY}>
-							<HackathonCard {...project} />
-						</BlurFade>
-					{/each}
-				</ul>
-			</BlurFade>
-		</div>
-	</section> -->
+	</section>
 
 	<section id="contact">
 		<div class="grid w-full items-center justify-center gap-4 px-4 py-12 text-center md:px-6">
