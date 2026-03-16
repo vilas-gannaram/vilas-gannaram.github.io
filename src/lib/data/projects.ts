@@ -9,14 +9,15 @@ const PROJECTS = [
 		description:
 			'A URL shortener is a web application that allows users to shorten long URLs into shorter, more manageable links. It is a useful tool for sharing links on social media, in emails, or in any situation where long URLs are cumbersome.',
 		technologies: [
-			'Golang',
+			'Go',
 			'Chi',
 			'sqlc',
-			'Supabase PostgreSQL',
-			'Render',
+			'PostgreSQL',
 			'React.js',
 			'TailwindCSS',
-			'Daisy UI'
+			'Daisy UI',
+			'Supabase',
+			'Render',
 		],
 		links: [
 			{
