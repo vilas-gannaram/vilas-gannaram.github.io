@@ -15,7 +15,7 @@
 	<meta name="description" content="Vilas Gannaram | Software Engineer" />
 	<meta property="og:title" content="Vilas Gannaram" />
 	<meta property="og:description" content="Vilas Gannaram | Software Engineer" />
-	<meta property="og:url" content="https://vilas-gannaram.github.io" />
+	<meta property="og:url" content="https://vilas-gannaram.github.io/" />
 	<meta property="og:site_name" content="Vilas Gannaram" />
 	<!-- <meta property="og:image" content={DATA.img} /> -->
 	<meta property="og:locale" content="en_US" />
@@ -44,10 +44,10 @@
 					<BlurFade
 						delay={BLUR_FADE_DELAY}
 						class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-						yOffset={8}>Hi, I'm Vilas 👋</BlurFade
+						yOffset={8}>Hi, I'm Vilas</BlurFade
 					>
 					<BlurFade class="max-w-[600px] md:text-xl" delay={BLUR_FADE_DELAY}
-						>Software Engineer
+						>Software Engineer building web applications & systems
 					</BlurFade>
 				</div>
 				<!-- <BlurFade delay={BLUR_FADE_DELAY}>
@@ -67,10 +67,13 @@
 		</BlurFade>
 		<BlurFade delay={BLUR_FADE_DELAY * 1.4}>
 			<p class="text-muted-foreground mt-4 font-sans text-sm">
-				Software Engineer with 3+ years of experience building high-performance, real-time web
-				platforms for data-intensive and AI-driven products. Proven track record of optimizing
-				rendering pipelines, structuring scalable state systems, and delivering production-grade
-				interfaces for global research teams.
+				I’m a Software Engineer with 3+ years of experience, working across frontend and backend on
+				data-heavy applications. I started on the UI side, building interfaces for complex datasets
+				and research workflows. Over time, I got more interested in what happens behind the
+				scenes—how data moves, how systems behave in production, and what makes them reliable.
+				Lately, I’ve been spending more time on backend systems and system design, while still
+				working close to the UI. I enjoy being in that space where product, data, and engineering
+				meet.
 			</p>
 		</BlurFade>
 	</section>

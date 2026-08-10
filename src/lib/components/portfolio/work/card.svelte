@@ -13,12 +13,13 @@
 	export let href: string = '';
 	export let badges: string[] = [''];
 	export let description: string = '';
+	export let content: string = '';
 	export let start: string = '';
 	export let end: string = '';
 	let isExpanded = true;
 
 	let handleClick = (e: MouseEvent) => {
-		if (description) {
+		if (description || content) {
 			e.preventDefault();
 			isExpanded = !isExpanded;
 		}
@@ -64,7 +65,7 @@
 					<div class="font-sans text-xs">{title}</div>
 				{/if}
 			</div>
-			{#if description}
+			{#if description || content}
 				{#if isExpanded}
 					<div
 						class="text-muted-foreground mt-2 text-xs md:text-sm"
@@ -73,7 +74,15 @@
 							easing: quartOut
 						}}
 					>
-						{description}
+						{#if description}
+							<p>{description}</p>
+						{/if}
+						{#if content}
+							<div class="mt-2 text-primary">
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+								{@html content}
+							</div>
+						{/if}
 					</div>
 				{/if}
 			{/if}

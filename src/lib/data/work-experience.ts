@@ -1,16 +1,6 @@
 import AganithaLogo from '$lib/imgs/aganitha.svg';
 
-type TWorkTimelineItem = {
-	company: string;
-	logoUrl: string;
-	href: string;
-	role: string;
-	start: string;
-	end: string;
-	description: string;
-};
-
-const WorkExperience: TWorkTimelineItem[] = [
+const WorkExperience = [
 	{
 		company: 'Aganitha AI',
 		logoUrl: AganithaLogo,
@@ -49,7 +39,7 @@ const WorkExperience: TWorkTimelineItem[] = [
 		start: 'Sept. 2025',
 		end: 'Present',
 		description:
-			'Designed and built a federated Next.js platform integrating 13 bioinformatics agents into a unified workflow interface. Engineered an SSE streaming pipeline with token reconciliation for real-time LLM workflows and seamless multi-day session persistence. Developed a modular SDK + component architecture (OpenAPI, Shadcn/UI, MDX), reducing frontend feature delivery time by 25%.'
+			'Right now, I’m working on a system that brings together multiple bioinformatics agents into a single interface. A big part of my work has been making LLM outputs actually usable in the product—things like genomic plots and structured data. I built a markdown-based rendering system to make those outputs predictable and easier to work with, which helped a lot with reliability. I’ve also worked on streaming responses in real time and making sure sessions persist properly. Along the way, I’ve been focusing more on how these pieces fit together as a system, not just as isolated features.'
 	}
 ];
 
