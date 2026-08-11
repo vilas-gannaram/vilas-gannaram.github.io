@@ -1,6 +1,7 @@
 import { Onest, Geist_Mono, Instrument_Serif } from 'next/font/google';
 import type { Metadata } from 'next';
 
+import Header from './components/header';
 import Footer from './components/footer';
 import './globals.css';
 
@@ -53,14 +54,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 		>
 			<body className='antialiased max-w-xl mx-4 mt-8 lg:mx-auto'>
 				<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
-					{/* <Navbar /> */}
+					<Header />
 					{children}
 					<Footer />
 					{/* <Analytics /> */}
 					{/* <SpeedInsights /> */}
 				</main>
 			</body>
-			{/* <body className='min-h-full flex flex-col'>{children}</body> */}
 		</html>
 	);
 }
