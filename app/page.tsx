@@ -6,11 +6,11 @@ export default function Home() {
 				<h1 className='text-2xl font-semibold tracking-tighter'>Vilas</h1>
 			</div>
 
-			<p className='mb-4'>
-				{`A Software Engineer who enjoys working across the stack —
-        UI, backend systems, Applied AI, and everything in between.`}
+			<p className=''>
+				A Software Engineer who enjoys working across the stack — UI, backend
+				systems, Applied AI, and everything in between.
 			</p>
-			<div className='my-8'>{/* <BlogPosts /> */}</div>
+			{/* <div className='my-8'><BlogPosts /></div> */}
 		</section>
 	);
 }
