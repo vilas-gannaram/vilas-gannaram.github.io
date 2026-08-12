@@ -64,8 +64,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 					<Header />
 					{children}
 					<Footer />
-					{/* <Analytics /> */}
-					{/* <SpeedInsights /> */}
 				</main>
 			</body>
 		</html>

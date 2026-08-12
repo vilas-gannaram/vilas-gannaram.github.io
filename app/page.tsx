@@ -7,7 +7,7 @@ export default function Home() {
 			</div>
 
 			<p>
-				I'm a Software Engineer working on agentic AI systems and full-stack
+				I&apos;m a Software Engineer working on agentic AI systems and full-stack
 				platforms — currently at{' '}
 				<a
 					target='_blank'
@@ -24,7 +24,6 @@ export default function Home() {
 				Humanities Degree, self-taught into software — think Dora the Explorer
 				with a bit of Zoro from One Piece energy. Not lost, just exploring.
 			</p>
-			{/* <div className='my-8'><BlogPosts /></div> */}
 		</section>
 	);
 }
