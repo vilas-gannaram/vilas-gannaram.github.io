@@ -19,8 +19,8 @@ export default async function BlogPage() {
 					href={`/blog/${post.slug}`}
 					className='flex flex-col space-y-1 mb-4'
 				>
-					<div className='flex flex-col md:flex-row md:items-baseline md:gap-2'>
-						<p className='text-neutral-600 dark:text-neutral-400 tabular-nums text-sm'>
+					<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
+						<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono'>
 							{formatDate(post.metadata.publishedAt)}
 						</p>
 						<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>
