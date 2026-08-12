@@ -7,13 +7,13 @@ export default function Home() {
 			</div>
 
 			<p>
-				I&apos;m a Software Engineer working on agentic AI systems and full-stack
-				platforms — currently at{' '}
+				I&apos;m a Software Engineer working on agentic AI systems and
+				full-stack platforms — currently at{' '}
 				<a
 					target='_blank'
 					rel='noopener noreferrer'
 					href='http://www.aganitha.ai'
-					className='underline text-neutral-600 dark:text-neutral-400'
+					className='underline underline-offset-2 text-neutral-600 dark:text-neutral-400'
 				>
 					Aganitha Cognitive Solutions
 				</a>{' '}
