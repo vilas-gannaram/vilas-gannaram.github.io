@@ -1,20 +1,28 @@
 export default function Home() {
 	return (
 		<section>
-			<div className='flex mb-8 items-baseline gap-2'>
+			<div className='flex mb-8 items-baseline gap-x-1.5'>
 				<p className='text-neutral-600 dark:text-neutral-400'>Hi, I&apos;m</p>
 				<h1 className='text-2xl font-semibold tracking-tighter'>Vilas</h1>
 			</div>
 
-			<p className=''>
-				A Software Engineer who enjoys working across the stack — UI, backend
-				systems, Applied AI, and everything in between.
+			<p>
+				I'm a Software Engineer working on agentic AI systems and full-stack
+				platforms — currently at{' '}
+				<a
+					target='_blank'
+					rel='noopener noreferrer'
+					href='http://www.aganitha.ai'
+					className='underline text-neutral-600 dark:text-neutral-400'
+				>
+					Aganitha Cognitive Solutions
+				</a>{' '}
+				in bioinformatics.
 			</p>
+
 			<p className='mt-4'>
-				Think Dora the Explorer with a bit of Zoro from One Piece energy — I set
-				out for one destination and somehow wander into a completely different
-				segment. Humanities degree, currently doing software. Not lost, just
-				exploring.
+				Humanities Degree, self-taught into software — think Dora the Explorer
+				with a bit of Zoro from One Piece energy. Not lost, just exploring.
 			</p>
 			{/* <div className='my-8'><BlogPosts /></div> */}
 		</section>
