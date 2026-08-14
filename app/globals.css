@@ -23,7 +23,7 @@
 
 @layer base {
 	body {
-		@apply text-[14px] leading-[20px] font-normal text-foreground bg-background font-sans;
+		@apply font-normal text-foreground bg-background font-sans;
 	}
 		
 	h1 {
