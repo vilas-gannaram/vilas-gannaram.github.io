@@ -20,8 +20,21 @@
 	}
 }
 
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+
+@layer base {
+	body {
+		@apply text-[14px] leading-[20px] font-normal text-foreground bg-background font-sans;
+	}
+		
+	h1 {
+		@apply text-[28px] leading-[34px] font-semibold;
+	}
+
+	h2 {
+		@apply text-[22px] leading-[28px] font-semibold;
+	}
+
+	h3 {
+		@apply text-[18px] leading-[24px] font-semibold;
+	}
 }
