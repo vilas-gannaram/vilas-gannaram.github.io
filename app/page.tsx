@@ -2,7 +2,7 @@ export default function Home() {
 	return (
 		<section>
 			<div className='flex mb-8 items-baseline gap-x-1.5'>
-				<p className='text-neutral-600 dark:text-neutral-400'>Hi, I&apos;m</p>
+				<h2>Hi, I&apos;m</h2>
 				<h1>Vilas</h1>
 			</div>
 

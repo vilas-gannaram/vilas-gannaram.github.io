@@ -12,7 +12,7 @@ export default async function BlogPage() {
 
 	return (
 		<section>
-			<h1 className='mb-8 text-2xl font-semibold tracking-tighter'>Blog</h1>
+			<h1>Blog</h1>
 			{posts.map((post) => (
 				<Link
 					key={post.slug}
