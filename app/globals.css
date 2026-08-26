@@ -26,12 +26,12 @@
 	}
 
 	h1 {
-		@apply text-[28px] leading-8 font-bold tracking-tight;
+		@apply text-[32px] leading-9 font-bold tracking-tight;
 		margin: 2.5rem 0 1rem;
 	}
 
 	h2 {
-		@apply text-[22px] leading-7 font-semibold tracking-tight;
+		@apply text-[24px] leading-8 font-semibold tracking-tight;
 		margin: 2rem 0 0.875rem;
 	}
 
