@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { formatDate, getBlogPosts } from './get-posts';
 
 export const metadata = {

@@ -13,7 +13,7 @@ export default function Home() {
 					target='_blank'
 					rel='noopener noreferrer'
 					href='http://www.aganitha.ai'
-					className='underline underline-offset-2 text-neutral-600 dark:text-neutral-400'
+					className='underline underline-offset-2'
 				>
 					Aganitha Cognitive Solutions
 				</a>{' '}
