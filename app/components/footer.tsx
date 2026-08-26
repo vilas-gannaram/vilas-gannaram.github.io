@@ -49,7 +49,7 @@ export default function Footer() {
 			</ul>
 			<p className='mt-8 text-neutral-600 dark:text-neutral-300 font-signature'>
 				© {new Date().getFullYear()}{' '}
-				<span className='font-signature text-base italic font-bold'>
+				<span className='font-signature text-base'>
 					Vilas Gannaram
 				</span>
 			</p>

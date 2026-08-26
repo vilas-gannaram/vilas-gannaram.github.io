@@ -10,7 +10,7 @@
 	--color-foreground: var(--foreground);
 	--font-sans: var(--font-outfit-sans);
 	--font-mono: var(--font-geist-mono);
-	--font-signature: var(--font-instrument-serif);
+	--font-signature: var(--font-style-script);
 }
 
 @media (prefers-color-scheme: dark) {

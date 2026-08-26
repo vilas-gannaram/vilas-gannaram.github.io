@@ -1,4 +1,4 @@
-import { Outfit, Geist_Mono, Instrument_Serif } from 'next/font/google';
+import { Outfit, Geist_Mono, Style_Script } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 
 import Header from './components/header';
@@ -15,11 +15,10 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-const instrumentSerif = Instrument_Serif({
-	variable: '--font-instrument-serif',
+const styleScript = Style_Script({
+	variable: '--font-style-script',
 	subsets: ['latin'],
 	weight: '400',
-	style: 'italic',
 });
 
 const siteUrl = 'https://vilas-gannaram.github.io';
@@ -57,7 +56,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 	return (
 		<html
 			lang='en'
-			className={`${outfitSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
+			className={`${outfitSans.variable} ${geistMono.variable} ${styleScript.variable} h-full antialiased`}
 		>
 			<body className='antialiased max-w-xl px-4 mt-8 mx-auto'>
 				<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
