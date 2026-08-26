@@ -8,7 +8,7 @@
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--font-sans: var(--font-outfit-sans);
+	--font-sans: var(--font-google-sans-flex);
 	--font-mono: var(--font-geist-mono);
 	--font-signature: var(--font-style-script);
 }
@@ -26,17 +26,17 @@
 	}
 
 	h1 {
-		@apply text-[28px] leading-8 font-bold tracking-tight;
+		@apply text-[28px] leading-8 font-bold;
 		margin: 2.5rem 0 1rem;
 	}
 
 	h2 {
-		@apply text-[22px] leading-7 font-semibold tracking-tight;
+		@apply text-[22px] leading-7 font-semibold;
 		margin: 2rem 0 0.875rem;
 	}
 
 	h3 {
-		@apply text-[18px] leading-6 font-semibold tracking-tight;
+		@apply text-[18px] leading-6 font-semibold;
 		margin: 1.75rem 0 0.75rem;
 	}
 
