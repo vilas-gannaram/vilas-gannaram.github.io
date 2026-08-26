@@ -3,7 +3,7 @@ export default function Home() {
 		<section>
 			<div className='flex mb-8 items-baseline gap-x-1.5'>
 				<h2>Hi, I&apos;m</h2>
-				<h1>Vilas</h1>
+				<h1 className='mt-0'>Vilas</h1>
 			</div>
 
 			<p>
