@@ -1,12 +1,12 @@
-import { Onest, Geist_Mono, Instrument_Serif } from 'next/font/google';
+import { Outfit, Geist_Mono, Instrument_Serif } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 
 import Header from './components/header';
 import Footer from './components/footer';
 import './globals.css';
 
-const onestSans = Onest({
-	variable: '--font-onest-sans',
+const outfitSans = Outfit({
+	variable: '--font-outfit-sans',
 	subsets: ['latin'],
 });
 
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 	return (
 		<html
 			lang='en'
-			className={`${onestSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
+			className={`${outfitSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
 		>
 			<body className='antialiased max-w-xl px-4 mt-8 mx-auto'>
 				<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
