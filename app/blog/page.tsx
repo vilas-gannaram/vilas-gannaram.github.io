@@ -11,24 +11,27 @@ export default async function BlogPage() {
 
 	return (
 		<section>
-			<h1>Blog</h1>
-			{posts.map((post) => (
-				<Link
-					key={post.slug.join('/')}
-					href={`/blog/${post.slug.join('/')}`}
-					className='flex flex-col space-y-1 mb-4'
-				>
-					<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
-						<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono'>
-							{formatDate(post.metadata.publishedAt)} ·{' '}
-							{post.readingTime} min read
-						</p>
-						<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>
-							{post.metadata.title}
-						</p>
-					</div>
-				</Link>
-			))}
+			<h1 className='mt-0'>Blog</h1>
+
+			<div className='not-typeset my-6 md:my-8'>
+				{posts.map((post) => (
+					<Link
+						key={post.slug.join('/')}
+						href={`/blog/${post.slug.join('/')}`}
+						className='flex flex-col space-y-1 mb-4'
+					>
+						<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
+							<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono'>
+								{formatDate(post.metadata.publishedAt)} · {post.readingTime} min
+								read
+							</p>
+							<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>
+								{post.metadata.title}
+							</p>
+						</div>
+					</Link>
+				))}
+			</div>
 		</section>
 	);
 }
