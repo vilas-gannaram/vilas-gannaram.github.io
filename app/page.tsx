@@ -2,7 +2,9 @@ export default function Home() {
 	return (
 		<section>
 			<div className='flex mb-8 items-baseline gap-x-1.5'>
-				<h2 className='mt-0'>Hi, I&apos;m</h2>
+				<p className='mt-0 text-[1.25em] leading-[1.4] font-semibold'>
+					Hi, I&apos;m
+				</p>
 				<h1 className='mt-0'>Vilas</h1>
 			</div>
 
