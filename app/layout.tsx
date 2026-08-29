@@ -39,14 +39,15 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 			suppressHydrationWarning
 		>
 			<body
-				className='antialiased px-4 mt-8 mx-auto typeset typeset-docs max-w-[37em]'
+				className='antialiased mt-8 typeset typeset-docs'
 				suppressHydrationWarning
 			>
 				<StructuredData />
 				<ThemeProvider attribute='class' defaultTheme='dark'>
 					<ThemeColorSync />
-					<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
-						<Header />
+					<Header />
+
+					<main className='flex-auto min-w-0 mt-6 flex flex-col px-6 max-w-[37em] mx-auto'>
 						{children}
 						<Footer />
 					</main>

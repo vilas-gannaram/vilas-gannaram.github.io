@@ -20,7 +20,7 @@ export default function Header() {
 	return (
 		<aside className='not-typeset sticky top-0 z-20 mb-16 tracking-tight bg-background/80 backdrop-blur-sm supports-backdrop-filter:bg-background/60'>
 			<nav
-				className='flex flex-row items-center justify-between relative py-3 fade md:overflow-auto scroll-pr-6 md:relative'
+				className='px-6 max-w-[37em] mx-auto flex flex-row items-center justify-between relative py-3 fade md:overflow-auto scroll-pr-6 md:relative'
 				id='nav'
 			>
 				<div className='flex flex-row space-x-4 lg:space-x-6'>
