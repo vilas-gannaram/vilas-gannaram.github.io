@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import './typeset.css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0.008 326);
@@ -40,15 +42,13 @@
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: oklch(0.145 0 0);
-		--foreground: oklch(0.985 0 0);
-		--muted: oklch(0.269 0 0);
-		--muted-foreground: oklch(0.708 0 0);
-		--border: oklch(1 0 0 / 10%);
-		--ring: oklch(0.556 0 0);
-	}
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--border: oklch(1 0 0 / 10%);
+	--ring: oklch(0.556 0 0);
 }
 
 @layer base {
