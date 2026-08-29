@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: IBlogPostPageProps) {
 				{` · ${readingTime} min read`}
 			</p>
 			{metadata.tags && metadata.tags.length > 0 && (
-				<div className='flex gap-2 mb-6'>
+				<div className='flex gap-2 mb-6 md:mb-8'>
 					{metadata.tags.map((tag) => (
 						<span
 							key={tag}
