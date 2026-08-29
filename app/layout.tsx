@@ -58,7 +58,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 			lang='en'
 			className={`${googleSansFlex.variable} ${geistMono.variable} ${styleScript.variable} h-full antialiased`}
 		>
-			<body className='antialiased max-w-xl px-4 mt-8 mx-auto'>
+			<body
+				className='antialiased max-w-xl px-4 mt-8 mx-auto'
+				suppressHydrationWarning
+			>
 				<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
 					<Header />
 					{children}
