@@ -1,5 +1,6 @@
 import { Google_Sans_Flex, Geist_Mono, Style_Script } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
+import { ThemeProvider } from 'next-themes';
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -57,16 +58,19 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 		<html
 			lang='en'
 			className={`${googleSansFlex.variable} ${geistMono.variable} ${styleScript.variable} h-full antialiased`}
+			suppressHydrationWarning
 		>
 			<body
 				className='antialiased px-4 mt-8 mx-auto typeset typeset-docs max-w-[37em]'
 				suppressHydrationWarning
 			>
-				<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
-					<Header />
-					{children}
-					<Footer />
-				</main>
+				<ThemeProvider attribute='class' defaultTheme='dark'>
+					<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
+						<Header />
+						{children}
+						<Footer />
+					</main>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
