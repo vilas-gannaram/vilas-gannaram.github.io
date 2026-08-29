@@ -33,10 +33,10 @@ export default function Header() {
 								<Link
 									key={path}
 									href={path}
-									className={`transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 border-b-2 ${
+									className={`transition-all hover:text-foreground flex align-middle relative py-1 border-b-2 ${
 										isActive
-											? 'border-foreground'
-											: 'border-transparent'
+											? 'text-foreground border-foreground'
+											: 'text-muted-foreground border-transparent'
 									}`}
 								>
 									{name}
