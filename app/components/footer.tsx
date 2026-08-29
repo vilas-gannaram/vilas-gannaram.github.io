@@ -1,3 +1,5 @@
+import { siteName, socialLinks } from '../lib/site';
+
 export default function Footer() {
 	return (
 		<footer className='not-typeset my-16'>
@@ -7,7 +9,7 @@ export default function Footer() {
 						className='flex items-center transition-all hover:text-foreground'
 						rel='noopener noreferrer'
 						target='_blank'
-						href='https://github.com/vilas-gannaram'
+						href={socialLinks.github}
 					>
 						<ArrowIcon />
 						<p className='ml-2 h-7'>github</p>
@@ -18,7 +20,7 @@ export default function Footer() {
 						className='flex items-center transition-all hover:text-foreground'
 						rel='noopener noreferrer'
 						target='_blank'
-						href='https://www.linkedin.com/in/vilasgannaram/'
+						href={socialLinks.linkedin}
 					>
 						<ArrowIcon />
 						<p className='ml-2 h-7'>linkedin</p>
@@ -29,7 +31,7 @@ export default function Footer() {
 						className='flex items-center transition-all hover:text-foreground'
 						rel='noopener noreferrer'
 						target='_blank'
-						href='mailto:vilasgannaram@gmail.com'
+						href={socialLinks.email}
 					>
 						<ArrowIcon />
 						<p className='ml-2 h-7'>email</p>
@@ -40,7 +42,7 @@ export default function Footer() {
 						className='flex items-center transition-all hover:text-foreground'
 						rel='noopener noreferrer'
 						target='_blank'
-						href='https://github.com/vilas-gannaram/vilas-gannaram.github.io'
+						href={socialLinks.repo}
 					>
 						<ArrowIcon />
 						<p className='ml-2 h-7'>view source</p>
@@ -49,7 +51,7 @@ export default function Footer() {
 			</ul>
 			<p className='mt-8 text-muted-foreground font-signature'>
 				© {new Date().getFullYear()}{' '}
-				<span className='text-base'>Vilas Gannaram</span>
+				<span className='text-base'>{siteName}</span>
 			</p>
 		</footer>
 	);
