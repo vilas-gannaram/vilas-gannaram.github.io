@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { formatDate, getBlogPosts } from './get-posts';
+import { formatDate, getBlogPosts } from '../lib/posts';
 
 export const metadata = {
 	title: 'Blog',
@@ -14,8 +14,8 @@ export default async function BlogPage() {
 			<h1>Blog</h1>
 			{posts.map((post) => (
 				<Link
-					key={post.slug}
-					href={`/blog/${post.slug}`}
+					key={post.slug.join('/')}
+					href={`/blog/${post.slug.join('/')}`}
 					className='flex flex-col space-y-1 mb-4'
 				>
 					<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
