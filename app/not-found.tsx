@@ -1,11 +1,15 @@
+import Link from 'next/link';
+
 export default function NotFound() {
 	return (
 		<section>
-			<h1 className='mb-8 text-2xl font-semibold tracking-tighter'>
-				404 - Page Not Found
-			</h1>
-			<p className='mb-4'>
-				Oops!. The page you are looking for does not exist.
+			<h1>404 - Page Not Found</h1>
+			<p>
+				Oops! The page you are looking for does not exist.{' '}
+				<Link href='/' className='underline underline-offset-2'>
+					Go back home
+				</Link>
+				.
 			</p>
 		</section>
 	);
