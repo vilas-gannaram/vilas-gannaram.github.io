@@ -2,15 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import type { ComponentType } from 'react';
 
-export type PostMetadata = {
-	title: string;
-	publishedAt: string;
-	summary: string;
-	updatedAt?: string;
-	tags?: string[];
-	draft?: boolean;
-};
-
 const postsDir = path.join(process.cwd(), 'app', 'blog', 'posts');
 const includeDrafts = process.env.NODE_ENV !== 'production';
 const WORDS_PER_MINUTE = 200;
@@ -48,10 +39,9 @@ function getReadingTime(slug: string[]) {
 
 export async function getPost(slug: string[]) {
 	try {
-		const mod = (await import(`../blog/posts/${slug.join('/')}/index.mdx`)) as {
-			default: ComponentType;
-			metadata: PostMetadata;
-		};
+		const mod = (await import(
+			`../blog/posts/${slug.join('/')}/index.mdx`
+		)) as IPostModule;
 		if (mod.metadata.draft && !includeDrafts) return null;
 
 		return {
@@ -89,4 +79,18 @@ export function formatDate(date: string) {
 		day: 'numeric',
 		year: 'numeric',
 	});
+}
+
+export interface IPostMetadata {
+	title: string;
+	publishedAt: string;
+	summary: string;
+	updatedAt?: string;
+	tags?: string[];
+	draft?: boolean;
+}
+
+interface IPostModule {
+	default: ComponentType;
+	metadata: IPostMetadata;
 }

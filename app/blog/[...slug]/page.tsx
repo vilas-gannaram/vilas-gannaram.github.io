@@ -6,11 +6,7 @@ export async function generateStaticParams() {
 	return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ slug: string[] }>;
-}) {
+export async function generateMetadata({ params }: IBlogPostPageProps) {
 	const { slug } = await params;
 	const post = await getPost(slug);
 	if (!post) return {};
@@ -21,11 +17,7 @@ export async function generateMetadata({
 	};
 }
 
-export default async function BlogPostPage({
-	params,
-}: {
-	params: Promise<{ slug: string[] }>;
-}) {
+export default async function BlogPostPage({ params }: IBlogPostPageProps) {
 	const { slug } = await params;
 	const post = await getPost(slug);
 	if (!post) notFound();
@@ -59,4 +51,8 @@ export default async function BlogPostPage({
 			<Content />
 		</section>
 	);
+}
+
+interface IBlogPostPageProps {
+	params: Promise<{ slug: string[] }>;
 }
