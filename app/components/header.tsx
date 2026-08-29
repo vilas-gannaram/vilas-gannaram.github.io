@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import ThemeToggle from './theme-toggle';
+
 const navItems = {
 	'/': {
 		name: 'home',
@@ -19,7 +21,7 @@ export default function Header() {
 		<aside className='not-typeset mb-16 tracking-tight'>
 			<div className='lg:sticky lg:top-20'>
 				<nav
-					className='flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative'
+					className='flex flex-row items-center justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative'
 					id='nav'
 				>
 					<div className='flex flex-row space-x-4 lg:space-x-6'>
@@ -42,6 +44,7 @@ export default function Header() {
 							);
 						})}
 					</div>
+					<ThemeToggle />
 				</nav>
 			</div>
 		</aside>
