@@ -28,7 +28,7 @@ export default async function BlogPostPage({ params }: IBlogPostPageProps) {
 		<section>
 			<h1>{metadata.title}</h1>
 			<p
-				className={`text-neutral-600 dark:text-neutral-400 text-sm font-mono ${
+				className={`text-muted-foreground text-sm font-mono ${
 					metadata.tags && metadata.tags.length > 0 ? 'mb-2' : 'mb-6'
 				}`}
 			>
@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: IBlogPostPageProps) {
 					{metadata.tags.map((tag) => (
 						<span
 							key={tag}
-							className='text-xs font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 rounded-full px-2 py-0.5'
+							className='text-xs font-mono text-muted-foreground border border-border rounded-full px-2 py-0.5'
 						>
 							{tag}
 						</span>

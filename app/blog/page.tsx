@@ -21,11 +21,11 @@ export default async function BlogPage() {
 						className='flex flex-col space-y-1 mb-4'
 					>
 						<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
-							<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono'>
+							<p className='text-muted-foreground text-sm font-mono'>
 								{formatDate(post.metadata.publishedAt)} · {post.readingTime} min
 								read
 							</p>
-							<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>
+							<p className='text-foreground tracking-tight'>
 								{post.metadata.title}
 							</p>
 						</div>
