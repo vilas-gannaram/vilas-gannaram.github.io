@@ -1,48 +1,28 @@
-import { Google_Sans_Flex, Geist_Mono, Style_Script } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 
 import Header from './components/header';
 import Footer from './components/footer';
+import StructuredData from './components/structured-data';
+import { googleSansFlex, geistMono, styleScript } from './lib/fonts';
+import { siteDescription, siteName, siteTitle, siteUrl } from './lib/site';
 import './globals.css';
-
-const googleSansFlex = Google_Sans_Flex({
-	variable: '--font-google-sans-flex',
-	subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-});
-
-const styleScript = Style_Script({
-	variable: '--font-style-script',
-	subsets: ['latin'],
-	weight: '400',
-});
-
-const siteUrl = 'https://vilas-gannaram.github.io';
-const title =
-	'VILAS GANNARAM | Software Engineer | FullStack Developer | Applied AI';
-const description =
-	'Portfolio of Vilas Gannaram — Software Engineer building fullstack and applied AI products.';
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
-	title,
-	description,
+	title: siteTitle,
+	description: siteDescription,
 	openGraph: {
-		title,
-		description,
+		title: siteTitle,
+		description: siteDescription,
 		url: siteUrl,
-		siteName: 'Vilas Gannaram',
+		siteName,
 		type: 'website',
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title,
-		description,
+		title: siteTitle,
+		description: siteDescription,
 	},
 };
 
@@ -64,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 				className='antialiased px-4 mt-8 mx-auto typeset typeset-docs max-w-[37em]'
 				suppressHydrationWarning
 			>
+				<StructuredData />
 				<ThemeProvider attribute='class' defaultTheme='dark'>
 					<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
 						<Header />
