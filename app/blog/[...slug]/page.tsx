@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
-import { formatDate, getPostSlugs, type PostMetadata } from '../../lib/posts';
+import { formatDate, getPost, getPostSlugs } from '../../lib/posts';
 
-export function generateStaticParams() {
-	return getPostSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+	const slugs = await getPostSlugs();
+	return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -11,7 +12,7 @@ export async function generateMetadata({
 	params: Promise<{ slug: string[] }>;
 }) {
 	const { slug } = await params;
-	const post = await loadPost(slug);
+	const post = await getPost(slug);
 	if (!post) return {};
 
 	return {
@@ -20,35 +21,41 @@ export async function generateMetadata({
 	};
 }
 
-async function loadPost(slug: string[]) {
-	try {
-		const mod = (await import(`../posts/${slug.join('/')}/index.mdx`)) as {
-			default: React.ComponentType;
-			metadata: PostMetadata;
-		};
-		return mod;
-	} catch {
-		return null;
-	}
-}
-
 export default async function BlogPostPage({
 	params,
 }: {
 	params: Promise<{ slug: string[] }>;
 }) {
 	const { slug } = await params;
-	const post = await loadPost(slug);
+	const post = await getPost(slug);
 	if (!post) notFound();
 
-	const { default: Content, metadata } = post;
+	const { default: Content, metadata, readingTime } = post;
 
 	return (
 		<section>
 			<h1>{metadata.title}</h1>
-			<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono mb-6'>
+			<p
+				className={`text-neutral-600 dark:text-neutral-400 text-sm font-mono ${
+					metadata.tags && metadata.tags.length > 0 ? 'mb-2' : 'mb-6'
+				}`}
+			>
 				{formatDate(metadata.publishedAt)}
+				{metadata.updatedAt && ` · Updated ${formatDate(metadata.updatedAt)}`}
+				{` · ${readingTime} min read`}
 			</p>
+			{metadata.tags && metadata.tags.length > 0 && (
+				<div className='flex gap-2 mb-6'>
+					{metadata.tags.map((tag) => (
+						<span
+							key={tag}
+							className='text-xs font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 rounded-full px-2 py-0.5'
+						>
+							{tag}
+						</span>
+					))}
+				</div>
+			)}
 			<Content />
 		</section>
 	);

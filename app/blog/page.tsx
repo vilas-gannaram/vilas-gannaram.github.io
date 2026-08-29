@@ -20,7 +20,8 @@ export default async function BlogPage() {
 				>
 					<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
 						<p className='text-neutral-600 dark:text-neutral-400 text-sm font-mono'>
-							{formatDate(post.metadata.publishedAt)}
+							{formatDate(post.metadata.publishedAt)} ·{' '}
+							{post.readingTime} min read
 						</p>
 						<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>
 							{post.metadata.title}

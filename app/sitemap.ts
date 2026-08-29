@@ -8,7 +8,7 @@ export default async function sitemap() {
 	const posts = await getBlogPosts();
 	const postEntries = posts.map((post) => ({
 		url: `${baseUrl}/blog/${post.slug.join('/')}`,
-		lastModified: post.metadata.publishedAt,
+		lastModified: post.metadata.updatedAt ?? post.metadata.publishedAt,
 	}));
 
 	const routes = ['', '/blog'].map((route) => ({
