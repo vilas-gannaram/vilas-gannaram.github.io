@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import Header from './components/header';
 import Footer from './components/footer';
 import StructuredData from './components/structured-data';
+import ThemeColorSync from './components/theme-color-sync';
 import { googleSansFlex, geistMono, styleScript } from './lib/fonts';
 import { siteDescription, siteName, siteTitle, siteUrl } from './lib/site';
 import './globals.css';
@@ -27,10 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: '#ffffff' },
-		{ media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-	],
+	themeColor: '#0a0a0a',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -46,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 			>
 				<StructuredData />
 				<ThemeProvider attribute='class' defaultTheme='dark'>
+					<ThemeColorSync />
 					<main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
 						<Header />
 						{children}
