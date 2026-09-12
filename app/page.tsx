@@ -19,12 +19,7 @@ export default function Home() {
 				>
 					Aganitha Cognitive Solutions
 				</a>{' '}
-				in bioinformatics.
-			</p>
-
-			<p className='mt-4'>
-				Humanities Degree, self-taught into software — think Dora the Explorer
-				with a bit of Zoro from One Piece energy. Not lost, just exploring.
+				in bioinformatics. Humanities degree, self-taught into software.
 			</p>
 		</section>
 	);
