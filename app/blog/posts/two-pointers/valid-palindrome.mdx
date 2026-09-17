@@ -1,0 +1,47 @@
+---
+title: 'Valid Palindrome'
+summary: 'LeetCode 125 - Valid Palindrome. Clean-and-compare and two-pointer solutions.'
+tags: ['two-pointers', 'easy', 'python3']
+publishedAt: '2026-09-17'
+---
+
+## Problem
+
+Given a string `s`, return `true` if it's a palindrome after converting all uppercase letters to lowercase and removing all non-alphanumeric characters, and `false` otherwise.
+
+**Link:** [leetcode.com/problems/valid-palindrome](https://leetcode.com/problems/valid-palindrome/)
+
+## Clean and compare
+
+Strip out non-alphanumeric characters, lowercase everything, then check if the cleaned string reads the same forwards and backwards.
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        cleaned = "".join(c.lower() for c in s if c.isalnum())
+        return cleaned == cleaned[::-1]
+```
+
+- **Complexity:** O(n) time, O(n) space
+
+## Two pointers
+
+Clean the string the same way, then walk two pointers inward from both ends, comparing characters as you go.
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        cleaned = "".join(c.lower() for c in s if c.isalnum())
+        left = 0
+        right = len(cleaned) - 1
+
+        while left < right:
+            if cleaned[left] != cleaned[right]:
+                return False
+            left += 1
+            right -= 1
+
+        return True
+```
+
+- **Complexity:** O(n) time, O(1) space
