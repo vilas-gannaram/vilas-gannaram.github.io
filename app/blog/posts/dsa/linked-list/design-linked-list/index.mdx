@@ -1,0 +1,100 @@
+---
+title: 'Design Linked List'
+summary: 'LeetCode 707 - Design Linked List. Two-pointer and running-minimum solutions.'
+tags: ['linked-list', 'medium', 'python3']
+publishedAt: '2026-09-18'
+---
+
+**Link:** [leetcode.com/problems/design-linked-list](https://leetcode.com/problems/design-linked-list/)
+
+## Problem
+
+Given an array `prices` where `prices[i]` is the price of a stock on day `i`, find the maximum profit you can achieve by buying on one day and selling on a later day. If no profit is possible, return `0`.
+
+## Two pointers
+
+Keep `i` at the lowest price seen so far and `j` scanning forward. If a new low shows up, move `i` there; otherwise, check if selling at `j` beats the best profit found so far.
+
+```python
+class Node:
+    def __init__(self, val: int) -> None:
+        self.value: int = val
+        self.next: Node | None = None
+
+
+class MyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def get(self, index: int) -> int:
+        cur_idx, current_node = 0, self.head
+
+        while cur_idx < index and current_node is not None:
+            cur_idx += 1
+            current_node = current_node.next
+
+        if current_node is not None:
+            return current_node.value
+        return -1
+
+    def addAtHead(self, val: int) -> None:
+        new_node = Node(val)
+        new_node.next = self.head
+        self.head = new_node
+
+    def addAtTail(self, val: int) -> None:
+        new_node = Node(val)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        cur = self.head
+        while cur.next is not None:
+            cur = cur.next
+        cur.next = new_node
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        new_node = Node(val)
+        cur_idx, current_node = 0, self.head
+
+        if index == 0:
+            self.addAtHead(val)
+            return
+
+        while cur_idx < index - 1 and current_node is not None:
+            cur_idx += 1
+            current_node = current_node.next
+
+        if current_node:
+            new_node.next = current_node.next
+            current_node.next = new_node
+
+    def deleteAtIndex(self, index: int) -> None:
+        if self.head is None or index < 0:
+            return
+
+        if index == 0:
+            self.head = self.head.next
+            return
+
+        cur_idx, current = 0, self.head
+
+        while cur_idx < index - 1 and current:
+            cur_idx += 1
+            current = current.next
+
+        if current and current.next:
+            current.next = current.next.next
+
+
+# Your MyLinkedList object will be instantiated and called as such:
+# obj = MyLinkedList()
+# param_1 = obj.get(index)
+# obj.addAtHead(val)
+# obj.addAtTail(val)
+# obj.addAtIndex(index,val)
+# obj.deleteAtIndex(index)
+```
+
+- **Complexity:** O(n) time, O(1) space
