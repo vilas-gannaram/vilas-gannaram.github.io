@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: IBlogPostPageProps) {
 					{metadata.tags.map((tag) => (
 						<span
 							key={tag}
-							className='text-xs font-mono text-muted-foreground border border-border rounded-full px-2 py-0.5'
+							className='text-xs font-mono text-muted-foreground border border-border rounded-full px-2 py-0.5 inline-flex items-center justify-center text-center leading-tight'
 						>
 							{tag}
 						</span>

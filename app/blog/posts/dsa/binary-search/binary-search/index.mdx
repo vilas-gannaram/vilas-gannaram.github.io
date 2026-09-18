@@ -16,19 +16,18 @@ Given an array of integers `nums` sorted in ascending order and an integer `targ
 Maintain a `left` and `right` boundary. Check the middle element — if it's the target, return it; if the target is bigger, discard the left half; if smaller, discard the right half. Repeat until the range is empty.
 
 ```python
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
+def search(self, nums: List[int], target: int) -> int:
+    left, right = 0, len(nums) - 1
 
-        while left <= right:
-            mid = (left + right) // 2
-            if nums[mid] == target:
-                return mid
-            elif target > nums[mid]:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return -1
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        elif target > nums[mid]:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
 ```
 
 - **Complexity:** O(log n) time, O(1) space

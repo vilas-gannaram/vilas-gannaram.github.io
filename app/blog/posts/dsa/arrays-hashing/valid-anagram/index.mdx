@@ -1,0 +1,64 @@
+---
+title: 'Valid Anagram'
+summary: 'LeetCode 242 - Valid Anagram. Sorting and hashmap-based solutions.'
+tags: ['arrays-hashing', 'hashmap', 'easy', 'python3']
+publishedAt: '2026-09-17'
+---
+
+**Link:** [leetcode.com/problems/valid-anagram](https://leetcode.com/problems/valid-anagram/)
+
+## Problem
+
+Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise. An anagram uses the exact same letters as the original string, just rearranged.
+
+## Sorting
+
+If two strings are anagrams, sorting both gives you identical strings.
+
+```python
+def isAnagram(self, s: str, t: str) -> bool:
+    return sorted(s) == sorted(t)
+```
+
+- **Complexity:** O(n log n) time, O(n) space
+
+## Single Hashmap
+
+Count each character in `s`, then walk through `t` subtracting counts. If any character is missing or overused, it's not an anagram.
+
+```python
+def isAnagram(self, s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    counts = {}
+    for char in s:
+        counts[char] = counts.get(char, 0) + 1
+    for char in t:
+        if char not in counts or counts[char] == 0:
+            return False
+        counts[char] -= 1
+
+    return True
+```
+
+- **Complexity:** O(n) time, O(1) space (bounded by alphabet size)
+
+## Two Hashmaps
+
+Build a separate character count for each string, then compare the two counts directly.
+
+```python
+def isAnagram(self, s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    countS, countT = {}, {}
+    for i in range(len(s)):
+        countS[s[i]] = countS.get(s[i], 0) + 1
+        countT[t[i]] = countT.get(t[i], 0) + 1
+
+    return countS == countT
+```
+
+- **Complexity:** O(n) time, O(n) space
