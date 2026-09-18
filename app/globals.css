@@ -51,6 +51,24 @@
 	--ring: oklch(0.556 0 0);
 }
 
+pre:has(code[data-theme]) {
+	background-color: var(--shiki-light-bg);
+}
+
+code[data-theme*=' '],
+code[data-theme*=' '] span {
+	color: var(--shiki-light);
+}
+
+.dark pre:has(code[data-theme]) {
+	background-color: var(--shiki-dark-bg) !important;
+}
+
+.dark code[data-theme*=' '],
+.dark code[data-theme*=' '] span {
+	color: var(--shiki-dark) !important;
+}
+
 @layer base {
 	body {
 		@apply font-normal text-foreground bg-background font-sans;
