@@ -1,6 +1,6 @@
 ---
 title: 'Design Linked List'
-summary: 'LeetCode 707 - Design Linked List. Two-pointer and running-minimum solutions.'
+summary: 'LeetCode 707 - Design Linked List. Singly linked list implementation.'
 tags: ['linked-list', 'medium', 'python3']
 publishedAt: '2026-09-18'
 ---
@@ -9,11 +9,11 @@ publishedAt: '2026-09-18'
 
 ## Problem
 
-Given an array `prices` where `prices[i]` is the price of a stock on day `i`, find the maximum profit you can achieve by buying on one day and selling on a later day. If no profit is possible, return `0`.
+Design and implement a singly linked list, supporting `get(index)`, `addAtHead(val)`, `addAtTail(val)`, `addAtIndex(index, val)`, and `deleteAtIndex(index)`. Indexing is 0-based, and an invalid `get` should return `-1`.
 
-## Two pointers
+## Singly linked list
 
-Keep `i` at the lowest price seen so far and `j` scanning forward. If a new low shows up, move `i` there; otherwise, check if selling at `j` beats the best profit found so far.
+Each node holds a value and a pointer to the next node. `addAtHead`/`addAtTail` are direct pointer updates; `get`/`addAtIndex`/`deleteAtIndex` all walk the list from `head` to reach the target position, then adjust pointers around it.
 
 ```python
 class Node:
@@ -86,15 +86,6 @@ class MyLinkedList:
 
         if current and current.next:
             current.next = current.next.next
-
-
-# Your MyLinkedList object will be instantiated and called as such:
-# obj = MyLinkedList()
-# param_1 = obj.get(index)
-# obj.addAtHead(val)
-# obj.addAtTail(val)
-# obj.addAtIndex(index,val)
-# obj.deleteAtIndex(index)
 ```
 
-- **Complexity:** O(n) time, O(1) space
+- **Complexity:** O(index) time per operation (worst case O(n), walking from head), O(1) space per operation, O(n) total space for the list itself
