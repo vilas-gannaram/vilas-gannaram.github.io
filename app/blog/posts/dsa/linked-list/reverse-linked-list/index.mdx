@@ -1,0 +1,45 @@
+---
+title: 'Reverse Linked List'
+summary: 'LeetCode 206 - Reverse Linked List. Iterative pointer-reversal solution.'
+tags: ['linked-list', 'easy', 'python3']
+publishedAt: '2026-09-18'
+---
+
+**Link:** [leetcode.com/problems/reverse-linked-list](https://leetcode.com/problems/reverse-linked-list/)
+
+## Problem
+
+Given the `head` of a singly linked list, reverse the list and return the new head.
+
+## Iterative reversal
+
+Walk through the list one node at a time, flipping each node's `next` pointer to point backward instead of forward. You need three pointers: `prev` (the reversed part so far), `current` (the node you're processing), and `next` (saved before you overwrite `current.next`, so you don't lose the rest of the list).
+
+**Example:** reversing `1 → 2 → 3 → None`
+
+| Step   | `prev` | `current` | `next` | What happens                                                    |
+| ------ | ------ | --------- | ------ | --------------------------------------------------------------- |
+| Start  | `None` | `1`       | —      | `next = current.next` → `next = 2`                              |
+|        |        |           | `2`    | `current.next = prev` → `1.next = None`                         |
+|        | `1`    | `2`       |        | `prev = current` → `prev = 1`, `current = next` → `current = 2` |
+| Step 2 | `1`    | `2`       | —      | `next = 2`                                                      |
+| ...    |        |           |        | repeats: `2.next = 1`, `prev = 2`, `current = 3`                |
+| Step 3 | `2`    | `3`       | —      | `3.next = 2`, `prev = 3`, `current = None`                      |
+| End    | `3`    | `None`    |        | loop exits, return `prev` → `3 → 2 → 1 → None`                  |
+
+Each iteration detaches one node from the original chain and reattaches it pointing the other way, one link at a time, until `current` runs off the end and `prev` holds the new head.
+
+```python
+def reverseList(head: ListNode | None) -> ListNode | None:
+    prev, current = None, head
+
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+
+    return prev
+```
+
+- **Complexity:** O(n) time, O(1) space
