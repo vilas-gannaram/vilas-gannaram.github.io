@@ -1,0 +1,47 @@
+---
+title: 'Valid Parentheses'
+summary: 'LeetCode 20 - Valid Parentheses. String-replacement and Stack-based  solutions.'
+tags: ['stack', 'easy', 'python3']
+publishedAt: '2026-09-17'
+---
+
+**Link:** [leetcode.com/problems/valid-parentheses](https://leetcode.com/problems/valid-parentheses/)
+
+## Problem
+
+Given a string `s` containing just the characters `(`, `)`, `{`, `}`, `[`, and `]`, determine if the input string is valid. A string is valid if every opening bracket has a matching closing bracket, and brackets close in the correct order.
+
+## String replacement
+
+Repeatedly strip out matched pairs (`()`, `{}`, `[]`) until nothing changes. If the string ends up empty, every bracket was matched.
+
+```python
+def isValid(self, s: str) -> bool:
+    while "()" in s or "{}" in s or "[]" in s:
+        s = s.replace("()", "").replace("{}", "").replace("[]", "")
+    return s == ""
+```
+
+- **Complexity:** O(n^2) time, O(n) space — each pass is O(n), and up to O(n) passes may be needed. Worse than the stack, included for comparison only.
+
+## Stack
+
+Push opening brackets onto a stack. When you hit a closing bracket, it must match the bracket on top of the stack — if it doesn't (or the stack is empty), the string isn't valid.
+
+```python
+def isValid(self, s: str) -> bool:
+    stack = []
+    parentheses = {")": "(", "}": "{", "]": "["}
+
+    for chr in s:
+        if chr in parentheses:
+            top = stack.pop() if stack else "#"
+            if parentheses[chr] != top:
+                return False
+        else:
+            stack.append(chr)
+
+    return not stack
+```
+
+- **Complexity:** O(n) time, O(n) space
