@@ -9,8 +9,20 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
 	options: {
 		remarkPlugins: [
+			'remark-gfm',
 			'remark-frontmatter',
 			['remark-mdx-frontmatter', { name: 'metadata' }],
+		],
+		rehypePlugins: [
+			[
+				'rehype-pretty-code',
+				{
+					theme: {
+						light: 'vitesse-light',
+						dark: 'vitesse-dark',
+					},
+				},
+			],
 		],
 	},
 });
