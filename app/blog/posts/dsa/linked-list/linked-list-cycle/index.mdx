@@ -1,0 +1,30 @@
+---
+title: 'Linked List Cycle'
+summary: 'LeetCode 141 - Linked List Cycle. Floyd’s cycle-finding (tortoise and hare) solution.'
+tags: ['linked-list', 'easy', 'python3']
+publishedAt: '2026-09-18'
+---
+
+**Link:** [leetcode.com/problems/linked-list-cycle](https://leetcode.com/problems/linked-list-cycle/)
+
+## Problem
+
+Given the `head` of a linked list, determine if the linked list has a cycle in it — that is, some node can be reached again by continuously following `next` pointers.
+
+## Floyd's cycle-finding algorithm
+
+Also known as the tortoise and hare algorithm. Run two pointers through the list, `slow` moving one step at a time and `fast` moving two. If there's a cycle, `fast` will eventually lap `slow` and they'll meet; if there's no cycle, `fast` reaches the end first.
+
+```python
+def hasCycle(self, head: Optional[ListNode]) -> bool:
+    fast, slow = head, head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+```
+
+- **Complexity:** O(n) time, O(1) space
