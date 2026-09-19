@@ -1,0 +1,56 @@
+---
+title: 'Min Stack'
+summary: 'LeetCode 155 - Min Stack. Stack with auxiliary min-tracking stack.'
+tags: ['stack', 'medium', 'python3']
+publishedAt: '2026-09-19'
+---
+
+**Link:** [leetcode.com/problems/min-stack](https://leetcode.com/problems/min-stack/)
+
+## Problem
+
+Design a stack that supports `push`, `pop`, `top`, and retrieving the minimum element in constant time, via `getMin()`.
+
+## Auxiliary min stack
+
+Keep a second stack alongside the main one, tracking the minimum seen so far at each depth. On every `push`, also push the current minimum (either the new value, or whatever was previously the minimum) onto `min_stack`. On `pop`, pop both stacks together — so `min_stack`'s top always reflects the correct minimum for whatever remains in the main stack.
+
+**Example:** pushing `3, 5, 2, 1`, then popping twice
+
+| Operation | `stack`        | `min_stack`    | `getMin()`                                                 |
+| --------- | -------------- | -------------- | ---------------------------------------------------------- |
+| `push(3)` | `[3]`          | `[3]`          | `3`                                                        |
+| `push(5)` | `[3, 5]`       | `[3, 3]`       | `3` — 5 isn't smaller than the current min, so `3` repeats |
+| `push(2)` | `[3, 5, 2]`    | `[3, 3, 2]`    | `2` — new minimum                                          |
+| `push(1)` | `[3, 5, 2, 1]` | `[3, 3, 2, 1]` | `1` — new minimum                                          |
+| `pop()`   | `[3, 5, 2]`    | `[3, 3, 2]`    | `2` — both stacks drop their top, min reverts correctly    |
+| `pop()`   | `[3, 5]`       | `[3, 3]`       | `3`                                                        |
+
+The key idea: `min_stack` isn't just "the minimums pushed" — it stores a minimum value for _every_ position in `stack`, even repeating the same value multiple times (like the two `3`s above). That's what makes `pop()` safe — popping both stacks together always leaves `min_stack[-1]` correct for whatever's left, with no recomputation needed.
+
+```python
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
+
+    def push(self, value: int) -> None:
+        self.stack.append(value)
+
+        if not self.min_stack or value < self.min_stack[-1]:
+            self.min_stack.append(value)
+        else:
+            self.min_stack.append(self.min_stack[-1])
+
+    def pop(self) -> None:
+        self.stack.pop()
+        self.min_stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_stack[-1]
+```
+
+- **Complexity:** O(1) time for every operation, O(n) space (two parallel stacks)
