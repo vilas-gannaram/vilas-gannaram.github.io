@@ -1,0 +1,32 @@
+---
+title: 'Group Anagrams'
+summary: 'LeetCode 49 - Group Anagrams. Sorted-key hashmap grouping.'
+tags: ['arrays-hashing', 'hashmap', 'medium', 'python3']
+publishedAt: '2026-09-20'
+---
+
+**Link:** [leetcode.com/problems/group-anagrams](https://leetcode.com/problems/group-anagrams/)
+
+## Problem
+
+Given an array of strings `strs`, group the anagrams together. You can return the answer in any order.
+
+## Sorted-key hashmap
+
+Two strings are anagrams if and only if their sorted characters are identical — so sorting each string gives you a key that's shared by every anagram in its group. Use that sorted string as a hashmap key, and append each original string to the list at that key.
+
+```python
+def groupAnagrams(strs: list[str]) -> list[list[str]]:
+    groups = {}
+
+    for s in strs:
+        key = "".join(sorted(s))
+
+        if key not in groups:
+            groups[key] = []
+        groups[key].append(s)
+
+    return list(groups.values())
+```
+
+- **Complexity:** O(n · k log k) time — n strings, each sorted in O(k log k) where k is string length — O(n · k) space
