@@ -1,0 +1,46 @@
+---
+title: 'Product of Array Except Self'
+summary: 'LeetCode 238 - Product of Array Except Self. Prefix and suffix product solution.'
+tags: ['arrays-hashing', 'prefix-sum', 'medium', 'python3']
+publishedAt: '2026-09-17'
+---
+
+**Link:** [leetcode.com/problems/product-of-array-except-self](https://leetcode.com/problems/product-of-array-except-self/)
+
+## Problem
+
+Given an integer array `nums`, return an array `answer` where `answer[i]` is the product of every element of `nums` except `nums[i]`. The algorithm must run in `O(n)` time and cannot use division.
+
+**Example:** `nums = [1, 2, 3, 4]` → `[24, 12, 8, 6]`
+
+## Prefix and suffix products
+
+For each index, the answer is the product of everything to its **left** multiplied by the product of everything to its **right**.
+
+1. **Left to right:** store the running product of everything before `i` in `answer[i]`.
+2. **Right to left:** keep a running product of everything after `i` and multiply it into `answer[i]`.
+
+```python
+def productExceptSelf(self, nums: list[int]) -> list[int]:
+    n = len(nums)
+    answer = [1] * n
+
+    left = 1
+    for i, num in enumerate(nums):
+        answer[i] = left
+        left *= num
+
+    right = 1
+    for i in reversed(range(n)):
+        answer[i] *= right
+        right *= nums[i]
+
+    return answer
+```
+
+- `[1] * n` pre-sizes the list, since Python can't assign to an index that doesn't exist yet.
+- In each loop, the running product is used **before** `nums[i]` is multiplied in, so `nums[i]` is never included in its own answer.
+- For `[1, 2, 3, 4]`, the first pass gives `[1, 1, 2, 6]` (left products), and the second pass multiplies in `[24, 12, 4, 1]` (right products) to get `[24, 12, 8, 6]`.
+- This handles zeros correctly, which a divide-the-total approach would not.
+
+- **Complexity:** O(n) time, O(1) extra space (the output array doesn't count)
