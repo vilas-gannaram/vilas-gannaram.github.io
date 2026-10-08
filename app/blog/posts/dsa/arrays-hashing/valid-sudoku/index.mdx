@@ -1,0 +1,105 @@
+---
+title: 'Valid Sudoku'
+summary: 'LeetCode 36 - Valid Sudoku. Grouping with hashmaps and single-pass hashset solutions.'
+tags: ['arrays-hashing', 'hashmap', 'hashset', 'matrix', 'medium', 'python3']
+publishedAt: '2026-09-17'
+---
+
+**Link:** [leetcode.com/problems/valid-sudoku](https://leetcode.com/problems/valid-sudoku/)
+
+## Problem
+
+Given a partially filled `9 x 9` Sudoku board, determine whether it is valid. Only the filled cells need to be checked:
+
+- Each **row** contains the digits `1-9` without repetition.
+- Each **column** contains the digits `1-9` without repetition.
+- Each of the nine **3 x 3 boxes** contains the digits `1-9` without repetition.
+
+Empty cells are represented by `"."`. The board doesn't need to be solvable, just valid so far.
+
+## Build columns and boxes, then validate
+
+Loop over the rows once. Validate each row immediately, and while walking its cells, group them into columns and boxes in hashmaps. After the loop, validate every column and box.
+
+```py
+def isValidSudoku(board: list[list[str]]) -> bool:
+    columns = {}
+    boxes = {}
+
+    for i, row in enumerate(board):
+        # check if row is valid
+        if not isValid(row):
+            return False
+
+        for j, c in enumerate(row):
+            # forming columns
+            colKey = f"c{j}"
+            if colKey not in columns:
+                columns[colKey] = []
+            columns[colKey].append(c)
+
+            # forming boxes: 3x3 grids
+            boxKey = f"b{i // 3}{j // 3}"
+            if boxKey not in boxes:
+                boxes[boxKey] = []
+            boxes[boxKey].append(c)
+
+    for values in columns.values():
+        if not isValid(values):
+            return False
+
+    for values in boxes.values():
+        if not isValid(values):
+            return False
+
+    return True
+
+
+def isValid(arr: list[str]) -> bool:
+    seen = set()
+    for n in arr:
+        if n == ".":
+            continue
+        if n in seen:
+            return False
+        seen.add(n)
+    return True
+```
+
+- Rows are checked during the loop, but columns and boxes can only be checked once every row has been seen.
+- `i // 3` and `j // 3` give the box's row and column (`0`, `1` or `2`), so each box gets a key like `b02`. Use `//`, not `/`, because `/` returns a float.
+- Iterating `columns.values()` gives just the lists of cells.
+
+- **Complexity:** O(1) time and space, since the board is always `9 x 9` (O(n²) for an `n x n` board)
+
+## Single pass
+
+Use one set to record each digit's position as a string, like `"5 in row 0"`, `"5 in col 3"` and `"5 in box 0-1"`. If the same string shows up twice, that digit is repeated in that row, column or box.
+
+```py
+def isValidSudoku(board: list[list[str]]) -> bool:
+    seen = set()
+
+    for i, row in enumerate(board):
+        for j, c in enumerate(row):
+            if c == ".":
+                continue
+
+            rKey = f"{c} in row {i}"
+            cKey = f"{c} in col {j}"
+            bKey = f"{c} in box {i // 3}-{j // 3}"
+
+            if rKey in seen or cKey in seen or bKey in seen:
+                return False
+
+            seen.add(rKey)
+            seen.add(cKey)
+            seen.add(bKey)
+
+    return True
+```
+
+- Each cell is visited once, and the function returns early on the first duplicate.
+- Including the digit, the kind of group and its index in each key keeps rows, columns and boxes from colliding in the shared set.
+
+- **Complexity:** O(1) time and space, since the board is always `9 x 9` (O(n²) for an `n x n` board)
