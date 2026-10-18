@@ -5,6 +5,8 @@ export const siteTitle =
 export const siteDescription =
 	'Portfolio of Vilas Gannaram — Software Engineer building fullstack and applied AI products.';
 
+export const resumeUrl = '/vilas-gannaram-resume.pdf';
+
 export const socialLinks = {
 	github: 'https://github.com/vilas-gannaram',
 	linkedin: 'https://www.linkedin.com/in/vilasgannaram/',

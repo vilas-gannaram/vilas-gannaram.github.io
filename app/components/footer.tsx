@@ -1,4 +1,4 @@
-import { siteName, socialLinks } from '@/app/lib/site';
+import { resumeUrl, siteName, socialLinks } from '@/app/lib/site';
 
 export default function Footer() {
 	return (
@@ -35,6 +35,16 @@ export default function Footer() {
 					>
 						<ArrowIcon />
 						<p className='ml-2 h-7'>email</p>
+					</a>
+				</li>
+				<li>
+					<a
+						className='flex items-center transition-all hover:text-foreground'
+						target='_blank'
+						href={resumeUrl}
+					>
+						<ArrowIcon />
+						<p className='ml-2 h-7'>resume</p>
 					</a>
 				</li>
 				<li>
