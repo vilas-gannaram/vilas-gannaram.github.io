@@ -1,15 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
+
+const subscribeNoop = () => () => {};
 
 export default function ThemeToggle() {
 	const { resolvedTheme, setTheme } = useTheme();
-	const [mounted, setMounted] = useState(false);
-
-	useEffect(() => {
-		setMounted(true);
-	}, []);
+	// false on the server and during hydration, true once mounted on the client.
+	const mounted = useSyncExternalStore(
+		subscribeNoop,
+		() => true,
+		() => false
+	);
 
 	if (!mounted) {
 		return <div className='size-7 rounded-none border border-border' aria-hidden />;
