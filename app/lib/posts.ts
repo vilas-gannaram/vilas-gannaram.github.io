@@ -2,9 +2,24 @@ import fs from 'fs';
 import path from 'path';
 import type { ComponentType } from 'react';
 
-const postsDir = path.join(process.cwd(), 'app', 'blog', 'posts');
+const contentDir = path.join(process.cwd(), 'app', 'content');
 const includeDrafts = process.env.NODE_ENV !== 'production';
 const WORDS_PER_MINUTE = 200;
+
+const difficultyOrder: Record<TDifficulty, number> = {
+	easy: 0,
+	medium: 1,
+	hard: 2,
+};
+
+const topicTitles: Record<string, string> = {
+	'arrays-hashing': 'Arrays & Hashing',
+	'two-pointers': 'Two Pointers',
+	'sliding-window': 'Sliding Window',
+	stack: 'Stack',
+	'binary-search': 'Binary Search',
+	'linked-list': 'Linked List',
+};
 
 function walk(dir: string, segments: string[] = []): string[][] {
 	const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -23,13 +38,9 @@ function walk(dir: string, segments: string[] = []): string[][] {
 	return slugs;
 }
 
-function getAllSlugs() {
-	return walk(postsDir);
-}
-
-function getReadingTime(slug: string[]) {
+function getReadingTime(section: TSection, slug: string[]) {
 	const raw = fs.readFileSync(
-		path.join(postsDir, ...slug, 'index.mdx'),
+		path.join(contentDir, section, ...slug, 'index.mdx'),
 		'utf8'
 	);
 	const body = raw.replace(/^---[\s\S]*?---/, '');
@@ -37,27 +48,27 @@ function getReadingTime(slug: string[]) {
 	return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
-export async function getPost(slug: string[]) {
+export async function getPost(section: TSection, slug: string[]) {
 	try {
 		const mod = (await import(
-			`../blog/posts/${slug.join('/')}/index.mdx`
+			`../content/${section}/${slug.join('/')}/index.mdx`
 		)) as IPostModule;
 		if (mod.metadata.draft && !includeDrafts) return null;
 
 		return {
 			...mod,
+			section,
 			slug,
-			readingTime: getReadingTime(slug),
+			readingTime: getReadingTime(section, slug),
 		};
 	} catch {
 		return null;
 	}
 }
 
-export async function getBlogPosts() {
-	const slugs = getAllSlugs();
-
-	const posts = await Promise.all(slugs.map((slug) => getPost(slug)));
+export async function getPosts(section: TSection) {
+	const slugs = walk(path.join(contentDir, section));
+	const posts = await Promise.all(slugs.map((slug) => getPost(section, slug)));
 
 	return posts
 		.filter((post): post is NonNullable<typeof post> => post !== null)
@@ -68,9 +79,47 @@ export async function getBlogPosts() {
 		);
 }
 
-export async function getPostSlugs() {
-	const posts = await getBlogPosts();
+export async function getAllPosts() {
+	const [blog, dsa] = await Promise.all([getPosts('blog'), getPosts('dsa')]);
+	return [...blog, ...dsa];
+}
+
+export async function getPostSlugs(section: TSection) {
+	const posts = await getPosts(section);
 	return posts.map((post) => post.slug);
+}
+
+export async function getDsaTopics() {
+	const posts = await getPosts('dsa');
+	const byTopic = new Map<string, typeof posts>();
+
+	for (const post of posts) {
+		const topic = post.slug[0];
+		byTopic.set(topic, [...(byTopic.get(topic) ?? []), post]);
+	}
+
+	return [...byTopic.entries()]
+		.map(([topic, topicPosts]) => ({
+			topic,
+			title: getTopicTitle(topic),
+			posts: topicPosts.sort(
+				(a, b) =>
+					difficultyOrder[a.metadata.difficulty ?? 'easy'] -
+					difficultyOrder[b.metadata.difficulty ?? 'easy']
+			),
+		}))
+		.sort((a, b) => a.title.localeCompare(b.title));
+}
+
+export function getPostHref(section: TSection, slug: string[]) {
+	return `/${section}/${slug.join('/')}`;
+}
+
+export function getTopicTitle(topic: string) {
+	return (
+		topicTitles[topic] ??
+		topic.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())
+	);
 }
 
 export function formatDate(date: string) {
@@ -81,12 +130,16 @@ export function formatDate(date: string) {
 	});
 }
 
+export type TSection = 'blog' | 'dsa';
+export type TDifficulty = 'easy' | 'medium' | 'hard';
+
 export interface IPostMetadata {
 	title: string;
 	publishedAt: string;
 	summary: string;
 	updatedAt?: string;
 	tags?: string[];
+	difficulty?: TDifficulty;
 	draft?: boolean;
 }
 

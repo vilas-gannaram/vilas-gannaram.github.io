@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { formatDate, getBlogPosts } from '../lib/posts';
+import { formatDate, getPostHref, getPosts } from '../lib/posts';
 
 export const metadata = {
 	title: 'Blog',
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
-	const posts = await getBlogPosts();
+	const posts = await getPosts('blog');
 
 	return (
 		<section>
@@ -17,7 +17,7 @@ export default async function BlogPage() {
 				{posts.map((post) => (
 					<Link
 						key={post.slug.join('/')}
-						href={`/blog/${post.slug.join('/')}`}
+						href={getPostHref('blog', post.slug)}
 						className='flex flex-col space-y-1 mb-4'
 					>
 						<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>

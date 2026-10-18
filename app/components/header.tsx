@@ -12,6 +12,9 @@ const navItems = {
 	'/blog': {
 		name: 'blog',
 	},
+	'/dsa': {
+		name: 'dsa',
+	},
 };
 
 export default function Header() {
