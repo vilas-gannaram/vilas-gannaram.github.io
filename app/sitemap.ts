@@ -1,19 +1,14 @@
-import { getAllPosts, getPostHref } from '@/app/lib/posts';
 import { siteUrl } from '@/app/lib/site';
 
 export const dynamic = 'force-static';
 
-export default async function sitemap() {
-	const posts = await getAllPosts();
-	const postEntries = posts.map((post) => ({
-		url: `${siteUrl}${getPostHref(post.section, post.slug)}`,
-		lastModified: post.metadata.updatedAt ?? post.metadata.publishedAt,
-	}));
-
-	const routes = ['', '/blog', '/dsa'].map((route) => ({
-		url: `${siteUrl}${route}`,
-		lastModified: new Date().toISOString().split('T')[0],
-	}));
-
-	return [...routes, ...postEntries];
+// Blog and DSA pages are noindex (see app/blog/layout.tsx and
+// app/dsa/layout.tsx), so only the home page is listed.
+export default function sitemap() {
+	return [
+		{
+			url: siteUrl,
+			lastModified: new Date().toISOString().split('T')[0],
+		},
+	];
 }
