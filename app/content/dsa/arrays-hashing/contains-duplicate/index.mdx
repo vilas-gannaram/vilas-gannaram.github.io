@@ -1,7 +1,7 @@
 ---
 title: 'Contains Duplicate'
 summary: 'LeetCode 217 - Contains Duplicate. Brute force and optimized solutions.'
-tags: ['arrays-hashing', 'hashmap', 'python3']
+tags: ['arrays-hashing', 'hashmap', 'python3', 'javascript', 'go']
 difficulty: 'easy'
 publishedAt: '2026-09-17'
 ---
@@ -16,7 +16,7 @@ Given an integer array `nums`, return `true` if any value appears **at least twi
 
 Compare every pair(`i` and `j`) of elements and check if they match
 
-```python
+```python [Python]
 def containsDuplicate(self, nums: list[int]) -> bool:
     l = len(nums)
     for i in range(l):
@@ -26,13 +26,41 @@ def containsDuplicate(self, nums: list[int]) -> bool:
     return False
 ```
 
+```js [JavaScript]
+function containsDuplicate(nums) {
+	const l = nums.length;
+	for (let i = 0; i < l; i++) {
+		for (let j = i + 1; j < l; j++) {
+			if (nums[i] === nums[j]) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+```
+
+```go [Go]
+func containsDuplicate(nums []int) bool {
+	l := len(nums)
+	for i := 0; i < l; i++ {
+		for j := i + 1; j < l; j++ {
+			if nums[i] == nums[j] {
+				return true
+			}
+		}
+	}
+	return false
+}
+```
+
 - **Complexity:** O(n^2) time, O(1) space
 
 ## Optimized approach
 
 Instead of re-scanning, keep track of what we've already seen — if we find a duplicate, return early.
 
-```python
+```python [Python]
 def containsDuplicate(self, nums: list[int]) -> bool:
     seen = {}
 
@@ -42,6 +70,36 @@ def containsDuplicate(self, nums: list[int]) -> bool:
         seen[num] = num
 
     return False
+```
+
+```js [JavaScript]
+function containsDuplicate(nums) {
+	const seen = new Set();
+
+	for (const num of nums) {
+		if (seen.has(num)) {
+			return true;
+		}
+		seen.add(num);
+	}
+
+	return false;
+}
+```
+
+```go [Go]
+func containsDuplicate(nums []int) bool {
+	seen := make(map[int]struct{})
+
+	for _, num := range nums {
+		if _, ok := seen[num]; ok {
+			return true
+		}
+		seen[num] = struct{}{}
+	}
+
+	return false
+}
 ```
 
 - **Complexity:** O(n) time, O(n) space
