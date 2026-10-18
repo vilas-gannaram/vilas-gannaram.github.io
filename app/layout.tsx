@@ -5,7 +5,7 @@ import Header from '@/app/components/header';
 import Footer from '@/app/components/footer';
 import SmoothCursor from '@/app/components/smooth-cursor';
 import StructuredData from '@/app/components/structured-data';
-import ThemeColorSync from '@/app/components/theme-color-sync';
+import ThemeColorSync from '@/app/components/theme/color-sync';
 import { googleSansFlex, geistMono, styleScript } from '@/app/lib/fonts';
 import { siteDescription, siteName, siteTitle, siteUrl } from '@/app/lib/site';
 import './globals.css';

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import ThemeToggle from './theme-toggle';
+import ThemeToggle from '@/app/components/theme/toggle';
 
 const navItems = {
 	'/': {
