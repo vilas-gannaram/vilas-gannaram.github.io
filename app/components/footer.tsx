@@ -1,4 +1,4 @@
-import { siteName, socialLinks } from '../lib/site';
+import { siteName, socialLinks } from '@/app/lib/site';
 
 export default function Footer() {
 	return (

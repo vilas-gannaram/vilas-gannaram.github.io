@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import StructuredData from './components/structured-data';
-import ThemeColorSync from './components/theme-color-sync';
-import { googleSansFlex, geistMono, styleScript } from './lib/fonts';
-import { siteDescription, siteName, siteTitle, siteUrl } from './lib/site';
+import Header from '@/app/components/header';
+import Footer from '@/app/components/footer';
+import StructuredData from '@/app/components/structured-data';
+import ThemeColorSync from '@/app/components/theme-color-sync';
+import { googleSansFlex, geistMono, styleScript } from '@/app/lib/fonts';
+import { siteDescription, siteName, siteTitle, siteUrl } from '@/app/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {

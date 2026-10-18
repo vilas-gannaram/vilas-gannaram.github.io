@@ -1,4 +1,4 @@
-import { siteName, siteUrl, socialLinks } from '../lib/site';
+import { siteName, siteUrl, socialLinks } from '@/app/lib/site';
 
 export default function StructuredData() {
 	const data = {
