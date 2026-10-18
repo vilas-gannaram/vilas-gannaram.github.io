@@ -51,6 +51,16 @@
 	--ring: oklch(0.556 0 0);
 }
 
+/* Tabbed code blocks: the tab row and panels share one block's spacing. */
+.code-tabs {
+	margin-block-start: calc(var(--typeset-flow) / 0.875);
+}
+
+.code-tabs figure,
+.code-tabs pre {
+	margin-block: 0;
+}
+
 pre:has(code[data-theme]) {
 	background-color: var(--shiki-light-bg);
 }
