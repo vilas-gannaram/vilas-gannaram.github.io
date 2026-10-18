@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes';
 
 import Header from '@/app/components/header';
 import Footer from '@/app/components/footer';
+import SmoothCursor from '@/app/components/smooth-cursor';
 import StructuredData from '@/app/components/structured-data';
 import ThemeColorSync from '@/app/components/theme-color-sync';
 import { googleSansFlex, geistMono, styleScript } from '@/app/lib/fonts';
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 				<StructuredData />
 				<ThemeProvider attribute='class' defaultTheme='dark'>
 					<ThemeColorSync />
+					<SmoothCursor />
 					<Header />
 
 					<main className='flex-auto min-w-0 mt-6 flex flex-col px-6 max-w-[37em] mx-auto'>
