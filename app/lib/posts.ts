@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import type { ComponentType } from 'react';
 
-const contentDir = path.join(process.cwd(), 'app', 'content');
+const contentDir = path.join(process.cwd(), 'content');
 const includeDrafts = process.env.NODE_ENV !== 'production';
 const WORDS_PER_MINUTE = 200;
 
@@ -51,7 +51,7 @@ function getReadingTime(section: TSection, slug: string[]) {
 export async function getPost(section: TSection, slug: string[]) {
 	try {
 		const mod = (await import(
-			`../content/${section}/${slug.join('/')}/index.mdx`
+			`../../content/${section}/${slug.join('/')}/index.mdx`
 		)) as IPostModule;
 		if (mod.metadata.draft && !includeDrafts) return null;
 
