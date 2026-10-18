@@ -84,6 +84,18 @@ export async function getAllPosts() {
 	return [...blog, ...dsa];
 }
 
+export async function getRecentPosts(limit: number) {
+	const posts = await getAllPosts();
+
+	return posts
+		.sort(
+			(a, b) =>
+				new Date(b.metadata.publishedAt).getTime() -
+				new Date(a.metadata.publishedAt).getTime()
+		)
+		.slice(0, limit);
+}
+
 export async function getPostSlugs(section: TSection) {
 	const posts = await getPosts(section);
 	return posts.map((post) => post.slug);
