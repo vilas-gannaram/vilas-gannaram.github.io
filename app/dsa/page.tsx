@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getDsaTopics, getPostHref } from '../lib/posts';
+import { getDsaTopics, getPostHref } from '@/app/lib/posts';
 
 export const metadata = {
 	title: 'DSA',

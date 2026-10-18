@@ -1,5 +1,5 @@
-import { getAllPosts, getPostHref } from './lib/posts';
-import { siteUrl } from './lib/site';
+import { getAllPosts, getPostHref } from '@/app/lib/posts';
+import { siteUrl } from '@/app/lib/site';
 
 export const dynamic = 'force-static';
 

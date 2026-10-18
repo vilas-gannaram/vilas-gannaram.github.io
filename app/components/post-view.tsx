@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { formatDate, type IPostMetadata } from '../lib/posts';
+import { formatDate, type IPostMetadata } from '@/app/lib/posts';
 
 export default function PostView({
 	Content,

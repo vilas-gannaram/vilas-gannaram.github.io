@@ -1,4 +1,4 @@
-import { siteUrl } from './lib/site';
+import { siteUrl } from '@/app/lib/site';
 
 export const dynamic = 'force-static';
 

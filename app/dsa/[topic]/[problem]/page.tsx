@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
-import PostView from '../../../components/post-view';
-import { getPost, getPostSlugs } from '../../../lib/posts';
+import PostView from '@/app/components/post-view';
+import { getPost, getPostSlugs } from '@/app/lib/posts';
 
 export async function generateStaticParams() {
 	const slugs = await getPostSlugs('dsa');
