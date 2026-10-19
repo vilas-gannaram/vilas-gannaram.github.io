@@ -48,7 +48,7 @@ export default async function Home() {
 			<h2>Selected work</h2>
 			<div className='not-typeset my-6'>
 				{projects.map((project) => (
-					<p key={project.name} className='mb-4 text-foreground tracking-tight'>
+					<p key={project.name} className='mb-2 text-foreground tracking-tight'>
 						<a
 							target='_blank'
 							rel='noopener noreferrer'
@@ -71,7 +71,7 @@ export default async function Home() {
 					<Link
 						key={`${post.section}/${post.slug.join('/')}`}
 						href={getPostHref(post.section, post.slug)}
-						className='flex flex-col space-y-1 mb-4'
+						className='flex flex-col space-y-1 mb-2'
 					>
 						<div className='flex flex-col md:flex-row md:items-baseline md:gap-4'>
 							<p className='text-muted-foreground text-sm font-mono'>
